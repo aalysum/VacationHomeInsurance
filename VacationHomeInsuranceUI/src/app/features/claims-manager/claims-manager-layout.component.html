@@ -1,0 +1,90 @@
+<div class="claims-manager-shell">
+	<aside class="claims-manager-sidebar">
+		<div class="sidebar-brand">
+			<a routerLink="/claims-manager/dashboard" aria-label="Claims Manager dashboard">
+				<span class="brand-mark" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M12 3 4.5 6.2v4.9c0 4.5 3.1 8.7 7.5 9.9 4.4-1.2 7.5-5.4 7.5-9.9V6.2L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+						<path d="m8.8 12 2.2 2.2 4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</span>
+				<span class="brand-copy">
+					<strong>SecureSphere</strong>
+					<small>Claims Management</small>
+				</span>
+			</a>
+		</div>
+
+		<nav class="claims-manager-navigation" aria-label="Claims Manager navigation">
+			<p class="navigation-heading">Workspace</p>
+			@for (item of navigationItems; track item.route) {
+				<a
+					[routerLink]="item.route"
+					class="navigation-item"
+					[class.navigation-item-active]="isCurrentNavigationItem(item)"
+					[attr.aria-current]="isCurrentNavigationItem(item) ? 'page' : null"
+				>
+					<span class="navigation-icon" aria-hidden="true">
+						@switch (item.icon) {
+							@case ('overview') {
+								<svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+							}
+							@case ('claims') {
+								<svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6.2v5.3c0 4.3 2.8 8.1 8 9.5 5.2-1.4 8-5.2 8-9.5V6.2L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /><path d="M8.5 12h7M12 8.5v7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+							}
+							@case ('profile') {
+								<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7" /><path d="M4.5 21c0-4.2 3.3-7 7.5-7s7.5 2.8 7.5 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+							}
+							@case ('security') {
+								<svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6.2v4.9c0 4.5 3.1 8.7 7.5 9.9 4.4-1.2 7.5-5.4 7.5-9.9V6.2L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" /><path d="M9 12h6m-3-3v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+							}
+						}
+					</span>
+					<span class="navigation-copy">
+						<strong>{{ item.label }}</strong>
+						<small>{{ item.description }}</small>
+					</span>
+				</a>
+			}
+		</nav>
+
+		<div class="sidebar-account">
+			<div class="account-card">
+				<p class="account-label">Signed in as</p>
+				<div class="account-identity">
+					<span class="account-avatar">{{ initials() }}</span>
+					<div>
+						<strong>{{ displayName() }}</strong>
+						<small>Claims Manager</small>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="sign-out-button" (click)="logout()">
+				<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 5H5v14h5m4-11 4 4-4 4m-6-4h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+				Sign out
+			</button>
+		</div>
+	</aside>
+
+	<div class="claims-manager-main">
+		<header class="mobile-header">
+			<a routerLink="/claims-manager/dashboard" aria-label="Claims Manager dashboard">
+				<span class="brand-mark" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6.2v4.9c0 4.5 3.1 8.7 7.5 9.9 4.4-1.2 7.5-5.4 7.5-9.9V6.2L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+				</span>
+				<span><strong>SecureSphere</strong><small>Claims Management</small></span>
+			</a>
+			<button type="button" class="mobile-sign-out" (click)="logout()">Sign out</button>
+		</header>
+		<nav class="mobile-navigation" aria-label="Claims Manager navigation">
+			@for (item of navigationItems; track item.route) {
+				<a [routerLink]="item.route" [class.navigation-item-active]="isCurrentNavigationItem(item)">
+					{{ item.label }}
+				</a>
+			}
+		</nav>
+		<main class="route-content">
+			<router-outlet />
+		</main>
+	</div>
+</div>

@@ -1,0 +1,391 @@
+:host {
+	display: block;
+	min-height: 100vh;
+	color: #0b2545;
+}
+
+.claims-manager-shell {
+	display: grid;
+	min-height: 100vh;
+	grid-template-columns: 290px minmax(0, 1fr);
+	background: #eef4ed;
+}
+
+.claims-manager-sidebar {
+	position: sticky;
+	top: 0;
+	display: flex;
+	height: 100vh;
+	min-height: 100vh;
+	flex-direction: column;
+	background: #0b2545;
+	color: #fff;
+}
+
+.sidebar-brand {
+	padding: 1.75rem;
+	border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.sidebar-brand > a,
+.mobile-header > a {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.brand-mark {
+	display: inline-flex;
+	width: 3rem;
+	height: 3rem;
+	flex: 0 0 3rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+	background: #fff;
+	color: #0b2545;
+	box-shadow: 0 14px 35px rgb(0 0 0 / 18%);
+}
+
+.brand-mark svg {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+.brand-copy,
+.mobile-header > a > span:last-child {
+	display: grid;
+	gap: 0.25rem;
+}
+
+.brand-copy strong,
+.mobile-header strong {
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+}
+
+.brand-copy small,
+.mobile-header small {
+	color: #afc1d1;
+	font-size: 0.56rem;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+.claims-manager-navigation {
+	display: grid;
+	align-content: start;
+	gap: 0.4rem;
+	flex: 1;
+	overflow-y: auto;
+	padding: 1.5rem 1rem;
+	scrollbar-width: thin;
+	scrollbar-color: rgb(175 193 209 / 55%) rgb(255 255 255 / 4%);
+}
+
+.navigation-heading {
+	margin: 0 0 0.55rem;
+	padding: 0 0.75rem;
+	color: #708ca4;
+	font-size: 0.625rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.navigation-item {
+	display: flex;
+	min-height: 3.5rem;
+	align-items: center;
+	gap: 0.75rem;
+	border: 1px solid transparent;
+	border-radius: 1rem;
+	padding: 0.6rem 0.7rem;
+	color: #c6d4de;
+	text-decoration: none;
+	transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.navigation-item:hover {
+	border-color: rgb(255 255 255 / 8%);
+	background: rgb(255 255 255 / 7%);
+	color: #fff;
+}
+
+.navigation-item-active {
+	border-color: rgb(175 193 209 / 18%);
+	background: linear-gradient(135deg, rgb(141 169 196 / 24%), rgb(141 169 196 / 12%));
+	color: #fff;
+	box-shadow: inset 0 1px 0 rgb(255 255 255 / 8%), 0 10px 25px rgb(0 0 0 / 10%);
+}
+
+.navigation-icon {
+	display: inline-flex;
+	width: 2.25rem;
+	height: 2.25rem;
+	flex: 0 0 2.25rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.75rem;
+	background: rgb(255 255 255 / 8%);
+	color: #afc1d1;
+}
+
+.navigation-item-active .navigation-icon,
+.navigation-item:hover .navigation-icon {
+	background: rgb(255 255 255 / 14%);
+	color: #fff;
+}
+
+.navigation-icon svg {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+.navigation-copy {
+	display: grid;
+	min-width: 0;
+	gap: 0.2rem;
+}
+
+.navigation-copy strong {
+	overflow: hidden;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.navigation-copy small {
+	overflow: hidden;
+	color: #8fa5b7;
+	font-size: 0.625rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.sidebar-account {
+	padding: 1rem;
+	border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.account-card {
+	border: 1px solid rgb(255 255 255 / 10%);
+	border-radius: 1.35rem;
+	background: rgb(255 255 255 / 6%);
+	padding: 1rem;
+}
+
+.account-label {
+	margin: 0;
+	color: #829bb0;
+	font-size: 0.625rem;
+	font-weight: 700;
+	letter-spacing: 0.17em;
+	text-transform: uppercase;
+}
+
+.account-identity {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-top: 0.8rem;
+}
+
+.account-avatar {
+	display: inline-flex;
+	width: 2.5rem;
+	height: 2.5rem;
+	flex: 0 0 2.5rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.9rem;
+	background: rgb(141 169 196 / 20%);
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: 650;
+}
+
+.account-identity > div {
+	display: grid;
+	min-width: 0;
+	gap: 0.2rem;
+}
+
+.account-identity strong,
+.account-identity small {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.account-identity strong {
+	font-size: 0.8125rem;
+	font-weight: 500;
+}
+
+.account-identity small {
+	color: #8fa5b7;
+	font-size: 0.625rem;
+}
+
+.sign-out-button,
+.mobile-sign-out {
+	display: inline-flex;
+	min-height: 2.8rem;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	border: 1px solid rgb(255 255 255 / 10%);
+	border-radius: 999px;
+	background: transparent;
+	color: #c6d4de;
+	font: inherit;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.sign-out-button {
+	width: 100%;
+	margin-top: 0.75rem;
+}
+
+.sign-out-button svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+.sign-out-button:hover,
+.mobile-sign-out:hover {
+	border-color: rgb(255 255 255 / 20%);
+	background: rgb(255 255 255 / 10%);
+	color: #fff;
+}
+
+.claims-manager-main {
+	min-width: 0;
+}
+
+.route-content {
+	min-width: 0;
+}
+
+.mobile-header,
+.mobile-navigation {
+	display: none;
+}
+
+.navigation-item:focus-visible,
+.sign-out-button:focus-visible,
+.mobile-sign-out:focus-visible,
+.mobile-navigation a:focus-visible {
+	outline: 3px solid #9bc7b1;
+	outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+	.claims-manager-shell {
+		grid-template-columns: 230px minmax(0, 1fr);
+	}
+}
+
+@media (max-width: 700px) {
+	.claims-manager-shell {
+		display: block;
+	}
+
+	.claims-manager-sidebar {
+		display: none;
+	}
+
+	.mobile-header {
+		position: sticky;
+		top: 0;
+		z-index: 30;
+		display: flex;
+		min-height: 4.5rem;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		border-bottom: 1px solid rgb(255 255 255 / 60%);
+		background: rgb(238 244 237 / 92%);
+		padding: 0.65rem 1rem;
+		backdrop-filter: blur(16px);
+	}
+
+	.mobile-header .brand-mark {
+		width: 2.5rem;
+		height: 2.5rem;
+		flex-basis: 2.5rem;
+		border-radius: 0.8rem;
+	}
+
+	.mobile-header .brand-mark svg {
+		width: 1.4rem;
+		height: 1.4rem;
+	}
+
+	.mobile-header strong {
+		color: #0b2545;
+		font-size: 0.8125rem;
+	}
+
+	.mobile-header small {
+		color: #6f8598;
+		font-size: 0.5rem;
+	}
+
+	.mobile-sign-out {
+		min-height: 2.35rem;
+		border-color: #c9d6df;
+		padding: 0.45rem 0.8rem;
+		color: #13315c;
+		font-size: 0.75rem;
+	}
+
+	.mobile-sign-out:hover {
+		border-color: #aebdc8;
+		background: #fff;
+		color: #0b2545;
+	}
+
+	.mobile-navigation {
+		display: flex;
+		gap: 0.35rem;
+		overflow-x: auto;
+		border-bottom: 1px solid #d7e1e7;
+		background: #fff;
+		padding: 0.55rem 0.75rem;
+		scrollbar-width: thin;
+	}
+
+	.mobile-navigation a {
+		flex: 0 0 auto;
+		border-radius: 999px;
+		padding: 0.55rem 0.75rem;
+		color: #52697d;
+		font-size: 0.72rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.mobile-navigation a.navigation-item-active {
+		background: #0b2545;
+		color: #fff;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}

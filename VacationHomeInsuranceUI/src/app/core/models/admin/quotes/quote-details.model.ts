@@ -1,0 +1,44 @@
+import { AdminDecision } from './admin-decision.enum';
+import { ProductType } from './product-type.enum';
+import { QuoteCoverage } from './quote-coverage.model';
+import { QuoteStatus } from './quote-status.enum';
+import { RiskLevel } from './risk-level.enum';
+
+export interface QuoteDetails {
+	id: string;
+	quoteNumber: string;
+	customerId: string;
+	propertyId: string;
+	productId: string;
+	productName: string;
+	productDescription: string;
+	productType: ProductType;
+	status: QuoteStatus;
+	propertyName: string;
+	propertyType: string;
+	addressSummary: string;
+	propertyValue: number;
+	constructionYear: number;
+	occupancyFrequency: string;
+	riskScore: number;
+	riskLevel: RiskLevel;
+	riskExplanation: string;
+	basePremium: number;
+	riskAdjustmentAmount: number;
+	mandatoryCoverageCharges: number;
+	optionalCoverageCharges: number;
+	finalAnnualPremium: number;
+	estimatedMonthlyEquivalent: number;
+	paymentFrequency: string;
+	generatedAtUtc: string;
+	expiresAtUtc: string;
+	paymentDeadlineUtc: string | null;
+	customerAcceptedAtUtc: string | null;
+	adminDecision: AdminDecision | null;
+	adminDecisionAtUtc: string | null;
+	approvalRemarks: string | null;
+	rejectionReason: string | null;
+	paymentEligible: boolean;
+	coverages: QuoteCoverage[];
+	rowVersion: string;
+}

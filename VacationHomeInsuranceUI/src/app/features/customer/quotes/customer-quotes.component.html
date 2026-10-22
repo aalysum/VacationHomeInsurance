@@ -1,0 +1,2052 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div class="min-h-screen lg:grid lg:grid-cols-[290px_minmax(0,1fr)]">
+    <aside
+      class="hidden min-h-screen bg-[#0B2545] text-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col"
+    >
+      <div class="border-b border-white/10 px-7 py-7">
+        <a
+          routerLink="/customer/dashboard"
+          class="flex items-center gap-3"
+          aria-label="Go to Customer dashboard"
+        >
+          <span
+            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+
+
+              <path
+                d="M8.8 12L11 14.2L15.5 9.7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+
+          <span>
+            <span class="block text-[15px] font-semibold">
+              SecureSphere
+            </span>
+
+
+            <span
+              class="mt-1 block text-[9px] uppercase tracking-[0.22em] text-[#AFC1D1]"
+            >
+              Customer Portal
+            </span>
+          </span>
+        </a>
+      </div>
+
+      <nav
+        class="customer-scrollbar flex-1 overflow-y-auto px-4 py-6"
+        aria-label="Customer navigation"
+      >
+        <p
+          class="px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#708CA4]"
+        >
+          Workspace
+        </p>
+
+
+        <div class="mt-4 space-y-1.5">
+          @for (
+            item of navigationItems;
+            track item.label
+          ) {
+            @if (item.available) {
+              <a
+                [routerLink]="item.route"
+                class="customer-nav-item"
+                [class.customer-nav-item-active]="
+                  isCurrentNavigationItem(item)
+                "
+              >
+                <span class="customer-nav-icon">
+                  @switch (item.icon) {
+                    @case ('overview') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('properties') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('quotes') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('policies') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('claims') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M12 8V13M12 16V16.1"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('profile') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="12"
+                          cy="8"
+                          r="4"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+
+
+                        <path
+                          d="M4.5 21C4.5 16.8 7.8 14 12 14C16.2 14 19.5 16.8 19.5 21"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('security') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="5"
+                          y="10"
+                          width="14"
+                          height="11"
+                          rx="2"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+
+
+                        <path
+                          d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @default {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                <span class="min-w-0 flex-1">
+                  <span class="block truncate text-sm font-medium">
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#8FA5B7]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+              </a>
+            } @else {
+              <button
+                type="button"
+                class="customer-nav-item customer-nav-item-disabled"
+                disabled
+              >
+                <span class="customer-nav-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 3H15L19 7V21H6V3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span class="min-w-0 flex-1 text-left">
+                  <span class="block truncate text-sm">
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#708CA4]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+
+
+                <span class="customer-soon-badge">
+                  Soon
+                </span>
+              </button>
+            }
+          }
+        </div>
+      </nav>
+
+
+      <div class="border-t border-white/10 p-4">
+        <div
+          class="rounded-[22px] border border-white/10 bg-white/[0.06] p-4"
+        >
+          <p
+            class="text-[10px] uppercase tracking-[0.17em] text-[#829BB0]"
+          >
+            Signed in as
+          </p>
+
+
+          <div class="mt-3 flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#8DA9C4]/20 text-sm font-semibold"
+            >
+              {{ initials() }}
+            </span>
+
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium">
+                {{ displayName() }}
+              </p>
+
+
+              <p class="mt-0.5 text-[10px] text-[#8FA5B7]">
+                Customer account
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <button
+          type="button"
+          class="mt-3 w-full rounded-full border border-white/10 px-5 py-3 text-sm text-[#C6D4DE] hover:bg-white/10"
+          (click)="logout()"
+        >
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+
+    <div class="min-w-0">
+      <header
+        class="sticky top-0 z-30 border-b border-white/60 bg-[#EEF4ED]/85 backdrop-blur-xl"
+      >
+        <div
+          class="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-8 lg:px-10"
+        >
+          <div>
+            <p
+              class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7890A3]"
+            >
+              Customer Portal
+            </p>
+
+
+            <h1 class="mt-1 text-lg font-medium">
+              Insurance Quotes
+            </h1>
+          </div>
+
+
+          <div class="flex gap-3">
+            <button
+              type="button"
+              class="quote-secondary-button"
+              [disabled]="quotesLoading()"
+              (click)="refreshQuotes()"
+            >
+              Refresh
+            </button>
+
+
+            <button
+              type="button"
+              class="quote-primary-button"
+              (click)="openGenerateQuote()"
+            >
+              Generate quote
+            </button>
+          </div>
+        </div>
+      </header>
+
+
+      <main class="px-8 py-10 lg:px-10">
+        <div class="mx-auto max-w-[1600px]">
+          @if (successMessage()) {
+            <div class="quote-success-message">
+              <span>
+                {{ successMessage() }}
+              </span>
+
+
+              <button
+                type="button"
+                (click)="clearSuccessMessage()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          @if (errorMessage()) {
+            <div class="quote-error-message">
+              <span>
+                {{ errorMessage() }}
+              </span>
+
+
+              <button
+                type="button"
+                (click)="clearError()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          <section class="quote-hero">
+            <div>
+              <span class="quote-hero-badge">
+                Vacation Home Insurance
+              </span>
+
+
+              <h2>
+                Generate and manage quotes.
+              </h2>
+
+
+              <p>
+                Select an active vacation property, choose an
+                insurance product and optional Coverages, then
+                review the calculated premium and risk details.
+              </p>
+            </div>
+
+
+            <div class="quote-total-card">
+              <span>
+                Total quotes
+              </span>
+
+
+              <strong>
+                {{ totalCount() }}
+              </strong>
+            </div>
+          </section>
+
+
+          <section class="quote-filter-card">
+            <form
+              [formGroup]="filterForm"
+              (ngSubmit)="applyFilters()"
+            >
+              <div class="quote-filter-grid">
+                <label class="quote-field">
+                  <span>
+                    Property
+                  </span>
+
+
+                  <select formControlName="propertyId">
+                    <option value="">
+                      All properties
+                    </option>
+
+
+                    @for (
+                      property of propertyItems();
+                      track property.propertyId
+                    ) {
+                      <option
+                        [value]="property.propertyId"
+                      >
+                        {{ property.propertyName }}
+                      </option>
+                    }
+                  </select>
+                </label>
+
+
+                <label class="quote-field">
+                  <span>
+                    Product
+                  </span>
+
+
+                  <select formControlName="productId">
+                    <option value="">
+                      All products
+                    </option>
+
+
+                    @for (
+                      product of activeProducts();
+                      track product.id
+                    ) {
+                      <option [value]="product.id">
+                        {{ product.name }}
+                      </option>
+                    }
+                  </select>
+                </label>
+
+
+                <label class="quote-field">
+                  <span>
+                    Status
+                  </span>
+
+
+                  <select formControlName="status">
+                    <option value="">
+                      All statuses
+                    </option>
+
+
+                    <option [value]="QuoteStatus.Active">
+                      Active
+                    </option>
+
+
+                    <option
+                      [value]="
+                        QuoteStatus.PendingAdminApproval
+                      "
+                    >
+                      Pending Admin Approval
+                    </option>
+
+
+                    <option
+                      [value]="QuoteStatus.AdminApproved"
+                    >
+                      Admin Approved
+                    </option>
+
+
+                    <option
+                      [value]="QuoteStatus.AdminRejected"
+                    >
+                      Admin Rejected
+                    </option>
+
+
+                    <option [value]="QuoteStatus.Expired">
+                      Expired
+                    </option>
+
+
+                    <option [value]="QuoteStatus.Invalidated">
+                      Invalidated
+                    </option>
+
+
+                    <option [value]="QuoteStatus.Withdrawn">
+                      Withdrawn
+                    </option>
+
+
+                    <option
+                      [value]="
+                        QuoteStatus.ConvertedToPolicy
+                      "
+                    >
+                      Converted to Policy
+                    </option>
+                  </select>
+                </label>
+
+
+                <label class="quote-field">
+                  <span>
+                    Rows
+                  </span>
+
+
+                  <select formControlName="pageSize">
+                    <option [ngValue]="10">
+                      10
+                    </option>
+
+
+                    <option [ngValue]="25">
+                      25
+                    </option>
+
+
+                    <option [ngValue]="50">
+                      50
+                    </option>
+                  </select>
+                </label>
+              </div>
+
+
+              <div class="quote-filter-actions">
+                <button
+                  type="button"
+                  class="quote-secondary-button"
+                  (click)="clearFilters()"
+                >
+                  Clear filters
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="quote-primary-button"
+                >
+                  Apply filters
+                </button>
+              </div>
+            </form>
+          </section>
+
+
+          <section class="quote-list-card">
+            <div class="quote-list-header">
+              <div>
+                <p class="quote-eyebrow">
+                  Quote history
+                </p>
+
+
+                <h2>
+                  My quotes
+                </h2>
+              </div>
+
+
+              <span class="quote-count-badge">
+                {{ totalCount() }} records
+              </span>
+            </div>
+
+
+            @if (quotesLoading()) {
+              <div class="space-y-4 p-8">
+                @for (
+                  item of [1, 2, 3];
+                  track item
+                ) {
+                  <div
+                    class="h-28 animate-pulse rounded-[20px] bg-[#EDF1F3]"
+                  ></div>
+                }
+              </div>
+            } @else if (
+              quoteItems().length === 0
+            ) {
+              <div class="quote-empty-state">
+                <h3>
+                  No quotes found
+                </h3>
+
+
+                <p>
+                  Generate an insurance quote for an active
+                  vacation property.
+                </p>
+
+
+                <button
+                  type="button"
+                  class="quote-primary-button mt-5"
+                  (click)="openGenerateQuote()"
+                >
+                  Generate quote
+                </button>
+              </div>
+            } @else {
+              <div class="divide-y divide-[#E6ECEF]">
+                @for (
+                  quote of quoteItems();
+                  track quote.id
+                ) {
+                  <button
+                    type="button"
+                    class="quote-list-row"
+                    (click)="openQuote(quote)"
+                  >
+                    <span class="quote-list-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+
+
+                    <span class="min-w-0 flex-1 text-left">
+                      <span class="flex items-center gap-3">
+                        <strong>
+                          {{ quote.quoteNumber }}
+                        </strong>
+
+
+                        <span
+                          class="quote-status"
+                          [ngClass]="
+                            quoteStatusClass(
+                              effectiveQuoteStatus(
+                                quote.id,
+                                quote.status
+                              )
+                            )
+                          "
+                        >
+                          {{
+                            quoteStatusLabel(
+                              effectiveQuoteStatus(
+                                quote.id,
+                                quote.status
+                              )
+                            )
+                          }}
+                        </span>
+                      </span>
+
+
+                      <span class="quote-row-title">
+                        {{ quote.productName }}
+                      </span>
+
+
+                      <span class="quote-row-meta">
+                        {{ quote.propertyName }}
+                        · Generated
+                        {{
+                          formatDate(
+                            quote.generatedAtUtc
+                          )
+                        }}
+                        · Expires
+                        {{
+                          formatDate(
+                            quote.expiresAtUtc
+                          )
+                        }}
+                      </span>
+                    </span>
+
+
+                    <span class="text-right">
+                      <strong class="quote-premium">
+                        {{
+                          formatCurrency(
+                            quote.finalAnnualPremium
+                          )
+                        }} / year
+                      </strong>
+
+
+                      <span class="quote-premium-label">
+                        Annual premium
+                      </span>
+                    </span>
+                  </button>
+                }
+              </div>
+
+
+              <div class="quote-pagination">
+                <p>
+                  Showing {{ pageStart() }} to
+                  {{ pageEnd() }} of {{ totalCount() }}
+                </p>
+
+
+                <div>
+                  <button
+                    type="button"
+                    class="quote-pagination-button"
+                    [disabled]="
+                      !hasPreviousPage() ||
+                      quotesLoading()
+                    "
+                    (click)="previousPage()"
+                  >
+                    Previous
+                  </button>
+
+
+                  <span>
+                    Page {{ pageNumber() }} of
+                    {{ totalPages() || 1 }}
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="quote-pagination-button"
+                    [disabled]="
+                      !hasNextPage() ||
+                      quotesLoading()
+                    "
+                    (click)="nextPage()"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            }
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  @if (dialogMode()) {
+    <div
+      class="quote-dialog-backdrop"
+      (click)="closeDialog()"
+    >
+      <section
+        class="quote-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quote-dialog-title"
+        (click)="$event.stopPropagation()"
+      >
+        <header class="quote-dialog-header">
+          <div>
+            <p class="quote-eyebrow">
+              Insurance quote
+            </p>
+
+
+            <h2 id="quote-dialog-title">
+              @switch (dialogMode()) {
+                @case ('generate') {
+                  Generate quote
+                }
+
+
+                @case ('details') {
+                  Quote details
+                }
+
+
+                @case ('withdraw') {
+                  Withdraw quote
+                }
+
+
+                @case ('payment') {
+                  Pay and activate Policy
+                }
+
+
+                @case ('payment-result') {
+                  Payment completed
+                }
+              }
+            </h2>
+          </div>
+
+
+          <button
+            type="button"
+            class="quote-dialog-close"
+            [disabled]="
+              quoteProcessing() ||
+              paymentLoading()
+            "
+            (click)="closeDialog()"
+            aria-label="Close dialog"
+          >
+            ×
+          </button>
+        </header>
+
+
+        <div class="quote-dialog-content">
+          @if (dialogMode() === 'generate') {
+            <form
+              [formGroup]="generationForm"
+              (ngSubmit)="generateQuote()"
+            >
+              <div class="quote-generation-grid">
+                <label class="quote-field">
+                  <span>
+                    Vacation property
+                  </span>
+
+
+                  <select formControlName="propertyId">
+                    <option value="">
+                      Select a property
+                    </option>
+
+
+                    @for (
+                      property of propertyItems();
+                      track property.propertyId
+                    ) {
+                      <option
+                        [value]="property.propertyId"
+                      >
+                        {{ property.propertyName }}
+                      </option>
+                    }
+                  </select>
+                </label>
+
+
+                <label class="quote-field">
+                  <span>
+                    Insurance product
+                  </span>
+
+
+                  <select
+                    formControlName="productId"
+                    (change)="productChanged()"
+                  >
+                    <option value="">
+                      Select a product
+                    </option>
+
+
+                    @for (
+                      product of activeProducts();
+                      track product.id
+                    ) {
+                      <option [value]="product.id">
+                        {{ product.name }}
+                      </option>
+                    }
+                  </select>
+                </label>
+              </div>
+
+
+              @if (productsLoading()) {
+                <div class="quote-loading-state">
+                  Loading product information
+                </div>
+              } @else if (
+                selectedProduct();
+                as product
+              ) {
+                <section class="quote-product-card">
+                  <p class="quote-eyebrow">
+                    Selected product
+                  </p>
+
+
+                  <h3>
+                    {{ product.name }}
+                  </h3>
+
+
+                  <p>
+                    {{ product.description }}
+                  </p>
+                </section>
+
+
+                <section class="quote-coverage-section">
+                  <div class="quote-section-heading">
+                    <div>
+                      <p class="quote-eyebrow">
+                        Included Coverages
+                      </p>
+
+
+                      <h3>
+                        Mandatory Coverages
+                      </h3>
+                    </div>
+                  </div>
+
+
+                  <div class="quote-coverage-grid">
+                    @for (
+                      coverage of mandatoryCoverages();
+                      track coverage.coverageId
+                    ) {
+                      <article class="quote-coverage-card">
+                        <span class="coverage-mandatory">
+                          Mandatory
+                        </span>
+
+
+                        <h4>
+                          {{ coverage.coverageName }}
+                        </h4>
+
+
+                        <p>
+                          {{ coverage.coverageDescription }}
+                        </p>
+
+
+                        <strong>
+                          Annual charge:
+                          {{
+                            formatCurrency(
+                              coverage.coverageCharge
+                            )
+                          }}
+                        </strong>
+                      </article>
+                    }
+                  </div>
+                </section>
+
+
+                @if (
+                  optionalCoverages().length > 0
+                ) {
+                  <section class="quote-coverage-section">
+                    <div class="quote-section-heading">
+                      <div>
+                        <p class="quote-eyebrow">
+                          Optional protection
+                        </p>
+
+
+                        <h3>
+                          Select optional Coverages
+                        </h3>
+                      </div>
+                    </div>
+
+
+                    <div class="quote-coverage-grid">
+                      @for (
+                        coverage of optionalCoverages();
+                        track coverage.coverageId
+                      ) {
+                        <label
+                          class="quote-coverage-card quote-optional-coverage"
+                        >
+                          <input
+                            type="checkbox"
+                            [checked]="
+                              selectedOptionalCoverageIds()
+                                .includes(
+                                  coverage.coverageId
+                                )
+                            "
+                            (change)="
+                              toggleOptionalCoverage(
+                                coverage.coverageId,
+                                $event
+                              )
+                            "
+                          />
+
+
+                          <span class="coverage-optional">
+                            Optional
+                          </span>
+
+
+                          <h4>
+                            {{ coverage.coverageName }}
+                          </h4>
+
+
+                          <p>
+                            {{ coverage.coverageDescription }}
+                          </p>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage.coverageCharge
+                              )
+                            }}
+                          </strong>
+                        </label>
+                      }
+                    </div>
+                  </section>
+                }
+              }
+
+
+              <div class="quote-dialog-actions">
+                <button
+                  type="button"
+                  class="quote-secondary-button"
+                  [disabled]="quoteProcessing()"
+                  (click)="closeDialog()"
+                >
+                  Cancel
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="quote-primary-button"
+                  [disabled]="
+                    !generationForm.controls.propertyId.value ||
+                    !generationForm.controls.productId.value ||
+                    quoteProcessing()
+                  "
+                >
+                  {{
+                    quoteProcessing()
+                      ? 'Generating'
+                      : 'Generate quote'
+                  }}
+                </button>
+              </div>
+            </form>
+          } @else if (
+            dialogMode() === 'details' &&
+            quoteDetailsLoading()
+          ) {
+            <div class="quote-loading-state">
+              Loading quote details
+            </div>
+          } @else if (
+            dialogMode() === 'details' &&
+            selectedQuote();
+            as quote
+          ) {
+            <section class="quote-summary-card">
+              <div>
+                <span>
+                  {{ quote.quoteNumber }}
+                </span>
+
+
+                <h3>
+                  {{ quote.productName }}
+                </h3>
+
+
+                <p>
+                  {{ quote.propertyName }}
+                  ·
+                  {{ quote.addressSummary }}
+                </p>
+              </div>
+
+
+              <span
+                class="quote-status"
+                [ngClass]="
+                  quoteStatusClass(
+                    effectiveQuoteStatus(
+                      quote.id,
+                      quote.status
+                    )
+                  )
+                "
+              >
+                {{
+                  quoteStatusLabel(
+                    effectiveQuoteStatus(
+                      quote.id,
+                      quote.status
+                    )
+                  )
+                }}
+              </span>
+            </section>
+
+
+            <section class="quote-details-grid">
+              <div>
+                <span>
+                  Annual premium
+                </span>
+
+
+                <strong>
+                  {{
+                    formatCurrency(
+                      quote.finalAnnualPremium
+                    )
+                  }} / year
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Monthly equivalent (annual premium / 12)
+                </span>
+
+
+                <strong>
+                  {{
+                    formatCurrency(
+                      quote.estimatedMonthlyEquivalent
+                    )
+                  }} / month
+                </strong>
+              </div>
+
+              <p class="col-span-full text-xs text-[#748799]">
+                This is an annual premium divided by 12 for comparison, not a monthly installment option. Coverage limits and annual charges are those returned with this quote.
+              </p>
+
+
+              <div>
+                <span>
+                  Risk level
+                </span>
+
+
+                <strong>
+                  {{
+                    riskLevelLabel(
+                      quote.riskLevel
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Risk score
+                </span>
+
+
+                <strong>
+                  {{ quote.riskScore }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Property value
+                </span>
+
+
+                <strong>
+                  {{
+                    formatCurrency(
+                      quote.propertyValue
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Generated
+                </span>
+
+
+                <strong>
+                  {{
+                    formatDate(
+                      quote.generatedAtUtc
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Expires
+                </span>
+
+
+                <strong>
+                  {{
+                    formatDate(
+                      quote.expiresAtUtc
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Payment frequency
+                </span>
+
+
+                <strong>
+                  {{ quote.paymentFrequency }}
+                </strong>
+              </div>
+            </section>
+
+
+            @if (quote.policyConversionWarning) {
+              <section class="quote-risk-card" role="status">
+                <p class="quote-eyebrow">
+                  Policy issuance notice
+                </p>
+                <p>
+                  {{ quote.policyConversionWarning }}
+                </p>
+              </section>
+            }
+
+
+            <section class="quote-coverage-section">
+              <div class="quote-section-heading">
+                <div>
+                  <p class="quote-eyebrow">
+                    Quote protection
+                  </p>
+
+
+                  <h3>
+                    Selected Coverages
+                  </h3>
+                </div>
+
+
+                <span class="quote-count-badge">
+                  {{ quote.coverages.length }}
+                </span>
+              </div>
+
+
+              <div class="quote-coverage-grid">
+                @for (
+                  coverage of quote.coverages;
+                  track coverage.coverageId
+                ) {
+                  <article class="quote-coverage-card">
+                    <span
+                      [class.coverage-mandatory]="
+                        coverage.coverageType ===
+                        CoverageType.Mandatory
+                      "
+                      [class.coverage-optional]="
+                        coverage.coverageType ===
+                        CoverageType.Optional
+                      "
+                    >
+                      {{
+                        coverageTypeLabel(
+                          coverage.coverageType
+                        )
+                      }}
+                    </span>
+
+
+                    <h4>
+                      {{ coverage.coverageName }}
+                    </h4>
+
+
+                    <p>
+                      {{ coverage.coverageDescription }}
+                    </p>
+
+
+                    <strong>
+                      Limit:
+                      {{
+                        formatCurrency(
+                          coverage.coverageLimitAmount
+                        )
+                      }}
+                    </strong>
+                  </article>
+                }
+              </div>
+            </section>
+
+
+            @if (quote.rejectionReason) {
+              <section class="quote-rejection-card">
+                <strong>
+                  Rejection reason
+                </strong>
+
+
+                <p>
+                  {{ quote.rejectionReason }}
+                </p>
+              </section>
+            }
+
+
+            @if (quote.approvalRemarks) {
+              <section class="quote-approval-card">
+                <strong>
+                  Approval remarks
+                </strong>
+
+
+                <p>
+                  {{ quote.approvalRemarks }}
+                </p>
+              </section>
+            }
+
+
+            @if (canPayQuote()) {
+              <section class="quote-approval-card">
+                <div
+                  class="flex items-start justify-between gap-5"
+                >
+                  <div>
+                    <strong>
+                      Payment required
+                    </strong>
+
+
+                    <p class="mt-2">
+                      The Quote has been approved.
+                      Complete payment before the
+                      deadline to activate the Policy.
+                    </p>
+                  </div>
+
+
+                  <span class="coverage-mandatory">
+                    Eligible
+                  </span>
+                </div>
+
+
+                <div
+                  class="mt-5 grid grid-cols-2 gap-4"
+                >
+                  <div>
+                    <span
+                      class="text-xs text-[#748799]"
+                    >
+                      Amount payable
+                    </span>
+
+
+                    <strong class="mt-1 block">
+                      {{
+                        formatCurrency(
+                          quote.finalAnnualPremium
+                        )
+                      }} / year
+                    </strong>
+                  </div>
+
+
+                  <div>
+                    <span
+                      class="text-xs text-[#748799]"
+                    >
+                      Payment deadline
+                    </span>
+
+
+                    <strong class="mt-1 block">
+                      {{
+                        formatDate(
+                          quote.paymentDeadlineUtc
+                        )
+                      }}
+                    </strong>
+                  </div>
+                </div>
+              </section>
+            }
+
+
+            @if (
+              effectiveQuoteStatus(
+                quote.id,
+                quote.status
+              ) === QuoteStatus.ConvertedToPolicy
+            ) {
+              <section
+                class="rounded-[22px] border border-emerald-200 bg-emerald-50 p-5 text-emerald-800"
+              >
+                <strong>
+                  Policy activated
+                </strong>
+
+
+                <p class="mt-2 text-sm">
+                  Payment was completed and this Quote
+                  has been converted to an active Policy.
+                </p>
+              </section>
+            }
+
+
+            <div class="quote-dialog-actions">
+              @if (canWithdrawQuote()) {
+                <button
+                  type="button"
+                  class="quote-danger-button"
+                  [disabled]="quoteProcessing()"
+                  (click)="openWithdrawQuote()"
+                >
+                  Withdraw quote
+                </button>
+              }
+
+
+              @if (canPayQuote()) {
+                <button
+                  type="button"
+                  class="quote-primary-button"
+                  [disabled]="
+                    paymentLoading() ||
+                    quoteProcessing()
+                  "
+                  (click)="openPayment()"
+                >
+                  Pay and activate Policy
+                </button>
+              }
+
+
+              @if (canAcceptQuote()) {
+                <button
+                  type="button"
+                  class="quote-primary-button"
+                  [disabled]="quoteProcessing()"
+                  (click)="acceptQuote()"
+                >
+                  {{
+                    quoteProcessing()
+                      ? 'Accepting'
+                      : 'Accept Quote'
+                  }}
+                </button>
+              }
+            </div>
+          } @else if (
+            dialogMode() === 'payment' &&
+            selectedQuote();
+            as quote
+          ) {
+            <form
+              [formGroup]="paymentForm"
+              (ngSubmit)="submitPayment()"
+              autocomplete="off"
+            >
+              @if (paymentErrorMessage()) {
+                <div
+                  class="quote-error-message mb-6"
+                  role="alert"
+                >
+                  <span>
+                    {{ paymentErrorMessage() }}
+                  </span>
+
+
+                  <button
+                    type="button"
+                    (click)="clearPaymentError()"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              }
+
+
+              <section class="quote-product-card">
+                <p class="quote-eyebrow">
+                  Approved Quote
+                </p>
+
+
+                <h3>
+                  {{ quote.quoteNumber }}
+                </h3>
+
+
+                <p>
+                  {{ quote.productName }}
+                  ·
+                  {{ quote.propertyName }}
+                </p>
+
+
+                <div class="mt-5">
+                  <span class="text-sm text-[#748799]">
+                    Amount payable
+                  </span>
+
+
+                  <strong class="mt-1 block text-2xl">
+                    {{
+                      formatCurrency(
+                        quote.finalAnnualPremium
+                      )
+                    }} / year
+                  </strong>
+                </div>
+
+
+                @if (quote.paymentDeadlineUtc) {
+                  <p class="mt-4 text-sm text-[#748799]">
+                    Payment deadline:
+                    {{
+                      formatDate(
+                        quote.paymentDeadlineUtc
+                      )
+                    }}
+                  </p>
+                }
+              </section>
+
+
+              <section
+                class="mt-6 rounded-[24px] border border-[#D7E1E7] bg-white p-6"
+              >
+                <div>
+                  <p class="quote-eyebrow">
+                    Payment information
+                  </p>
+
+
+                  <h3 class="mt-2 text-xl font-medium">
+                    Card details
+                  </h3>
+
+
+                  <p
+                    class="mt-2 text-sm leading-6 text-[#748799]"
+                  >
+                    Enter mock card information for
+                    this local development payment.
+                  </p>
+                </div>
+
+
+                <div class="quote-generation-grid mt-6">
+                  <label class="quote-field">
+                    <span>
+                      Cardholder name
+                    </span>
+
+
+                    <input
+                      type="text"
+                      formControlName="cardholderName"
+                      maxlength="200"
+                      autocomplete="cc-name"
+                      placeholder="Name on card"
+                    />
+
+
+                    @if (
+                      paymentForm.controls
+                        .cardholderName.touched &&
+                      paymentForm.controls
+                        .cardholderName.invalid
+                    ) {
+                      <small class="text-red-600">
+                        Cardholder name is required.
+                      </small>
+                    }
+                  </label>
+
+
+                  <label class="quote-field">
+                    <span>
+                      Card number
+                    </span>
+
+
+                    <input
+                      type="text"
+                      inputmode="numeric"
+                      formControlName="cardNumber"
+                      minlength="12"
+                      maxlength="19"
+                      autocomplete="cc-number"
+                      placeholder="4111111111111111"
+                    />
+
+
+                    @if (
+                      paymentForm.controls
+                        .cardNumber.touched &&
+                      paymentForm.controls
+                        .cardNumber.invalid
+                    ) {
+                      <small class="text-red-600">
+                        Enter a card number containing
+                        12 to 19 digits.
+                      </small>
+                    }
+                  </label>
+
+
+                  <label class="quote-field">
+                    <span>
+                      Expiry month
+                    </span>
+
+
+                    <input
+                      type="number"
+                      min="1"
+                      max="12"
+                      formControlName="expiryMonth"
+                      autocomplete="cc-exp-month"
+                    />
+
+
+                    @if (
+                      paymentForm.controls
+                        .expiryMonth.touched &&
+                      paymentForm.controls
+                        .expiryMonth.invalid
+                    ) {
+                      <small class="text-red-600">
+                        Enter a valid expiry month.
+                      </small>
+                    }
+                  </label>
+
+
+                  <label class="quote-field">
+                    <span>
+                      Expiry year
+                    </span>
+
+
+                    <input
+                      type="number"
+                      formControlName="expiryYear"
+                      autocomplete="cc-exp-year"
+                    />
+
+
+                    @if (
+                      paymentForm.controls
+                        .expiryYear.touched &&
+                      paymentForm.controls
+                        .expiryYear.invalid
+                    ) {
+                      <small class="text-red-600">
+                        Enter a valid future expiry year.
+                      </small>
+                    }
+                  </label>
+
+
+                  <label class="quote-field">
+                    <span>
+                      CVV
+                    </span>
+
+
+                    <input
+                      type="password"
+                      inputmode="numeric"
+                      minlength="3"
+                      maxlength="4"
+                      formControlName="cvv"
+                      autocomplete="cc-csc"
+                      placeholder="123"
+                    />
+
+
+                    @if (
+                      paymentForm.controls.cvv.touched &&
+                      paymentForm.controls.cvv.invalid
+                    ) {
+                      <small class="text-red-600">
+                        Enter a valid 3 or 4-digit CVV.
+                      </small>
+                    }
+                  </label>
+
+
+                  <div class="quote-field">
+                    <span>
+                      Payment amount
+                    </span>
+
+
+                    <div
+                      class="rounded-xl border border-[#CEDAE2] bg-[#F4F7F6] px-4 py-3 font-semibold text-[#0B2545]"
+                    >
+                      {{
+                        formatCurrency(
+                          quote.finalAnnualPremium
+                        )
+                      }} / year
+                    </div>
+
+
+                    <small class="text-[#748799]">
+                      The approved premium cannot be changed.
+                    </small>
+                  </div>
+                </div>
+
+
+                <div
+                  class="mt-6 rounded-[18px] border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-800"
+                >
+                  This project uses a simulated payment flow.
+                  Do not enter real card or CVV information.
+                </div>
+              </section>
+
+
+              <div class="quote-dialog-actions">
+                <button
+                  type="button"
+                  class="quote-secondary-button"
+                  [disabled]="paymentLoading()"
+                  (click)="returnToQuoteDetails()"
+                >
+                  Back
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="quote-primary-button"
+                  [disabled]="
+                    paymentForm.invalid ||
+                    paymentLoading()
+                  "
+                >
+                  {{
+                    paymentLoading()
+                      ? 'Processing payment'
+                      : 'Pay and activate Policy'
+                  }}
+                </button>
+              </div>
+            </form>
+          } @else if (
+            dialogMode() === 'payment-result' &&
+            paymentResult();
+            as result
+          ) {
+            <section
+              class="rounded-[28px] border border-emerald-200 bg-emerald-50 p-8 text-center"
+              role="status"
+            >
+              <span
+                class="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-emerald-100 text-emerald-700"
+              >
+                <svg
+                  class="h-8 w-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12.5L9.3 16.5L19 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+
+              <p
+                class="mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700"
+              >
+                Payment successful
+              </p>
+
+
+              <h3
+                class="mt-3 text-2xl font-medium text-[#0B2545]"
+              >
+                Your Policy is active.
+              </h3>
+
+
+              <p
+                class="mx-auto mt-3 max-w-md text-sm leading-7 text-[#617689]"
+              >
+                {{
+                  result.message ||
+                  'Payment was completed and the Policy was created.'
+                }}
+              </p>
+
+
+              <div
+                class="mx-auto mt-7 grid max-w-lg grid-cols-2 gap-4 text-left"
+              >
+                <div
+                  class="rounded-[18px] border border-emerald-200 bg-white/70 p-4"
+                >
+                  <span class="text-xs text-[#748799]">
+                    Payment number
+                  </span>
+
+
+                  <strong class="mt-2 block">
+                    {{ result.paymentNumber }}
+                  </strong>
+                </div>
+
+
+                <div
+                  class="rounded-[18px] border border-emerald-200 bg-white/70 p-4"
+                >
+                  <span class="text-xs text-[#748799]">
+                    Payment status
+                  </span>
+
+
+                  <strong class="mt-2 block">
+                    {{ result.status }}
+                  </strong>
+                </div>
+              </div>
+
+
+              <div class="mt-8 flex justify-center gap-3">
+                <button
+                  type="button"
+                  class="quote-secondary-button"
+                  (click)="closeDialog()"
+                >
+                  Close
+                </button>
+
+
+                @if (result.policyId) {
+                  <button
+                    type="button"
+                    class="quote-primary-button"
+                    (click)="openPaymentPolicy()"
+                  >
+                    Open Policy
+                  </button>
+                }
+              </div>
+            </section>
+          } @else if (
+            dialogMode() === 'withdraw' &&
+            selectedQuote();
+            as quote
+          ) {
+            <form
+              [formGroup]="withdrawalForm"
+              (ngSubmit)="confirmWithdrawal()"
+            >
+              <section class="quote-withdraw-card">
+                <h3>
+                  Withdraw {{ quote.quoteNumber }}?
+                </h3>
+
+
+                <p>
+                  Only an unused active Quote can be
+                  withdrawn.
+                </p>
+
+
+                <label class="quote-field mt-6">
+                  <span>
+                    Reason, optional
+                  </span>
+
+
+                  <textarea
+                    rows="5"
+                    formControlName="reason"
+                  ></textarea>
+                </label>
+              </section>
+
+
+              <div class="quote-dialog-actions">
+                <button
+                  type="button"
+                  class="quote-secondary-button"
+                  [disabled]="quoteProcessing()"
+                  (click)="returnToQuoteDetails()"
+                >
+                  Cancel
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="quote-danger-button"
+                  [disabled]="quoteProcessing()"
+                >
+                  {{
+                    quoteProcessing()
+                      ? 'Withdrawing'
+                      : 'Confirm withdrawal'
+                  }}
+                </button>
+              </div>
+            </form>
+          } @else {
+            <div class="quote-empty-state">
+              <h3>
+                Information unavailable
+              </h3>
+
+
+              <p>
+                The requested quote information could not
+                be displayed.
+              </p>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</div>

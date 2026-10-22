@@ -1,0 +1,1403 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div
+    class="min-h-screen lg:grid lg:grid-cols-[290px_minmax(0,1fr)]"
+  >
+    <aside
+      class="hidden min-h-screen bg-[#0B2545] text-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col"
+    >
+      <div class="border-b border-white/10 px-7 py-7">
+        <a
+          routerLink="/customer/dashboard"
+          class="flex items-center gap-3"
+          aria-label="Go to Customer dashboard"
+        >
+          <span
+            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+
+
+              <path
+                d="M8.8 12L11 14.2L15.5 9.7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+
+          <span>
+            <span
+              class="block text-[15px] font-semibold tracking-[-0.02em]"
+            >
+              SecureSphere
+            </span>
+
+
+            <span
+              class="mt-1 block text-[9px] font-medium uppercase tracking-[0.22em] text-[#AFC1D1]"
+            >
+              Customer Portal
+            </span>
+          </span>
+        </a>
+      </div>
+
+
+      <nav
+        class="customer-scrollbar flex-1 overflow-y-auto px-4 py-6"
+        aria-label="Customer navigation"
+      >
+        <p
+          class="px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#708CA4]"
+        >
+          Workspace
+        </p>
+
+
+        <div class="mt-4 space-y-1.5">
+          @for (
+            item of navigationItems;
+            track item.label
+          ) {
+            @if (item.available) {
+              <a
+                [routerLink]="item.route"
+                class="customer-nav-item"
+                [class.customer-nav-item-active]="
+                  isCurrentNavigationItem(item)
+                "
+              >
+                <span class="customer-nav-icon">
+                  @switch (item.icon) {
+                    @case ('overview') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('properties') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('quotes') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('policies') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 3H19V21H5V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M8 8H16M8 12H16M8 16H13"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('claims') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M12 8V13M12 16V16.1"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('profile') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="12"
+                          cy="8"
+                          r="4"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+
+
+                        <path
+                          d="M4.5 21C4.5 16.8 7.8 14 12 14C16.2 14 19.5 16.8 19.5 21"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('security') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @default {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4 6.2V11.5C4 15.8 6.8 19.6 12 21C17.2 19.6 20 15.8 20 11.5V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                <span class="min-w-0 flex-1">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#8FA5B7]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+              </a>
+            } @else {
+              <button
+                type="button"
+                class="customer-nav-item customer-nav-item-disabled"
+                disabled
+              >
+                <span class="customer-nav-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3L4 6.2V11.5C4 15.8 6.8 19.6 12 21C17.2 19.6 20 15.8 20 11.5V6.2L12 3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span class="min-w-0 flex-1 text-left">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#708CA4]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+
+
+                <span class="customer-soon-badge">
+                  Soon
+                </span>
+              </button>
+            }
+          }
+        </div>
+      </nav>
+
+
+      <div class="border-t border-white/10 p-4">
+        <div
+          class="rounded-[22px] border border-white/10 bg-white/[0.06] p-4"
+        >
+          <p
+            class="text-[10px] font-semibold uppercase tracking-[0.17em] text-[#829BB0]"
+          >
+            Signed in as
+          </p>
+
+
+          <div class="mt-3 flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#8DA9C4]/20 text-sm font-semibold"
+            >
+              {{ initials() }}
+            </span>
+
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium">
+                {{ displayName() }}
+              </p>
+
+
+              <p class="mt-0.5 text-[10px] text-[#8FA5B7]">
+                Customer account
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <button
+          type="button"
+          class="mt-3 w-full rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-[#C6D4DE] transition hover:bg-white/10 hover:text-white"
+          (click)="logout()"
+        >
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+
+    <div class="min-w-0">
+      <header
+        class="sticky top-0 z-30 border-b border-white/60 bg-[#EEF4ED]/85 backdrop-blur-xl"
+      >
+        <div
+          class="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-8 lg:px-10"
+        >
+          <div>
+            <p
+              class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7890A3]"
+            >
+              Customer Portal
+            </p>
+
+
+            <h1
+              class="mt-1 text-lg font-medium tracking-[-0.025em]"
+            >
+              Policies
+            </h1>
+          </div>
+
+
+          <button
+            type="button"
+            class="policy-secondary-button"
+            [disabled]="
+              policiesLoading() ||
+              policyProcessing()
+            "
+            (click)="refreshPolicies()"
+          >
+            {{
+              policiesLoading()
+                ? 'Refreshing'
+                : 'Refresh policies'
+            }}
+          </button>
+        </div>
+      </header>
+
+
+      <main class="px-8 py-10 lg:px-10">
+        <div class="mx-auto max-w-[1600px]">
+          @if (successMessage()) {
+            <div class="policy-success-message">
+              <span>
+                {{ successMessage() }}
+              </span>
+
+
+              <button
+                type="button"
+                (click)="clearSuccessMessage()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          @if (errorMessage()) {
+            <div class="policy-error-message">
+              <span>
+                {{ errorMessage() }}
+              </span>
+
+
+              <button
+                type="button"
+                (click)="clearError()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          <section class="policy-hero">
+            <div>
+              <span class="policy-hero-badge">
+                Insurance protection
+              </span>
+
+
+              <h2>
+                Your active protection.
+              </h2>
+
+
+              <p>
+                Review Policy periods, annual premiums,
+                selected Coverages, expiration dates, renewal
+                eligibility, and cancellation options.
+              </p>
+            </div>
+
+
+            <div class="policy-total-card">
+              <span>
+                Total Policies
+              </span>
+
+
+              <strong>
+                {{ totalPolicies() }}
+              </strong>
+            </div>
+          </section>
+
+
+          <section class="mt-7">
+            <div class="grid grid-cols-4 gap-5">
+              <article class="policy-stat-card">
+                <span class="policy-stat-label">
+                  Active Policies
+                </span>
+
+
+                <strong>
+                  {{ activePolicies().length }}
+                </strong>
+
+
+                <p>
+                  Policies currently providing insurance
+                  protection.
+                </p>
+              </article>
+
+
+              <article class="policy-stat-card">
+                <span class="policy-stat-label">
+                  Annual premium
+                </span>
+
+
+                <strong class="policy-stat-currency">
+                  {{
+                    formatCurrency(
+                      totalAnnualPremium()
+                    )
+                  }}
+                </strong>
+
+
+                <p>
+                  Combined annual premium across active
+                  Policies.
+                </p>
+              </article>
+
+
+              <article class="policy-stat-card">
+                <span class="policy-stat-label">
+                  Expired Policies
+                </span>
+
+
+                <strong>
+                  {{ expiredPolicies().length }}
+                </strong>
+
+
+                <p>
+                  Policies whose coverage periods have ended.
+                </p>
+              </article>
+
+
+              <article class="policy-stat-card">
+                <span class="policy-stat-label">
+                  Cancelled Policies
+                </span>
+
+
+                <strong>
+                  {{ cancelledPolicies().length }}
+                </strong>
+
+
+                <p>
+                  Policies cancelled by the Customer.
+                </p>
+              </article>
+            </div>
+          </section>
+
+
+          <section class="policy-list-card">
+            <div class="policy-list-header">
+              <div>
+                <p class="policy-eyebrow">
+                  Policy portfolio
+                </p>
+
+
+                <h2>
+                  My Policies
+                </h2>
+              </div>
+
+
+              <span class="policy-count-badge">
+                {{ totalPolicies() }} records
+              </span>
+            </div>
+
+
+            @if (policiesLoading()) {
+              <div class="space-y-4 p-8">
+                @for (
+                  item of [1, 2, 3];
+                  track item
+                ) {
+                  <div
+                    class="h-28 animate-pulse rounded-[20px] bg-[#EDF1F3]"
+                  ></div>
+                }
+              </div>
+            } @else if (
+              policies().length === 0
+            ) {
+              <div class="policy-empty-state">
+                <h3>
+                  No Policies found
+                </h3>
+
+
+                <p>
+                  A Policy is created after an approved Quote
+                  payment succeeds.
+                </p>
+
+
+                <a
+                  routerLink="/customer/quotes"
+                  class="policy-primary-button mt-5"
+                >
+                  View quotes
+                </a>
+              </div>
+            } @else {
+              <div class="divide-y divide-[#E6ECEF]">
+                @for (
+                  policy of policies();
+                  track policy.id
+                ) {
+                  <button
+                    type="button"
+                    class="policy-list-row"
+                    (click)="openPolicy(policy)"
+                  >
+                    <span class="policy-list-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 3H19V21H5V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M8 8H16M8 12H16M8 16H13"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+
+
+                    <span class="min-w-0 flex-1 text-left">
+                      <span class="flex items-center gap-3">
+                        <strong>
+                          {{ policy.policyNumber }}
+                        </strong>
+
+
+                        <span
+                          class="policy-status"
+                          [ngClass]="
+                            policyStatusClass(
+                              policy.status
+                            )
+                          "
+                        >
+                          {{
+                            policyStatusLabel(
+                              policy.status
+                            )
+                          }}
+                        </span>
+                      </span>
+
+
+                      <span class="policy-row-title">
+                        {{ policy.productName }}
+                      </span>
+
+
+                      <span
+                        class="mt-1 block text-xs font-medium text-[#526F8D]"
+                      >
+                        Property:
+                        {{ policy.propertyName }}
+                      </span>
+
+
+                      <span class="policy-row-meta">
+                        {{
+                          productTypeLabel(
+                            policy.productType
+                          )
+                        }}
+                        · Effective
+                        {{
+                          formatDate(
+                            policy.effectiveDateUtc
+                          )
+                        }}
+                        ·
+                        {{
+                          expiryLabel(
+                            policy.expiryDateUtc
+                          )
+                        }}
+                      </span>
+                    </span>
+
+
+                    <span class="text-right">
+                      <strong class="policy-premium">
+                        {{
+                          formatCurrency(
+                            policy.annualPremium
+                          )
+                        }}
+                      </strong>
+
+
+                      <span class="policy-premium-label">
+                        Annual premium
+                      </span>
+                    </span>
+                  </button>
+                }
+              </div>
+            }
+          </section>
+
+
+          <footer
+            class="mt-10 flex items-center justify-between border-t border-[#D5E0E6] py-7 text-xs text-[#7C8F9F]"
+          >
+            <p>
+              SecureSphere Customer Portal
+            </p>
+
+
+            <p>
+              Policies and coverage protection
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  @if (dialogMode()) {
+    <div
+      class="policy-dialog-backdrop"
+      (click)="closeDialog()"
+    >
+      <section
+        class="policy-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="policy-dialog-title"
+        (click)="$event.stopPropagation()"
+      >
+        <header class="policy-dialog-header">
+          <div>
+            <p class="policy-eyebrow">
+              Insurance Policy
+            </p>
+
+
+            <h2 id="policy-dialog-title">
+              @if (
+                dialogMode() === 'cancel'
+              ) {
+                Cancel Policy
+              } @else if (
+                dialogMode() === 'renew'
+              ) {
+                Policy renewal
+              } @else {
+                Policy details
+              }
+            </h2>
+          </div>
+
+
+          <button
+            type="button"
+            class="policy-dialog-close"
+            [disabled]="
+              policyProcessing() ||
+              renewalLoading()
+            "
+            aria-label="Close Policy dialog"
+            (click)="closeDialog()"
+          >
+            ×
+          </button>
+        </header>
+
+
+        <div class="policy-dialog-content">
+          @if (policyDetailsLoading()) {
+            <div class="policy-loading-state">
+              Loading Policy details
+            </div>
+          } @else if (
+            dialogMode() === 'details' &&
+            selectedPolicy();
+            as policy
+          ) {
+            <section class="policy-summary-card">
+              <div>
+                <span>
+                  {{ policy.policyNumber }}
+                </span>
+
+
+                <h3>
+                  {{ policy.productName }}
+                </h3>
+
+
+                <p>
+                  {{
+                    productTypeLabel(
+                      policy.productType
+                    )
+                  }}
+                </p>
+
+
+                <p class="mt-2 text-sm text-[#52697D]">
+                  Property:
+                  {{ policy.propertyName }}
+                </p>
+              </div>
+
+
+              <span
+                class="policy-status"
+                [ngClass]="
+                  policyStatusClass(
+                    policy.status
+                  )
+                "
+              >
+                {{
+                  policyStatusLabel(
+                    policy.status
+                  )
+                }}
+              </span>
+            </section>
+
+
+            <section class="policy-details-grid">
+              <div>
+                <span>
+                  Annual premium
+                </span>
+
+
+                <strong>
+                  {{
+                    formatCurrency(
+                      policy.annualPremium
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Effective date
+                </span>
+
+
+                <strong>
+                  {{
+                    formatDate(
+                      policy.effectiveDateUtc
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Expiry date
+                </span>
+
+
+                <strong>
+                  {{
+                    formatDate(
+                      policy.expiryDateUtc
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Expiry status
+                </span>
+
+
+                <strong>
+                  {{
+                    expiryLabel(
+                      policy.expiryDateUtc
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>
+                  Property
+                </span>
+
+
+                <strong>
+                  {{ policy.propertyName }}
+                </strong>
+              </div>
+            </section>
+
+
+            <section class="policy-coverage-section">
+              <div class="policy-section-heading">
+                <div>
+                  <p class="policy-eyebrow">
+                    Policy protection
+                  </p>
+
+
+                  <h3>
+                    Coverages
+                  </h3>
+                </div>
+
+
+                <span class="policy-count-badge">
+                  {{ policy.coverages.length }}
+                </span>
+              </div>
+
+
+              @if (
+                policy.coverages.length === 0
+              ) {
+                <div class="policy-inline-empty">
+                  No Coverages are available for this Policy.
+                </div>
+              } @else {
+                <div class="policy-coverage-grid">
+                  @for (
+                    coverage of policy.coverages;
+                    track coverage.coverageId
+                  ) {
+                    <article class="policy-coverage-card">
+                      <h4>
+                        {{ coverage.coverageName }}
+                      </h4>
+
+
+                      <div class="policy-coverage-values">
+                        <div>
+                          <span>
+                            Coverage limit
+                          </span>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage.coverageLimitAmount
+                              )
+                            }}
+                          </strong>
+                        </div>
+
+
+                        <div>
+                          <span>
+                            Annual charge
+                          </span>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage.coverageCharge
+                              )
+                            }}
+                          </strong>
+                        </div>
+
+
+                        <div>
+                          <span>
+                            Limit percentage
+                          </span>
+
+
+                          <strong>
+                            {{
+                              coverage
+                                .coverageLimitPercentage
+                            }}%
+                          </strong>
+                        </div>
+                      </div>
+                    </article>
+                  }
+                </div>
+              }
+            </section>
+
+            <section class="policy-coverage-section">
+              <div class="policy-section-heading">
+                <div>
+                  <p class="policy-eyebrow">
+                    Issued policy files
+                  </p>
+
+                  <h3>
+                    Policy documents
+                  </h3>
+                </div>
+
+                <span class="policy-count-badge">
+                  {{ policy.documents.length }}
+                </span>
+              </div>
+
+              @if (errorMessage()) {
+                <p class="policy-error-message" role="alert">
+                  {{ errorMessage() }}
+                </p>
+              }
+
+              @if (policy.documents.length === 0) {
+                <div class="policy-inline-empty">
+                  No policy document is available yet.
+                </div>
+              } @else {
+                <div class="space-y-3">
+                  @for (
+                    policyDocument of policy.documents;
+                    track policyDocument.id
+                  ) {
+                    <article class="policy-coverage-card flex flex-wrap items-center justify-between gap-4">
+                      <div>
+                        <h4>
+                          Policy PDF · Version
+                          {{ policyDocument.version }}
+                        </h4>
+                        <p class="mt-1 text-sm text-[#52697D]">
+                          Status: {{ policyDocument.status }}
+                          @if (policyDocument.generatedAtUtc) {
+                            · Issued
+                            {{
+                              formatDate(
+                                policyDocument.generatedAtUtc
+                              )
+                            }}
+                          }
+                        </p>
+                        @if (policyDocument.status === 'Failed') {
+                          <p class="mt-1 text-sm text-red-700" role="status">
+                            This document is temporarily unavailable.
+                          </p>
+                        }
+                      </div>
+
+                      @if (policyDocument.status === 'Available') {
+                        <button
+                          type="button"
+                          class="policy-primary-button"
+                          [disabled]="
+                            downloadingPolicyDocumentId() !== null
+                          "
+                          (click)="downloadPolicyDocument(policyDocument)"
+                        >
+                          {{
+                            downloadingPolicyDocumentId() ===
+                            policyDocument.id
+                              ? 'Downloading…'
+                              : 'Download PDF'
+                          }}
+                        </button>
+                      }
+                    </article>
+                  }
+                </div>
+              }
+            </section>
+
+
+            <div class="policy-dialog-actions">
+              @if (canCancelPolicy()) {
+                <button
+                  type="button"
+                  class="policy-danger-button"
+                  (click)="openCancellation()"
+                >
+                  Cancel Policy
+                </button>
+              }
+
+
+              @if (canCheckRenewal()) {
+                <button
+                  type="button"
+                  class="policy-primary-button"
+                  [disabled]="renewalLoading()"
+                  (click)="openRenewal()"
+                >
+                  Check renewal
+                </button>
+              }
+            </div>
+          } @else if (
+            dialogMode() === 'cancel' &&
+            selectedPolicy();
+            as policy
+          ) {
+            <form
+              [formGroup]="cancellationForm"
+              (ngSubmit)="confirmCancellation()"
+            >
+              <section class="policy-warning-card">
+                <h3>
+                  Cancel {{ policy.policyNumber }}?
+                </h3>
+
+
+                <p>
+                  Cancelling an active Policy ends its active
+                  status. Enter a clear reason before continuing.
+                </p>
+              </section>
+
+
+              <label class="policy-field mt-6">
+                <span>
+                  Cancellation reason
+                </span>
+
+
+                <textarea
+                  rows="5"
+                  maxlength="1000"
+                  formControlName="reason"
+                ></textarea>
+
+
+                @if (
+                  cancellationForm
+                    .controls
+                    .reason
+                    .touched &&
+                  cancellationForm
+                    .controls
+                    .reason
+                    .invalid
+                ) {
+                  <small class="policy-field-error">
+                    Enter a cancellation reason containing at
+                    least 10 characters.
+                  </small>
+                }
+              </label>
+
+
+              <div class="policy-dialog-actions">
+                <button
+                  type="button"
+                  class="policy-secondary-button"
+                  [disabled]="policyProcessing()"
+                  (click)="returnToDetails()"
+                >
+                  Keep Policy
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="policy-danger-button"
+                  [disabled]="
+                    cancellationForm.invalid ||
+                    policyProcessing()
+                  "
+                >
+                  {{
+                    policyProcessing()
+                      ? 'Cancelling'
+                      : 'Confirm cancellation'
+                  }}
+                </button>
+              </div>
+            </form>
+          } @else if (
+            dialogMode() === 'renew' &&
+            selectedPolicy();
+            as policy
+          ) {
+            <section class="policy-renewal-card">
+              <p class="policy-eyebrow">
+                Renewal eligibility
+              </p>
+
+
+              <h3>
+                {{ policy.policyNumber }}
+              </h3>
+
+
+              <div
+                class="mt-4 rounded-[18px] border border-[#D7E1E7] bg-white p-4"
+              >
+                <div
+                  class="grid grid-cols-2 gap-4"
+                >
+                  <div>
+                    <span
+                      class="text-xs font-medium text-[#748799]"
+                    >
+                      Policy expiry date
+                    </span>
+
+
+                    <strong
+                      class="mt-1 block text-sm text-[#0B2545]"
+                    >
+                      {{
+                        formatDate(
+                          policy.expiryDateUtc
+                        )
+                      }}
+                    </strong>
+                  </div>
+
+
+                  <div>
+                    <span
+                      class="text-xs font-medium text-[#748799]"
+                    >
+                      Renewal window opens
+                    </span>
+
+
+                    <strong
+                      class="mt-1 block text-sm text-[#0B2545]"
+                    >
+                      {{
+                        formatDate(
+                          renewalWindowStartDate(
+                            policy.expiryDateUtc
+                          )?.toISOString() ??
+                            null
+                        )
+                      }}
+                    </strong>
+                  </div>
+                </div>
+              </div>
+
+
+              @if (renewalLoading()) {
+                <div class="policy-renewal-loading">
+                  Checking renewal eligibility
+                </div>
+              } @else if (
+                renewalResult();
+                as result
+              ) {
+                <div class="policy-renewal-success">
+                  <strong>
+                    Renewal quote created
+                  </strong>
+
+
+                  <p>
+                    {{ result.message }}
+                  </p>
+                </div>
+
+
+                <div class="policy-dialog-actions">
+                  <button
+                    type="button"
+                    class="policy-secondary-button"
+                    (click)="returnToDetails()"
+                  >
+                    Back to Policy
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="policy-primary-button"
+                    (click)="openRenewalQuote()"
+                  >
+                    Open renewal quote
+                  </button>
+                </div>
+              } @else if (
+                renewalEligibility();
+                as eligibility
+              ) {
+                <div
+                  class="policy-eligibility-result"
+                  [class.eligible]="
+                    eligibility.eligible
+                  "
+                  [class.ineligible]="
+                    !eligibility.eligible
+                  "
+                >
+                  <strong>
+                    {{
+                      eligibility.eligible
+                        ? 'Eligible for renewal'
+                        : 'Not eligible for renewal'
+                    }}
+                  </strong>
+
+
+                  <p>
+                    {{ eligibility.reason }}
+                  </p>
+
+
+                  @if (
+                    !eligibility.eligible &&
+                    isRenewalWindowNotOpen(
+                      eligibility.reason
+                    )
+                  ) {
+                    <div
+                      class="mt-4 rounded-[16px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800"
+                    >
+                      <strong class="block">
+                        Renewal availability
+                      </strong>
+
+
+                      <p class="mt-1 leading-6">
+                        {{
+                          renewalAvailabilityMessage(
+                            policy.expiryDateUtc
+                          )
+                        }}
+                      </p>
+                    </div>
+                  }
+                </div>
+
+
+                <div class="policy-dialog-actions">
+                  <button
+                    type="button"
+                    class="policy-secondary-button"
+                    (click)="returnToDetails()"
+                  >
+                    Back
+                  </button>
+
+
+                  @if (eligibility.eligible) {
+                    <button
+                      type="button"
+                      class="policy-primary-button"
+                      [disabled]="renewalLoading()"
+                      (click)="createRenewal()"
+                    >
+                      Create renewal quote
+                    </button>
+                  }
+                </div>
+              } @else {
+                <div class="policy-inline-empty">
+                  Renewal eligibility information is unavailable.
+                </div>
+
+
+                <div class="policy-dialog-actions">
+                  <button
+                    type="button"
+                    class="policy-secondary-button"
+                    (click)="returnToDetails()"
+                  >
+                    Back
+                  </button>
+                </div>
+              }
+            </section>
+          } @else {
+            <div class="policy-empty-state">
+              <h3>
+                Policy information unavailable
+              </h3>
+
+
+              <p>
+                The requested Policy information could not
+                be displayed.
+              </p>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</div>
+

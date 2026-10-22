@@ -1,0 +1,15 @@
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\bin\Debug\net8.0\VacationHome.Auth.Domain.deps.json
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\bin\Debug\net8.0\VacationHome.Auth.Domain.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\bin\Debug\net8.0\VacationHome.Auth.Domain.pdb
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.csproj.AssemblyReference.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.AssemblyInfoInputs.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.AssemblyInfo.cs
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.csproj.CoreCompileInputs.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\refint\VacationHome.Auth.Domain.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\VacationHome.Auth.Domain.pdb
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Auth.Domain\obj\Debug\net8.0\ref\VacationHome.Auth.Domain.dll
+C:\Users\Swapanthi\.copilot\session-state\12e121eb-5678-4838-99cb-7c4754503b96\build\related-apis\Debug\net8.0\VacationHome.Auth.Domain.deps.json
+C:\Users\Swapanthi\.copilot\session-state\12e121eb-5678-4838-99cb-7c4754503b96\build\related-apis\Debug\net8.0\VacationHome.Auth.Domain.dll
+C:\Users\Swapanthi\.copilot\session-state\12e121eb-5678-4838-99cb-7c4754503b96\build\related-apis\Debug\net8.0\VacationHome.Auth.Domain.pdb

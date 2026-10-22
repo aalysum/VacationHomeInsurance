@@ -1,0 +1,14 @@
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\bin\Debug\net8.0\VacationHome.Customer.Domain.deps.json
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\bin\Debug\net8.0\VacationHome.Customer.Domain.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\bin\Debug\net8.0\VacationHome.Customer.Domain.pdb
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\VacationHome.Customer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\VacationHome.Customer.Domain.AssemblyInfoInputs.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\VacationHome.Customer.Domain.AssemblyInfo.cs
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\VacationHome.Customer.Domain.csproj.CoreCompileInputs.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\VacationHome.Customer.Domain.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\refint\VacationHome.Customer.Domain.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\VacationHome.Customer.Domain.pdb
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.Customer.Domain\obj\Debug\net8.0\ref\VacationHome.Customer.Domain.dll
+C:\Users\Swapanthi\.copilot\session-state\12e121eb-5678-4838-99cb-7c4754503b96\build\related-apis\Debug\net8.0\VacationHome.Customer.Domain.deps.json
+C:\Users\Swapanthi\.copilot\session-state\12e121eb-5678-4838-99cb-7c4754503b96\build\related-apis\Debug\net8.0\VacationHome.Customer.Domain.dll
+C:\Users\Swapanthi\.copilot\session-state\12e121eb-5678-4838-99cb-7c4754503b96\build\related-apis\Debug\net8.0\VacationHome.Customer.Domain.pdb

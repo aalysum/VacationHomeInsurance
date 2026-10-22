@@ -1,0 +1,6 @@
+@VacationHome.ApiGateway_HostAddress = http://localhost:5272
+
+GET {{VacationHome.ApiGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

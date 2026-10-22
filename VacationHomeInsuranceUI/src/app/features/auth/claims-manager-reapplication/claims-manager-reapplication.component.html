@@ -1,0 +1,612 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div class="grid min-h-screen lg:grid-cols-[0.8fr_1.2fr]">
+
+
+    <aside
+      class="relative hidden overflow-hidden bg-[#0B2545] p-12 text-white lg:flex lg:flex-col lg:justify-between xl:p-16"
+    >
+      <div
+        class="pointer-events-none absolute -left-48 -top-48 h-[560px] w-[560px] rounded-full bg-[#8DA9C4]/20 blur-[90px]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute -bottom-56 -right-40 h-[560px] w-[560px] rounded-full bg-white/10 blur-[100px]"
+      ></div>
+
+
+      <a
+        routerLink="/"
+        class="relative z-10 inline-flex items-center gap-3"
+      >
+        <span
+          class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+        >
+          <svg
+            class="h-7 w-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+
+
+            <path
+              d="M8.8 12L11 14.2L15.5 9.7"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+
+        <span>
+          <span class="block text-base font-semibold">
+            SecureSphere
+          </span>
+
+
+          <span
+            class="mt-1 block text-[10px] uppercase tracking-[0.22em] text-[#AFC1D1]"
+          >
+            Insurance
+          </span>
+        </span>
+      </a>
+
+
+      <div class="relative z-10 max-w-xl">
+        <span
+          class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#D5E1E9]"
+        >
+          Application resubmission
+        </span>
+
+
+        <h1
+          class="mt-8 text-5xl font-medium leading-[1.02] tracking-[-0.055em] xl:text-6xl"
+        >
+          Update your information and apply again.
+        </h1>
+
+
+        <p
+          class="mt-6 max-w-lg text-sm leading-7 text-[#B7C7D4] xl:text-base"
+        >
+          Correct your professional information, provide a new
+          verification document, and resubmit your Claims Manager
+          application for administrator review.
+        </p>
+
+
+        <div class="mt-12 space-y-5 border-t border-white/10 pt-8">
+          <div class="flex items-center gap-4">
+            <span class="step-index">
+              01
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Review the rejection reason
+              </p>
+
+
+              <p class="mt-1 text-xs text-[#91A7B9]">
+                Correct the information identified during review.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="flex items-center gap-4">
+            <span class="step-index">
+              02
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Upload a corrected document
+              </p>
+
+
+              <p class="mt-1 text-xs text-[#91A7B9]">
+                A new verification document is required.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="flex items-center gap-4">
+            <span class="step-index">
+              03
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Return to administrator review
+              </p>
+
+
+              <p class="mt-1 text-xs text-[#91A7B9]">
+                Your status becomes Pending Approval after success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <p class="relative z-10 text-xs text-[#8199AD]">
+        Protection · Trust · Clarity
+      </p>
+    </aside>
+
+
+    <main
+      class="relative flex items-start justify-center overflow-hidden px-5 py-10 sm:px-8 lg:px-12 xl:px-16"
+    >
+      <div
+        class="pointer-events-none absolute -right-48 -top-48 h-[480px] w-[480px] rounded-full bg-white/85 blur-[100px]"
+      ></div>
+
+
+      <div class="relative z-10 w-full max-w-[760px]">
+
+
+        @if (successMessage()) {
+          <section class="success-card">
+            <span
+              class="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-amber-50 text-amber-700"
+            >
+              <svg
+                class="h-9 w-9"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 7V12L15.5 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+
+            <span class="pending-badge">
+              Pending Approval
+            </span>
+
+
+            <h1
+              class="mt-6 text-4xl font-medium tracking-[-0.05em] sm:text-5xl"
+            >
+              Application resubmitted.
+            </h1>
+
+
+            <p
+              class="mx-auto mt-5 max-w-lg text-sm leading-7 text-[#6B7F92]"
+            >
+              {{ successMessage() }}
+              Your updated application is now waiting for
+              administrator review.
+            </p>
+
+
+            <button
+              type="button"
+              class="primary-button mt-9"
+              (click)="returnToStatus()"
+            >
+              View application status
+            </button>
+          </section>
+        } @else {
+          <header>
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7890A3]"
+            >
+              Claims Manager reapplication
+            </p>
+
+
+            <h1
+              class="mt-5 text-4xl font-medium tracking-[-0.05em] sm:text-5xl"
+            >
+              Update and resubmit.
+            </h1>
+
+
+            <p class="mt-4 text-sm leading-7 text-[#6B7F92]">
+              Enter your corrected professional details and upload
+              a new verification document.
+            </p>
+          </header>
+
+
+          @if (errorMessage()) {
+            <div
+              class="mt-8 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+              role="alert"
+            >
+              {{ errorMessage() }}
+            </div>
+          }
+
+
+          <form
+            class="mt-9 space-y-7"
+            [formGroup]="reapplicationForm"
+            (ngSubmit)="submit()"
+            novalidate
+          >
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  for="reapplyFirstName"
+                  class="auth-label"
+                >
+                  First name
+                </label>
+
+
+                <input
+                  id="reapplyFirstName"
+                  type="text"
+                  maxlength="100"
+                  formControlName="firstName"
+                  autocomplete="given-name"
+                  class="auth-input"
+                  placeholder="Enter first name"
+                />
+
+
+                @if (
+                  firstNameControl.hasError('required') &&
+                  firstNameControl.touched
+                ) {
+                  <p class="field-error">
+                    First name is required.
+                  </p>
+                } @else if (
+                  firstNameControl.hasError('maxlength') &&
+                  firstNameControl.touched
+                ) {
+                  <p class="field-error">
+                    First name cannot exceed 100 characters.
+                  </p>
+                } @else if (
+                  firstNameControl.hasError('controlCharacters') &&
+                  firstNameControl.touched
+                ) {
+                  <p class="field-error">
+                    First name contains unsupported characters.
+                  </p>
+                } @else if (
+                  getBackendError('firstName')
+                ) {
+                  <p class="field-error">
+                    {{ getBackendError('firstName') }}
+                  </p>
+                }
+              </div>
+
+
+              <div>
+                <label
+                  for="reapplyLastName"
+                  class="auth-label"
+                >
+                  Last name
+                </label>
+
+
+                <input
+                  id="reapplyLastName"
+                  type="text"
+                  maxlength="100"
+                  formControlName="lastName"
+                  autocomplete="family-name"
+                  class="auth-input"
+                  placeholder="Enter last name"
+                />
+
+
+                @if (
+                  lastNameControl.hasError('required') &&
+                  lastNameControl.touched
+                ) {
+                  <p class="field-error">
+                    Last name is required.
+                  </p>
+                } @else if (
+                  lastNameControl.hasError('maxlength') &&
+                  lastNameControl.touched
+                ) {
+                  <p class="field-error">
+                    Last name cannot exceed 100 characters.
+                  </p>
+                } @else if (
+                  lastNameControl.hasError('controlCharacters') &&
+                  lastNameControl.touched
+                ) {
+                  <p class="field-error">
+                    Last name contains unsupported characters.
+                  </p>
+                }
+              </div>
+            </div>
+
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  for="reapplyPhone"
+                  class="auth-label"
+                >
+                  Phone number
+                </label>
+
+
+                <input
+                  id="reapplyPhone"
+                  type="tel"
+                  maxlength="30"
+                  formControlName="phoneNumber"
+                  autocomplete="tel"
+                  class="auth-input"
+                  placeholder="Enter phone number"
+                />
+
+
+                @if (
+                  phoneNumberControl.hasError('required') &&
+                  phoneNumberControl.touched
+                ) {
+                  <p class="field-error">
+                    Phone number is required.
+                  </p>
+                } @else if (
+                  phoneNumberControl.hasError('maxlength') &&
+                  phoneNumberControl.touched
+                ) {
+                  <p class="field-error">
+                    Phone number cannot exceed 30 characters.
+                  </p>
+                }
+              </div>
+
+
+              <div>
+                <label
+                  for="reapplyExperience"
+                  class="auth-label"
+                >
+                  Years of experience
+                </label>
+
+
+                <input
+                  id="reapplyExperience"
+                  type="number"
+                  min="0"
+                  step="1"
+                  formControlName="yearsOfExperience"
+                  class="auth-input"
+                />
+
+
+                @if (
+                  yearsOfExperienceControl.hasError('min') &&
+                  yearsOfExperienceControl.touched
+                ) {
+                  <p class="field-error">
+                    Years of experience cannot be negative.
+                  </p>
+                }
+              </div>
+            </div>
+
+
+            <div>
+              <div class="flex items-center justify-between">
+                <label
+                  for="reapplySummary"
+                  class="auth-label"
+                >
+                  Professional summary
+                </label>
+
+
+                <span class="text-[11px] text-[#8596A4]">
+                  {{
+                    professionalSummaryControl.value.length
+                  }} / 2000
+                </span>
+              </div>
+
+
+              <textarea
+                id="reapplySummary"
+                rows="6"
+                maxlength="2000"
+                formControlName="professionalSummary"
+                class="auth-input min-h-40 resize-y"
+                placeholder="Describe your professional experience..."
+              ></textarea>
+
+
+              @if (
+                professionalSummaryControl.hasError('required') &&
+                professionalSummaryControl.touched
+              ) {
+                <p class="field-error">
+                  Professional summary is required.
+                </p>
+              } @else if (
+                professionalSummaryControl.hasError('maxlength') &&
+                professionalSummaryControl.touched
+              ) {
+                <p class="field-error">
+                  Professional summary cannot exceed 2000 characters.
+                </p>
+              } @else if (
+                professionalSummaryControl.hasError('controlCharacters') &&
+                professionalSummaryControl.touched
+              ) {
+                <p class="field-error">
+                  Professional summary contains unsupported characters.
+                </p>
+              }
+            </div>
+
+
+            <div>
+              <label class="auth-label">
+                New verification document
+              </label>
+
+
+              <input
+                #fileInput
+                type="file"
+                class="sr-only"
+                [accept]="acceptedFileTypes"
+                (change)="onFileSelected($event)"
+              />
+
+
+              @if (!selectedFile()) {
+                <div
+                  class="file-drop-zone"
+                  [class.file-drop-zone-active]="dragActive()"
+                  role="button"
+                  tabindex="0"
+                  (click)="openFilePicker()"
+                  (keydown.enter)="openFilePicker()"
+                  (keydown.space)="openFilePicker()"
+                  (dragover)="onDragOver($event)"
+                  (dragleave)="onDragLeave($event)"
+                  (drop)="onFileDropped($event)"
+                >
+                  <span class="upload-icon">
+                    <svg
+                      class="h-7 w-7"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 16V4M7 9L12 4L17 9M5 14V20H19V14"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+
+
+                  <p class="mt-5 text-sm font-medium">
+                    Upload a corrected document
+                  </p>
+
+
+                  <p class="mt-2 text-xs text-[#7C8F9F]">
+                    Drop the file here or click to browse
+                  </p>
+
+
+                  <p class="mt-4 text-[11px] text-[#98A6B2]">
+                    PDF, JPG, JPEG, or PNG · Maximum 10 MB
+                  </p>
+                </div>
+              } @else {
+                <div class="selected-file">
+                  <span class="file-icon">
+                    DOC
+                  </span>
+
+
+                  <div class="min-w-0 flex-1">
+                    <p class="truncate text-sm font-medium">
+                      {{ selectedFile()?.name }}
+                    </p>
+
+
+                    <p class="mt-1 text-xs text-[#8192A0]">
+                      {{ getSelectedFileSize() }}
+                    </p>
+                  </div>
+
+
+                  <button
+                    type="button"
+                    class="file-action"
+                    (click)="openFilePicker()"
+                  >
+                    Replace
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="file-action text-red-600"
+                    (click)="removeSelectedFile()"
+                  >
+                    Remove
+                  </button>
+                </div>
+              }
+
+
+              @if (fileError()) {
+                <p class="field-error">
+                  {{ fileError() }}
+                </p>
+              }
+            </div>
+
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              <button
+                type="button"
+                class="secondary-button"
+                [disabled]="loading()"
+                (click)="returnToStatus()"
+              >
+                Cancel
+              </button>
+
+
+              <button
+                type="submit"
+                class="primary-button"
+                [disabled]="loading()"
+              >
+                @if (loading()) {
+                  <span class="button-spinner"></span>
+                  Resubmitting...
+                } @else {
+                  Resubmit application
+                }
+              </button>
+            </div>
+          </form>
+        }
+      </div>
+    </main>
+  </div>
+</div>

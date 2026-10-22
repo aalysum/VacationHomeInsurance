@@ -1,0 +1,214 @@
+<main class="min-h-screen overflow-hidden bg-[#EEF4ED] text-[#0B2545]">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-[#EEF4ED]/85 backdrop-blur-xl">
+    <nav class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12" aria-label="Main navigation">
+      <a routerLink="/" class="group flex items-center gap-3" aria-label="Insurance platform home">
+        <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B2545] shadow-[0_12px_30px_rgba(11,37,69,0.2)]">
+          <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M8.8 12L11 14.2L15.5 9.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span>
+          <span class="block text-[15px] font-semibold leading-none tracking-[-0.02em] text-[#0B2545]">SecureSphere</span>
+          <span class="mt-1 block text-[10px] font-medium uppercase tracking-[0.22em] text-[#6D8094]">Insurance</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-8 rounded-full border border-white/70 bg-white/50 px-7 py-3 shadow-[0_8px_30px_rgba(19,49,92,0.05)] lg:flex">
+        <a routerLink="/" class="nav-link">Home</a>
+        <a routerLink="/products/vacation-home-insurance" fragment="home" class="nav-link">Overview</a>
+        <a routerLink="/products/vacation-home-insurance" fragment="products" class="nav-link">Products</a>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a routerLink="/auth/login" class="hidden rounded-full px-5 py-3 text-sm font-medium text-[#13315C] transition hover:bg-white/70 sm:inline-flex">Sign in</a>
+        <button type="button" (click)="startQuote()" class="inline-flex items-center gap-2 rounded-full bg-[#13315C] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_30px_rgba(19,49,92,0.2)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#0B2545]">
+          Generate Quote
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12H19M14 7L19 12L14 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="relative isolate min-h-screen overflow-hidden pt-[76px]">
+    <div class="pointer-events-none absolute -left-48 top-16 h-[520px] w-[520px] rounded-full bg-[#8DA9C4]/30 blur-[100px]"></div>
+    <div class="pointer-events-none absolute -right-40 top-24 h-[540px] w-[540px] rounded-full bg-white/80 blur-[100px]"></div>
+
+    <div class="mx-auto grid min-h-[calc(100vh-76px)] max-w-[1440px] items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:py-24">
+      <div class="relative z-10 max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#657F72]">Protection for the places you return to</p>
+        <h1 class="mt-5 max-w-[780px] text-[clamp(3.4rem,7vw,7.2rem)] font-medium leading-[0.92] tracking-[-0.065em] text-[#0B2545]">
+          Vacation Home Insurance
+        </h1>
+        <p class="mt-9 max-w-xl text-base leading-8 text-[#64788C] sm:text-lg">
+          Protect your home-away-from-home with flexible insurance products. Explore protection for your property and natural-disaster risks, then choose the coverages that fit your needs.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <button type="button" (click)="startQuote()" class="group inline-flex items-center justify-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_20px_50px_rgba(11,37,69,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-[#13315C]">
+            Generate Quote
+            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-white/12 transition group-hover:translate-x-1">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12H19M14 7L19 12L14 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+          <a routerLink="/products/vacation-home-insurance" fragment="products" class="inline-flex items-center justify-center rounded-full border border-[#B8C8D4] bg-white/60 px-7 py-4 text-sm font-medium text-[#13315C] transition hover:bg-white">
+            Explore coverages
+          </a>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-[650px]">
+        <div class="absolute left-[10%] top-[8%] h-[78%] w-[78%] rounded-full border border-[#8DA9C4]/20"></div>
+        <div class="absolute left-[18%] top-[16%] h-[62%] w-[62%] rounded-full border border-dashed border-[#8DA9C4]/30"></div>
+
+        <div class="relative aspect-square">
+          <div class="absolute inset-[15%] overflow-hidden rounded-[44px] bg-gradient-to-br from-[#13315C] via-[#173963] to-[#0B2545] shadow-[0_50px_100px_rgba(11,37,69,0.28)]">
+            <div class="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-[#8DA9C4]/28 blur-2xl"></div>
+            <div class="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="relative flex h-full flex-col justify-between p-8 sm:p-10">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-[10px] font-medium uppercase tracking-[0.22em] text-[#B7C8D9]">Unified protection</p>
+                  <p class="mt-3 max-w-[250px] text-2xl font-medium leading-tight tracking-[-0.04em] text-white sm:text-3xl">Your coverage, clearly connected.</p>
+                </div>
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10">
+                  <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div>
+                <p class="text-xs text-[#B7C8D9]">Protection tailored to your property</p>
+                <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-white/10">
+                  <div class="h-full w-3/5 rounded-full bg-gradient-to-r from-[#8DA9C4] to-white"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <article class="floating-card absolute left-0 top-[10%] w-[215px] rounded-[22px] border border-white/80 bg-white/76 p-4 shadow-[0_20px_60px_rgba(19,49,92,0.12)] backdrop-blur-xl">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E4EDF3] text-[#13315C]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <p class="text-sm font-medium text-[#0B2545]">Property protection</p>
+            </div>
+          </article>
+
+          <article class="floating-card-delayed absolute right-0 top-[22%] w-[200px] rounded-[22px] border border-white/80 bg-white/76 p-4 shadow-[0_20px_60px_rgba(19,49,92,0.12)] backdrop-blur-xl">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E8EEF4] text-[#526F8D]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3L3 20H21L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                  <path d="M12 9V14M12 17.5V17.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </span>
+              <p class="text-sm font-medium text-[#0B2545]">Natural disasters</p>
+            </div>
+          </article>
+
+          <article class="floating-card-slow absolute bottom-[7%] left-[5%] w-[230px] rounded-[22px] border border-white/80 bg-white/80 p-4 shadow-[0_20px_60px_rgba(19,49,92,0.12)] backdrop-blur-xl">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <p class="text-[10px] font-medium uppercase tracking-[0.16em] text-[#7D8FA0]">Digital access</p>
+                <p class="mt-2 text-sm font-medium text-[#0B2545]">Quotes to claims</p>
+              </div>
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0B2545] text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12H19M14 7L19 12L14 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="bg-[#EEF4ED] py-24 sm:py-32">
+    <div class="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+      <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p class="section-eyebrow">Complete portfolio</p>
+          <h2 class="section-title mt-5 max-w-3xl">
+            Explore <span class="text-[#7892AA]">protection options.</span>
+          </h2>
+        </div>
+        <p class="max-w-lg text-sm leading-7 text-[#748799]">Compare the available products and the coverages associated with each option.</p>
+      </div>
+
+      @if (errorMessage()) {
+        <div role="alert" class="mt-8 rounded-2xl border border-red-200 bg-red-50 p-5 text-sm text-red-800">{{ errorMessage() }}</div>
+      }
+
+      @if (loading()) {
+        <p class="py-20 text-center text-sm text-[#71869A]" aria-live="polite">Loading coverage options...</p>
+      } @else if (products().length) {
+        <div class="mt-12 space-y-7">
+          @for (product of products(); track product.id) {
+            <article class="group overflow-hidden rounded-[28px] border border-[#D7E1E7] bg-white transition duration-500 hover:border-[#B8C8D4] hover:shadow-[0_24px_70px_rgba(19,49,92,0.08)]">
+              <div class="grid lg:grid-cols-[0.34fr_0.66fr]">
+                <div class="relative overflow-hidden border-b border-[#E1E8ED] bg-[#F8FAF9] p-7 sm:p-9 lg:border-b-0 lg:border-r">
+                  <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#E7EDF0]"></div>
+                  <div class="relative">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B2545] text-white" aria-hidden="true">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <h3 class="mt-10 text-2xl font-medium tracking-[-0.04em] text-[#0B2545]">{{ product.name }}</h3>
+                    <p class="mt-3 max-w-xs text-sm leading-7 text-[#748799]">{{ product.description }}</p>
+                    <button type="button" (click)="startQuote()" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#173963] transition hover:text-[#526F8D]">
+                      Start a quote
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12H19M14 7L19 12L14 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2">
+                  @for (group of coverageGroups; track group.type) {
+                    <div class="product-card p-6 sm:p-8">
+                      <h4 class="text-base font-medium leading-6 tracking-[-0.025em] text-[#193A5C]">{{ group.label }}</h4>
+                      @if (coveragesFor(product, group.type).length) {
+                        <ul class="mt-4 divide-y divide-[#EDF1F3]">
+                          @for (coverage of coveragesFor(product, group.type); track coverage.id) {
+                            <li class="py-3">
+                              <p class="text-sm font-medium text-[#193A5C]">{{ coverage.coverageName }}</p>
+                              @if (coverage.coverageDescription) {
+                                <p class="mt-1 text-xs leading-5 text-[#8495A4]">{{ coverage.coverageDescription }}</p>
+                              }
+                            </li>
+                          }
+                        </ul>
+                      } @else {
+                        <p class="mt-3 text-sm leading-6 text-[#8495A4]">Coverage details are not available.</p>
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      } @else {
+        <p class="mt-8 rounded-[28px] border border-dashed border-[#B9C8D0] bg-white/60 p-10 text-center text-sm text-[#71869A]">No vacation home products are available right now.</p>
+      }
+    </div>
+  </section>
+
+  <footer class="bg-[#0B2545] text-white">
+    <div class="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 lg:px-12">
+      <div class="flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-[#7F97AA] sm:flex-row sm:items-center sm:justify-between">
+        <p>SecureSphere Insurance</p>
+        <p>Protection · Trust · Clarity</p>
+      </div>
+    </div>
+  </footer>
+</main>

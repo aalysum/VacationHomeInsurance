@@ -1,0 +1,8 @@
+@VacationHome.ProductQuote.Api_HostAddress = http://localhost:5208
+
+
+GET {{VacationHome.ProductQuote.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+###

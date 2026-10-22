@@ -1,0 +1,808 @@
+<div
+  class="min-h-screen bg-[#EEF4ED] text-[#0B2545]"
+>
+  <div
+    class="grid min-h-screen lg:grid-cols-[0.82fr_1.18fr]"
+  >
+    <!-- Brand panel -->
+    <aside
+      class="relative hidden overflow-hidden bg-[#0B2545] p-12 text-white lg:flex lg:flex-col lg:justify-between xl:p-16"
+    >
+      <div
+        class="pointer-events-none absolute -left-48 -top-48 h-[560px] w-[560px] rounded-full bg-[#8DA9C4]/20 blur-[90px]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute -bottom-56 -right-40 h-[560px] w-[560px] rounded-full bg-white/10 blur-[100px]"
+      ></div>
+
+
+      <a
+        routerLink="/"
+        class="relative z-10 inline-flex items-center gap-3"
+      >
+        <span
+          class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+        >
+          <svg
+            class="h-7 w-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+
+
+            <path
+              d="M8.8 12L11 14.2L15.5 9.7"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+
+        <span>
+          <span
+            class="block text-base font-semibold"
+          >
+            SecureSphere
+          </span>
+
+
+          <span
+            class="mt-1 block text-[10px] uppercase tracking-[0.22em] text-[#AFC1D1]"
+          >
+            Insurance
+          </span>
+        </span>
+      </a>
+
+
+      <div class="relative z-10">
+        <span
+          class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#D5E1E9]"
+        >
+          <span
+            class="h-2 w-2 rounded-full bg-emerald-400"
+          ></span>
+
+
+          Customer registration
+        </span>
+
+
+        <h1
+          class="mt-8 max-w-xl text-5xl font-medium leading-[1.02] tracking-[-0.055em] xl:text-6xl"
+        >
+          Your protection journey starts here.
+        </h1>
+
+
+        <p
+          class="mt-6 max-w-lg text-sm leading-7 text-[#B7C7D4] xl:text-base"
+        >
+          Create your customer account to register your
+          vacation property, explore available protection,
+          generate quotes, and manage your policies and
+          claims.
+        </p>
+
+
+        <div
+          class="mt-12 space-y-5 border-t border-white/10 pt-8"
+        >
+          <div class="flex items-center gap-4">
+            <span class="step-icon">
+              01
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Create your secure account
+              </p>
+
+
+              <p
+                class="mt-1 text-xs text-[#91A7B9]"
+              >
+                Register using your personal details.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="flex items-center gap-4">
+            <span class="step-icon">
+              02
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Register your property
+              </p>
+
+
+              <p
+                class="mt-1 text-xs text-[#91A7B9]"
+              >
+                Add your vacation property securely.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="flex items-center gap-4">
+            <span class="step-icon">
+              03
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Explore your protection
+              </p>
+
+
+              <p
+                class="mt-1 text-xs text-[#91A7B9]"
+              >
+                Generate and review available quotes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <p
+        class="relative z-10 text-xs text-[#8199AD]"
+      >
+        Protection · Trust · Clarity
+      </p>
+    </aside>
+
+
+    <!-- Form panel -->
+    <main
+      class="relative flex items-center justify-center overflow-hidden px-5 py-10 sm:px-8 lg:px-12 xl:px-16"
+    >
+      <div
+        class="pointer-events-none absolute -right-48 -top-48 h-[480px] w-[480px] rounded-full bg-white/85 blur-[100px]"
+      ></div>
+
+
+      <div
+        class="relative z-10 w-full max-w-[680px]"
+      >
+        <a
+          routerLink="/"
+          class="mb-10 inline-flex items-center gap-3 lg:hidden"
+        >
+          <span
+            class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B2545] text-sm font-semibold text-white"
+          >
+            S
+          </span>
+
+
+          <span class="font-semibold">
+            SecureSphere
+          </span>
+        </a>
+
+
+        @if (successMessage()) {
+          <!-- Success experience -->
+          <section
+            class="rounded-[32px] border border-white/80 bg-white/80 p-8 text-center shadow-[0_30px_90px_rgba(19,49,92,0.1)] backdrop-blur-xl sm:p-12"
+          >
+            <span
+              class="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-emerald-50 text-emerald-600"
+            >
+              <svg
+                class="h-9 w-9"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12.5L9.2 16.5L19 6.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+
+            <p
+              class="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7890A3]"
+            >
+              Registration complete
+            </p>
+
+
+            <h2
+              class="mt-5 text-4xl font-medium tracking-[-0.05em] text-[#0B2545] sm:text-5xl"
+            >
+              Welcome to SecureSphere.
+            </h2>
+
+
+            <p
+              class="mx-auto mt-5 max-w-md text-sm leading-7 text-[#6B7F92]"
+            >
+              {{ successMessage() }}
+              Sign in using your registered email and password
+              to begin your insurance journey.
+            </p>
+
+
+            <a
+              routerLink="/auth/login"
+              class="mt-9 inline-flex items-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_18px_45px_rgba(11,37,69,0.2)] transition hover:-translate-y-0.5 hover:bg-[#13315C]"
+            >
+              Continue to login
+
+
+              <svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12H19M14 7L19 12L14 17"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </section>
+        } @else {
+          <header>
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7890A3]"
+            >
+              Create customer account
+            </p>
+
+
+            <div
+              class="mt-5 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
+            >
+              <div>
+                <h2
+                  class="text-4xl font-medium tracking-[-0.05em] text-[#0B2545] sm:text-5xl"
+                >
+                  Let us get you protected.
+                </h2>
+
+
+                <p
+                  class="mt-4 text-sm leading-7 text-[#6B7F92]"
+                >
+                  Enter your details to create a secure
+                  customer account.
+                </p>
+              </div>
+
+
+              <p class="shrink-0 text-xs text-[#718597]">
+                Already registered?
+
+
+                <a
+                  routerLink="/auth/login"
+                  class="ml-1 font-semibold text-[#13315C] hover:text-[#0B2545]"
+                >
+                  Sign in
+                </a>
+              </p>
+            </div>
+          </header>
+
+
+          @if (errorMessage()) {
+            <div
+              class="mt-8 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-700"
+              role="alert"
+            >
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 3L3 20H21L12 3Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linejoin="round"
+                />
+
+
+                <path
+                  d="M12 9V14M12 17.5V17.6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+
+
+              <span>{{ errorMessage() }}</span>
+            </div>
+          }
+
+
+          <form
+            class="mt-9 space-y-6"
+            [formGroup]="registrationForm"
+            (ngSubmit)="submit()"
+            novalidate
+          >
+            <div
+              class="grid gap-5 sm:grid-cols-2"
+            >
+              <!-- First name -->
+              <div>
+                <label
+                  for="firstName"
+                  class="auth-label"
+                >
+                  First name
+                </label>
+
+
+                <input
+                  id="firstName"
+                  type="text"
+                  formControlName="firstName"
+                  maxlength="100"
+                  autocomplete="given-name"
+                  placeholder="Enter first name"
+                  class="auth-input"
+                  [class.auth-input-error]="
+                    firstNameControl.invalid &&
+                    firstNameControl.touched
+                  "
+                />
+
+
+                @if (
+                  firstNameControl.hasError('required') &&
+                  firstNameControl.touched
+                ) {
+                  <p class="field-error">
+                    First name is required.
+                  </p>
+                } @else if (
+                  firstNameControl.hasError('maxlength') &&
+                  firstNameControl.touched
+                ) {
+                  <p class="field-error">
+                    First name cannot exceed 100 characters.
+                  </p>
+                } @else if (
+                  firstNameControl.hasError('controlCharacters') &&
+                  firstNameControl.touched
+                ) {
+                  <p class="field-error">
+                    First name contains unsupported characters.
+                  </p>
+                } @else if (
+                  getBackendError('firstName')
+                ) {
+                  <p class="field-error">
+                    {{ getBackendError('firstName') }}
+                  </p>
+                }
+              </div>
+
+
+              <!-- Last name -->
+              <div>
+                <label
+                  for="lastName"
+                  class="auth-label"
+                >
+                  Last name
+                </label>
+
+
+                <input
+                  id="lastName"
+                  type="text"
+                  formControlName="lastName"
+                  maxlength="100"
+                  autocomplete="family-name"
+                  placeholder="Enter last name"
+                  class="auth-input"
+                  [class.auth-input-error]="
+                    lastNameControl.invalid &&
+                    lastNameControl.touched
+                  "
+                />
+
+
+                @if (
+                  lastNameControl.hasError('required') &&
+                  lastNameControl.touched
+                ) {
+                  <p class="field-error">
+                    Last name is required.
+                  </p>
+                } @else if (
+                  lastNameControl.hasError('maxlength') &&
+                  lastNameControl.touched
+                ) {
+                  <p class="field-error">
+                    Last name cannot exceed 100 characters.
+                  </p>
+                } @else if (
+                  lastNameControl.hasError('controlCharacters') &&
+                  lastNameControl.touched
+                ) {
+                  <p class="field-error">
+                    Last name contains unsupported characters.
+                  </p>
+                } @else if (
+                  getBackendError('lastName')
+                ) {
+                  <p class="field-error">
+                    {{ getBackendError('lastName') }}
+                  </p>
+                }
+              </div>
+            </div>
+
+
+            <div
+              class="grid gap-5 sm:grid-cols-2"
+            >
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="auth-label"
+                >
+                  Email address
+                </label>
+
+
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  autocomplete="email"
+                  placeholder="name@example.com"
+                  class="auth-input"
+                  [class.auth-input-error]="
+                    emailControl.invalid &&
+                    emailControl.touched
+                  "
+                />
+
+
+                @if (
+                  emailControl.hasError('required') &&
+                  emailControl.touched
+                ) {
+                  <p class="field-error">
+                    Email is required.
+                  </p>
+                } @else if (
+                  emailControl.hasError('email') &&
+                  emailControl.touched
+                ) {
+                  <p class="field-error">
+                    Enter a valid email address.
+                  </p>
+                } @else if (
+                  getBackendError('email')
+                ) {
+                  <p class="field-error">
+                    {{ getBackendError('email') }}
+                  </p>
+                }
+              </div>
+
+
+              <!-- Phone -->
+              <div>
+                <label
+                  for="phoneNumber"
+                  class="auth-label"
+                >
+                  Phone number
+                </label>
+
+
+                <input
+                  id="phoneNumber"
+                  type="tel"
+                  formControlName="phoneNumber"
+                  autocomplete="tel"
+                  placeholder="Enter phone number"
+                  class="auth-input"
+                  [class.auth-input-error]="
+                    phoneNumberControl.invalid &&
+                    phoneNumberControl.touched
+                  "
+                />
+
+
+                @if (
+                  phoneNumberControl.hasError('required') &&
+                  phoneNumberControl.touched
+                ) {
+                  <p class="field-error">
+                    Phone number is required.
+                  </p>
+                } @else if (
+                  getBackendError('phoneNumber')
+                ) {
+                  <p class="field-error">
+                    {{ getBackendError('phoneNumber') }}
+                  </p>
+                }
+              </div>
+            </div>
+
+
+            <!-- Password -->
+            <div>
+              <label
+                for="password"
+                class="auth-label"
+              >
+                Password
+              </label>
+
+
+              <div class="relative">
+                <input
+                  id="password"
+                  [type]="
+                    passwordVisible()
+                      ? 'text'
+                      : 'password'
+                  "
+                  formControlName="password"
+                  autocomplete="new-password"
+                  placeholder="Create a strong password"
+                  class="auth-input pr-12"
+                  [class.auth-input-error]="
+                    passwordControl.invalid &&
+                    passwordControl.touched
+                  "
+                />
+
+
+                <button
+                  type="button"
+                  class="visibility-button"
+                  [attr.aria-label]="
+                    passwordVisible()
+                      ? 'Hide password'
+                      : 'Show password'
+                  "
+                  (click)="togglePasswordVisibility()"
+                >
+                  {{ passwordVisible() ? 'Hide' : 'Show' }}
+                </button>
+              </div>
+
+
+              @if (
+                passwordControl.hasError('required') &&
+                passwordControl.touched
+              ) {
+                <p class="field-error">
+                  Password is required.
+                </p>
+              } @else if (
+                passwordControl.invalid &&
+                passwordControl.touched
+              ) {
+                <p class="field-error">
+                  Password must satisfy all requirements below.
+                </p>
+              }
+
+
+              <div
+                class="mt-4 grid gap-2 sm:grid-cols-2"
+              >
+                <p
+                  class="password-rule"
+                  [class.password-rule-valid]="
+                    hasMinimumLength()
+                  "
+                >
+                  <span></span>
+                  At least 8 characters
+                </p>
+
+
+                <p
+                  class="password-rule"
+                  [class.password-rule-valid]="
+                    hasUppercase()
+                  "
+                >
+                  <span></span>
+                  One uppercase letter
+                </p>
+
+
+                <p
+                  class="password-rule"
+                  [class.password-rule-valid]="
+                    hasLowercase()
+                  "
+                >
+                  <span></span>
+                  One lowercase letter
+                </p>
+
+
+                <p
+                  class="password-rule"
+                  [class.password-rule-valid]="
+                    hasDigit()
+                  "
+                >
+                  <span></span>
+                  One number
+                </p>
+
+
+                <p
+                  class="password-rule"
+                  [class.password-rule-valid]="
+                    hasSpecialCharacter()
+                  "
+                >
+                  <span></span>
+                  One special character
+                </p>
+              </div>
+            </div>
+
+
+            <!-- Confirm password -->
+            <div>
+              <label
+                for="confirmPassword"
+                class="auth-label"
+              >
+                Confirm password
+              </label>
+
+
+              <div class="relative">
+                <input
+                  id="confirmPassword"
+                  [type]="
+                    confirmPasswordVisible()
+                      ? 'text'
+                      : 'password'
+                  "
+                  formControlName="confirmPassword"
+                  autocomplete="new-password"
+                  placeholder="Re-enter your password"
+                  class="auth-input pr-12"
+                  [class.auth-input-error]="
+                    confirmPasswordControl.invalid &&
+                    confirmPasswordControl.touched
+                  "
+                />
+
+
+                <button
+                  type="button"
+                  class="visibility-button"
+                  [attr.aria-label]="
+                    confirmPasswordVisible()
+                      ? 'Hide confirmation password'
+                      : 'Show confirmation password'
+                  "
+                  (click)="toggleConfirmPasswordVisibility()"
+                >
+                  {{
+                    confirmPasswordVisible()
+                      ? 'Hide'
+                      : 'Show'
+                  }}
+                </button>
+              </div>
+
+
+              @if (
+                confirmPasswordControl.hasError('required') &&
+                confirmPasswordControl.touched
+              ) {
+                <p class="field-error">
+                  Confirmation password is required.
+                </p>
+              } @else if (
+                confirmPasswordControl.hasError('passwordMismatch') &&
+                confirmPasswordControl.touched
+              ) {
+                <p class="field-error">
+                  Password and confirmation password must match.
+                </p>
+              }
+            </div>
+
+
+            <button
+              type="submit"
+              class="flex w-full items-center justify-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_18px_45px_rgba(11,37,69,0.2)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#13315C] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+              [disabled]="registrationLoading()"
+            >
+              @if (registrationLoading()) {
+                <span class="button-spinner"></span>
+                Creating your account...
+              } @else {
+                Create customer account
+
+
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12H19M14 7L19 12L14 17"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              }
+            </button>
+          </form>
+
+
+          <div
+            class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-[#CDD9E1] pt-6 text-xs text-[#718597] sm:flex-row"
+          >
+            <a
+              routerLink="/"
+              class="transition hover:text-[#0B2545]"
+            >
+              Back to home
+            </a>
+
+
+            <a
+              routerLink="/auth/register/claims-manager"
+              class="font-medium text-[#526F8D] transition hover:text-[#0B2545]"
+            >
+              Register as Claims Manager
+            </a>
+          </div>
+        }
+      </div>
+    </main>
+  </div>
+</div>

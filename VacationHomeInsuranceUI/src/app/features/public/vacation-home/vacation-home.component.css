@@ -1,0 +1,92 @@
+:host {
+  display: block;
+}
+
+.nav-link {
+  position: relative;
+  color: #5f7387;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 1px;
+  background: #13315c;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.nav-link:hover {
+  color: #0b2545;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.section-eyebrow {
+  color: #657f72;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #0b2545;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.product-card + .product-card {
+  border-top: 1px solid #e1e8ed;
+}
+
+.floating-card {
+  animation: float-card 7s ease-in-out infinite;
+}
+
+.floating-card-delayed {
+  animation: float-card 8s ease-in-out -2.5s infinite;
+}
+
+.floating-card-slow {
+  animation: float-card 9s ease-in-out -4s infinite;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (min-width: 640px) {
+  .product-card + .product-card {
+    border-top: 0;
+    border-left: 1px solid #e1e8ed;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-card,
+  .floating-card-delayed,
+  .floating-card-slow {
+    animation: none;
+  }
+}

@@ -1,0 +1,194 @@
+<main class="claims-manager-page">
+	<header class="workspace-hero">
+		<div class="hero-copy">
+			<p class="section-eyebrow">Claims workspace</p>
+			<h1>Claims overview</h1>
+			<p class="hero-description">
+				Review your assigned claims, monitor progress, and keep customer decisions moving.
+			</p>
+		</div>
+		<a routerLink="/claims-manager/claims" class="primary-action">
+			<span>View assigned claims</span>
+			<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+				<path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</a>
+	</header>
+
+	@if (errorMessage()) {
+		<p role="alert" class="feedback feedback-error">{{ errorMessage() }}</p>
+	}
+
+	@if (loading()) {
+		<section class="stat-grid" aria-label="Claim totals" aria-busy="true">
+			@for (item of [1, 2, 3, 4]; track item) {
+				<div class="stat-card stat-card-loading">
+					<span class="loading-icon"></span>
+					<span class="loading-line"></span>
+					<span class="loading-value"></span>
+				</div>
+			}
+		</section>
+		<p class="sr-only" aria-live="polite">Loading claims summary...</p>
+	} @else if (dashboard(); as summary) {
+		<section class="stat-grid" aria-label="Claim totals">
+			<article class="stat-card">
+				<span class="stat-icon icon-navy" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M8 6h12M8 12h12M8 18h7M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Total assigned</p>
+				<strong class="stat-value">{{ summary.totalClaims }}</strong>
+				<span class="stat-caption">Claims in your assigned portfolio</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-blue" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M12 3v3m0 12v3M4.93 4.93l2.12 2.12m9.9 9.9 2.12 2.12M3 12h3m12 0h3M4.93 19.07l2.12-2.12m9.9-9.9 2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+						<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8" />
+					</svg>
+				</span>
+				<p class="stat-label">Under review</p>
+				<strong class="stat-value">{{ summary.underReviewClaims }}</strong>
+				<span class="stat-caption">Claims currently being assessed</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-blue" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M8 7h8m-8 4h8m-8 4h5M5 3h14v18H5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Submitted</p>
+				<strong class="stat-value">{{ summary.submittedClaims }}</strong>
+				<span class="stat-caption">Awaiting initial review</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-amber" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M12 8v4l2.5 1.5M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Awaiting information</p>
+				<strong class="stat-value">{{ summary.informationRequestedClaims }}</strong>
+				<span class="stat-caption">Claims with an information request</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-emerald" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Approved claims</p>
+				<strong class="stat-value">{{ summary.approvedClaims }}</strong>
+				<span class="stat-caption">Awaiting payment or closure</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-amber" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="m7 7 10 10M17 7 7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+						<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
+					</svg>
+				</span>
+				<p class="stat-label">Rejected</p>
+				<strong class="stat-value">{{ summary.rejectedClaims }}</strong>
+				<span class="stat-caption">Claims declined after review</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-emerald" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M12 3v18m4-13c0-1.7-1.8-3-4-3S8 6.2 8 8s1.6 2.7 4 3.3 4 1.5 4 3.4-1.8 3.3-4 3.3-4-.9-4-2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Paid</p>
+				<strong class="stat-value">{{ summary.paidClaims }}</strong>
+				<span class="stat-caption">Claims with payment recorded</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-navy" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
+					</svg>
+				</span>
+				<p class="stat-label">Closed</p>
+				<strong class="stat-value">{{ summary.closedClaims }}</strong>
+				<span class="stat-caption">Completed claim files</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-emerald" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M12 3v18m4-13c0-1.7-1.8-3-4-3S8 6.2 8 8s1.6 2.7 4 3.3 4 1.5 4 3.4-1.8 3.3-4 3.3-4-.9-4-2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Total claimed</p>
+				<strong class="stat-value stat-currency">{{ formatCurrency(summary.totalClaimedAmount) }}</strong>
+				<span class="stat-caption">Requested amounts across assigned claims</span>
+			</article>
+			<article class="stat-card">
+				<span class="stat-icon icon-emerald" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M12 3v18m4-13c0-1.7-1.8-3-4-3S8 6.2 8 8s1.6 2.7 4 3.3 4 1.5 4 3.4-1.8 3.3-4 3.3-4-.9-4-2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+					</svg>
+				</span>
+				<p class="stat-label">Total approved</p>
+				<strong class="stat-value stat-currency">{{ formatCurrency(summary.totalApprovedAmount) }}</strong>
+				<span class="stat-caption">Approved amounts across assigned claims</span>
+			</article>
+		</section>
+
+		<section class="content-panel recent-panel" aria-labelledby="recent-claims-title">
+			<div class="panel-heading">
+				<div>
+					<p class="section-eyebrow">Your workload</p>
+					<h2 id="recent-claims-title">Recent claims</h2>
+				</div>
+				<a routerLink="/claims-manager/claims" class="text-action">
+					All assigned claims
+					<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+						<path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</a>
+			</div>
+
+			@if (summary.recentClaims.length) {
+				<div class="table-scroll">
+					<table class="claims-table">
+						<thead>
+							<tr>
+								<th scope="col">Claim</th>
+								<th scope="col">Status</th>
+								<th scope="col">Submitted</th>
+								<th scope="col" class="amount-cell">Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							@for (claim of summary.recentClaims; track claim.id) {
+								<tr>
+									<td>
+										<strong class="claim-number">{{ claim.claimNumber }}</strong>
+										<span class="claim-secondary">{{ claim.title }}</span>
+										<span class="claim-tertiary">Policy {{ claim.policyNumber || claim.policyId }}</span>
+									</td>
+									<td><span class="status-badge" [ngClass]="statusClass(claim.status)">{{ statusName(claim.status) }}</span></td>
+									<td>{{ claim.submittedAtUtc | date:'mediumDate' }}</td>
+									<td class="amount-cell">{{ formatCurrency(claim.claimedAmount) }}</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			} @else {
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none">
+							<path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Zm1 5h8m-8 4h8m-8 4h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</span>
+					<strong>No assigned claims yet</strong>
+					<p>Newly assigned claims will appear here.</p>
+				</div>
+			}
+		</section>
+	}
+</main>

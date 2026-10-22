@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bjqG+SeuERg=",
+  "success": true,
+  "projectFilePath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Infrastructure\\VacationHome.ProductQuote.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.32\\microsoft.netcore.app.ref.8.0.32.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.32\\microsoft.windowsdesktop.app.ref.8.0.32.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.32\\microsoft.aspnetcore.app.ref.8.0.32.nupkg.sha512"
+  ],
+  "logs": []
+}

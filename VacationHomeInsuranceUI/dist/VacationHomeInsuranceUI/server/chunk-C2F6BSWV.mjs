@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+var e={fieldName:"verificationDocument",maxFileSizeBytes:10485760,acceptedExtensions:[".pdf",".jpg",".jpeg",".png"],acceptedMimeTypes:["application/pdf","image/jpeg","image/png"],acceptAttribute:".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"};export{e as a};

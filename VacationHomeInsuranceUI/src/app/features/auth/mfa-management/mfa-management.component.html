@@ -1,0 +1,806 @@
+<div
+  class="min-h-screen bg-[#EEF4ED] text-[#0B2545]"
+>
+  <header
+    class="border-b border-white/50 bg-[#EEF4ED]/85 backdrop-blur-xl"
+  >
+    <div
+      class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12"
+    >
+      <a
+        routerLink="/"
+        class="flex items-center gap-3"
+        aria-label="SecureSphere home"
+      >
+        <span
+          class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B2545] text-white shadow-[0_12px_30px_rgba(11,37,69,0.2)]"
+        >
+          <svg
+            class="h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.8 12L11 14.2L15.5 9.7"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+
+        <span>
+          <span
+            class="block text-[15px] font-semibold leading-none tracking-[-0.02em]"
+          >
+            SecureSphere
+          </span>
+
+
+          <span
+            class="mt-1 block text-[10px] font-medium uppercase tracking-[0.22em] text-[#6D8094]"
+          >
+            Insurance
+          </span>
+        </span>
+      </a>
+
+
+      <a
+        routerLink="/account/security/change-password"
+        class="rounded-full border border-[#C7D4DE] bg-white/65 px-5 py-3 text-sm font-medium text-[#13315C] transition hover:bg-white"
+      >
+        Password settings
+      </a>
+    </div>
+  </header>
+
+
+  <main
+    class="relative isolate overflow-hidden px-5 py-16 sm:px-8 sm:py-24 lg:px-12"
+  >
+    <div
+      class="pointer-events-none absolute -left-48 top-0 h-[500px] w-[500px] rounded-full bg-[#8DA9C4]/25 blur-[100px]"
+    ></div>
+
+
+    <div
+      class="pointer-events-none absolute -right-48 bottom-0 h-[500px] w-[500px] rounded-full bg-white/80 blur-[100px]"
+    ></div>
+
+
+    <div
+      class="relative mx-auto max-w-[1180px]"
+    >
+      <div class="mb-10 max-w-3xl">
+        <p class="section-eyebrow">
+          Account security
+        </p>
+
+
+        <h1
+          class="mt-5 text-4xl font-medium leading-tight tracking-[-0.055em] text-[#0B2545] sm:text-6xl"
+        >
+          Multi-factor authentication
+        </h1>
+
+
+        <p
+          class="mt-5 max-w-2xl text-sm leading-7 text-[#687D90] sm:text-base"
+        >
+          Add an authenticator application to protect your
+          SecureSphere account with a second verification step.
+        </p>
+      </div>
+
+
+      @if (errorMessage()) {
+        <div
+          class="mb-7 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm leading-6 text-red-700"
+          role="alert"
+        >
+          {{ errorMessage() }}
+        </div>
+      }
+
+
+      @if (view() === 'loading') {
+        <div
+          class="rounded-[32px] border border-white/80 bg-white/70 p-8 shadow-[0_30px_80px_rgba(19,49,92,0.1)] backdrop-blur-xl sm:p-12"
+        >
+          <div
+            class="flex min-h-[360px] flex-col items-center justify-center"
+          >
+            <span
+              class="h-10 w-10 animate-spin rounded-full border-4 border-[#8DA9C4]/30 border-t-[#0B2545]"
+            ></span>
+
+
+            <p
+              class="mt-5 text-sm text-[#687D90]"
+            >
+              Loading security settings
+            </p>
+          </div>
+        </div>
+      }
+
+
+      @if (view() === 'setup') {
+        <div
+          class="grid overflow-hidden rounded-[34px] border border-white/80 bg-white/70 shadow-[0_35px_100px_rgba(19,49,92,0.12)] backdrop-blur-xl lg:grid-cols-[0.9fr_1.1fr]"
+        >
+          <section
+            class="relative overflow-hidden bg-[#0B2545] p-7 text-white sm:p-10 lg:p-12"
+          >
+            <div
+              class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#8DA9C4]/25 blur-2xl"
+            ></div>
+
+
+            <div
+              class="absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-white/5 blur-3xl"
+            ></div>
+
+
+            <div class="relative">
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium text-[#D4E0E9]"
+              >
+                <span
+                  class="h-2 w-2 rounded-full bg-amber-300"
+                ></span>
+
+
+                Setup in progress
+              </span>
+
+
+              <h2
+                class="mt-8 text-4xl font-medium leading-tight tracking-[-0.05em]"
+              >
+                Connect your authenticator manually.
+              </h2>
+
+
+              <p
+                class="mt-5 text-sm leading-7 text-[#B8C9D7]"
+              >
+                Add a new account in your authenticator application,
+                choose manual entry, and enter the account details
+                provided here.
+              </p>
+
+
+              <div class="mt-10 space-y-4">
+                <article
+                  class="rounded-[22px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-sm"
+                >
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-semibold"
+                    >
+                      01
+                    </span>
+
+
+                    <div>
+                      <h3
+                        class="text-sm font-medium text-white"
+                      >
+                        Open your authenticator app
+                      </h3>
+
+
+                      <p
+                        class="mt-2 text-xs leading-6 text-[#B8C9D7]"
+                      >
+                        Open Microsoft Authenticator, Google
+                        Authenticator, or another compatible
+                        application.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+
+                <article
+                  class="rounded-[22px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-sm"
+                >
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-semibold"
+                    >
+                      02
+                    </span>
+
+
+                    <div>
+                      <h3
+                        class="text-sm font-medium text-white"
+                      >
+                        Select manual setup
+                      </h3>
+
+
+                      <p
+                        class="mt-2 text-xs leading-6 text-[#B8C9D7]"
+                      >
+                        Choose the option to enter a setup key or
+                        secret manually instead of scanning a QR
+                        code.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+
+                <article
+                  class="rounded-[22px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-sm"
+                >
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-semibold"
+                    >
+                      03
+                    </span>
+
+
+                    <div>
+                      <h3
+                        class="text-sm font-medium text-white"
+                      >
+                        Select time-based authentication
+                      </h3>
+
+
+                      <p
+                        class="mt-2 text-xs leading-6 text-[#B8C9D7]"
+                      >
+                        Choose a time-based key when your
+                        application asks for the authentication
+                        type.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+
+                <article
+                  class="rounded-[22px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-sm"
+                >
+                  <div class="flex items-start gap-4">
+                    <span
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-semibold"
+                    >
+                      04
+                    </span>
+
+
+                    <div>
+                      <h3
+                        class="text-sm font-medium text-white"
+                      >
+                        Verify the generated code
+                      </h3>
+
+
+                      <p
+                        class="mt-2 text-xs leading-6 text-[#B8C9D7]"
+                      >
+                        Enter the current six-digit code in the
+                        confirmation field to finish setup.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+
+          <section
+            class="bg-white/80 p-7 sm:p-10 lg:p-12"
+          >
+            <p class="section-eyebrow">
+              Manual configuration
+            </p>
+
+
+            <h2
+              class="mt-4 text-3xl font-medium tracking-[-0.045em]"
+            >
+              Enter your setup key
+            </h2>
+
+
+            <p
+              class="mt-4 text-sm leading-7 text-[#687D90]"
+            >
+              In your authenticator application, add a new account
+              manually and enter the shared key below.
+            </p>
+
+
+            <div
+              class="mt-7 rounded-[22px] border border-[#D2DEE6] bg-[#F4F8F8] p-5"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#74899B]"
+              >
+                Account name
+              </p>
+
+
+              <p
+                class="mt-3 text-sm font-semibold text-[#13315C]"
+              >
+                SecureSphere Insurance
+              </p>
+            </div>
+
+
+            <div
+              class="mt-4 rounded-[22px] border border-[#D2DEE6] bg-[#F4F8F8] p-5"
+            >
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#74899B]"
+              >
+                Manual shared key
+              </p>
+
+
+              <code
+                class="mt-3 block break-all text-sm font-semibold tracking-[0.12em] text-[#13315C]"
+              >
+                {{ setup()?.sharedKey }}
+              </code>
+
+
+              <button
+                type="button"
+                class="mt-5 inline-flex items-center justify-center rounded-full border border-[#C4D2DC] bg-white px-4 py-2 text-xs font-semibold text-[#13315C] transition hover:border-[#8DA9C4] hover:bg-[#EEF4ED] disabled:cursor-not-allowed disabled:opacity-60"
+                [disabled]="isCopying()"
+                (click)="copySharedKey()"
+              >
+                {{ copied() ? 'Key copied' : 'Copy key' }}
+              </button>
+            </div>
+
+
+            <details
+              class="mt-4 rounded-[22px] border border-[#D2DEE6] bg-white p-5"
+            >
+              <summary
+                class="cursor-pointer text-sm font-medium text-[#193A5C]"
+              >
+                Advanced setup URI
+              </summary>
+
+
+              <p
+                class="mt-3 text-xs leading-6 text-[#687D90]"
+              >
+                Use this only if your authenticator application
+                supports importing an OTP authentication URI.
+              </p>
+
+
+              <code
+                class="mt-3 block max-h-24 overflow-auto break-all rounded-xl bg-[#F4F8F8] p-3 text-[11px] leading-5 text-[#526F8D]"
+              >
+                {{ setup()?.authenticatorUri }}
+              </code>
+
+
+              <button
+                type="button"
+                class="mt-4 inline-flex items-center justify-center rounded-full border border-[#C4D2DC] bg-white px-4 py-2 text-xs font-semibold text-[#13315C] transition hover:border-[#8DA9C4] hover:bg-[#EEF4ED] disabled:cursor-not-allowed disabled:opacity-60"
+                [disabled]="isCopyingUri()"
+                (click)="copyAuthenticatorUri()"
+              >
+                {{ uriCopied() ? 'URI copied' : 'Copy URI' }}
+              </button>
+            </details>
+
+
+            <form
+              class="mt-8"
+              [formGroup]="confirmationForm"
+              (ngSubmit)="submitConfirmation()"
+              novalidate
+            >
+              <label
+                for="confirmationCode"
+                class="block text-sm font-medium text-[#193A5C]"
+              >
+                Six-digit authenticator code
+              </label>
+
+
+              <p
+                class="mt-2 text-xs leading-5 text-[#74899B]"
+              >
+                Enter the code currently displayed by your
+                authenticator application.
+              </p>
+
+
+              <input
+                id="confirmationCode"
+                type="text"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                maxlength="6"
+                formControlName="code"
+                class="mfa-code-input mt-3"
+                placeholder="000000"
+                (input)="sanitizeCode($event, 'confirm')"
+              />
+
+
+              @if (
+                confirmationForm.controls.code.touched &&
+                confirmationForm.controls.code.hasError('required')
+              ) {
+                <p class="field-error">
+                  Authenticator code is required.
+                </p>
+              }
+
+
+              @if (
+                confirmationForm.controls.code.touched &&
+                !confirmationForm.controls.code.hasError('required') &&
+                confirmationForm.controls.code.hasError('pattern')
+              ) {
+                <p class="field-error">
+                  Authenticator code must contain six digits.
+                </p>
+              }
+
+
+              <div
+                class="mt-6 rounded-2xl border border-[#D7E2E8] bg-[#F7FAF9] px-4 py-4"
+              >
+                <p
+                  class="text-xs leading-6 text-[#64798C]"
+                >
+                  Enabling MFA signs you out from all active
+                  sessions. Sign in again using your password and
+                  authenticator code.
+                </p>
+              </div>
+
+
+              <button
+                type="submit"
+                class="mt-7 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_16px_40px_rgba(11,37,69,0.2)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#13315C] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                [disabled]="isSubmitting()"
+              >
+                @if (isSubmitting()) {
+                  <span
+                    class="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"
+                  ></span>
+
+
+                  Enabling MFA
+                } @else {
+                  Confirm and enable MFA
+                }
+              </button>
+            </form>
+          </section>
+        </div>
+      }
+
+
+      @if (view() === 'enabled') {
+        <div
+          class="grid overflow-hidden rounded-[34px] border border-white/80 bg-white/70 shadow-[0_35px_100px_rgba(19,49,92,0.12)] backdrop-blur-xl lg:grid-cols-[0.9fr_1.1fr]"
+        >
+          <section
+            class="relative overflow-hidden bg-[#0B2545] p-8 text-white sm:p-12"
+          >
+            <div
+              class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#8DA9C4]/25 blur-2xl"
+            ></div>
+
+
+            <div
+              class="absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-white/5 blur-3xl"
+            ></div>
+
+
+            <div class="relative">
+              <span
+                class="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/15 bg-white/10"
+              >
+                <svg
+                  class="h-8 w-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.8 12L11 14.2L15.5 9.7"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+
+              <span
+                class="mt-8 inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs font-medium text-emerald-100"
+              >
+                <span
+                  class="h-2 w-2 rounded-full bg-emerald-400"
+                ></span>
+
+
+                MFA enabled
+              </span>
+
+
+              <h2
+                class="mt-6 text-4xl font-medium leading-tight tracking-[-0.05em]"
+              >
+                Your account has additional protection.
+              </h2>
+
+
+              <p
+                class="mt-5 text-sm leading-7 text-[#B8C9D7]"
+              >
+                SecureSphere will require an authenticator code
+                after successful email and password verification.
+              </p>
+
+
+              <div
+                class="mt-10 space-y-4 border-t border-white/10 pt-8"
+              >
+                <div
+                  class="flex items-center gap-3 text-sm text-[#DCE6ED]"
+                >
+                  <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-white/10"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5 12.5L9.2 16.5L19 6.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+
+
+                  Password verification
+                </div>
+
+
+                <div
+                  class="flex items-center gap-3 text-sm text-[#DCE6ED]"
+                >
+                  <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-white/10"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5 12.5L9.2 16.5L19 6.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+
+
+                  Time-based authenticator code
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section
+            class="bg-white/80 p-7 sm:p-10 lg:p-12"
+          >
+            <p class="section-eyebrow">
+              Disable authentication
+            </p>
+
+
+            <h2
+              class="mt-4 text-3xl font-medium tracking-[-0.045em]"
+            >
+              Turn off MFA
+            </h2>
+
+
+            <p
+              class="mt-4 text-sm leading-7 text-[#687D90]"
+            >
+              Enter the current code from your authenticator
+              application to disable multi-factor authentication.
+            </p>
+
+
+            <form
+              class="mt-8"
+              [formGroup]="disableForm"
+              (ngSubmit)="submitDisable()"
+              novalidate
+            >
+              <label
+                for="disableCode"
+                class="block text-sm font-medium text-[#193A5C]"
+              >
+                Six-digit authenticator code
+              </label>
+
+
+              <p
+                class="mt-2 text-xs leading-5 text-[#74899B]"
+              >
+                Use the current code shown in the authenticator
+                account connected to SecureSphere.
+              </p>
+
+
+              <input
+                id="disableCode"
+                type="text"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                maxlength="6"
+                formControlName="code"
+                class="mfa-code-input mt-3"
+                placeholder="000000"
+                (input)="sanitizeCode($event, 'disable')"
+              />
+
+
+              @if (
+                disableForm.controls.code.touched &&
+                disableForm.controls.code.hasError('required')
+              ) {
+                <p class="field-error">
+                  Authenticator code is required.
+                </p>
+              }
+
+
+              @if (
+                disableForm.controls.code.touched &&
+                !disableForm.controls.code.hasError('required') &&
+                disableForm.controls.code.hasError('pattern')
+              ) {
+                <p class="field-error">
+                  Authenticator code must contain six digits.
+                </p>
+              }
+
+
+              <div
+                class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4"
+              >
+                <p
+                  class="text-xs leading-6 text-amber-800"
+                >
+                  Disabling MFA resets your authenticator key and
+                  signs you out from every active session. The
+                  existing key cannot be used again.
+                </p>
+              </div>
+
+
+              <button
+                type="submit"
+                class="mt-7 inline-flex w-full items-center justify-center gap-3 rounded-full border border-red-200 bg-red-50 px-7 py-4 text-sm font-medium text-red-700 transition duration-300 hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                [disabled]="isSubmitting()"
+              >
+                @if (isSubmitting()) {
+                  <span
+                    class="h-4 w-4 animate-spin rounded-full border-2 border-red-300 border-t-red-700"
+                  ></span>
+
+
+                  Disabling MFA
+                } @else {
+                  Disable MFA
+                }
+              </button>
+            </form>
+          </section>
+        </div>
+      }
+
+
+      @if (view() === 'setup-error') {
+        <div
+          class="rounded-[32px] border border-white/80 bg-white/75 p-8 text-center shadow-[0_30px_80px_rgba(19,49,92,0.1)] backdrop-blur-xl sm:p-14"
+        >
+          <span
+            class="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-[#E5EDF2] text-[#13315C]"
+          >
+            <svg
+              class="h-8 w-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+
+
+          <h2
+            class="mt-6 text-3xl font-medium tracking-[-0.045em]"
+          >
+            MFA settings are unavailable
+          </h2>
+
+
+          <p
+            class="mx-auto mt-4 max-w-lg text-sm leading-7 text-[#687D90]"
+          >
+            SecureSphere could not load your MFA configuration.
+            Try again after checking that your authenticated
+            session is still active.
+          </p>
+
+
+          <button
+            type="button"
+            class="mt-8 inline-flex items-center justify-center rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[#13315C]"
+            (click)="loadMfaState()"
+          >
+            Try again
+          </button>
+        </div>
+      }
+    </div>
+  </main>
+</div>
+
+
+
+

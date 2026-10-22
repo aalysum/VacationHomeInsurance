@@ -1,0 +1,1172 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div
+    class="min-h-screen lg:grid lg:grid-cols-[290px_minmax(0,1fr)]"
+  >
+    <aside
+      class="hidden min-h-screen bg-[#0B2545] text-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col"
+    >
+      <div class="border-b border-white/10 px-7 py-7">
+        <a
+          routerLink="/customer/dashboard"
+          class="flex items-center gap-3"
+          aria-label="Go to Customer dashboard"
+        >
+          <span
+            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+
+
+              <path
+                d="M8.8 12L11 14.2L15.5 9.7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+
+          <span>
+            <span
+              class="block text-[15px] font-semibold"
+            >
+              SecureSphere
+            </span>
+
+
+            <span
+              class="mt-1 block text-[9px] uppercase tracking-[0.22em] text-[#AFC1D1]"
+            >
+              Customer Portal
+            </span>
+          </span>
+        </a>
+      </div>
+
+
+      <nav
+        class="customer-scrollbar flex-1 overflow-y-auto px-4 py-6"
+        aria-label="Customer navigation"
+      >
+        <p
+          class="px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#708CA4]"
+        >
+          Workspace
+        </p>
+
+
+        <div class="mt-4 space-y-1.5">
+          @for (
+            item of navigationItems;
+            track item.label
+          ) {
+            @if (item.available) {
+              <a
+                [routerLink]="item.route"
+                class="customer-nav-item"
+                [class.customer-nav-item-active]="
+                  isCurrentNavigationItem(item)
+                "
+              >
+                <span class="customer-nav-icon">
+                  @switch (item.icon) {
+                    @case ('overview') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('properties') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('profile') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="12"
+                          cy="8"
+                          r="4"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+
+
+                        <path
+                          d="M4.5 21C4.5 16.8 7.8 14 12 14C16.2 14 19.5 16.8 19.5 21"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+                      </svg>
+                    }
+
+
+                    @default {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                <span class="min-w-0 flex-1">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#8FA5B7]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+              </a>
+            } @else {
+              <button
+                type="button"
+                class="customer-nav-item customer-nav-item-disabled"
+                disabled
+              >
+                <span class="customer-nav-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 3H15L19 7V21H6V3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span class="min-w-0 flex-1 text-left">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#708CA4]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+
+
+                <span class="customer-soon-badge">
+                  Soon
+                </span>
+              </button>
+            }
+          }
+        </div>
+      </nav>
+
+
+      <div class="border-t border-white/10 p-4">
+        <div
+          class="rounded-[22px] border border-white/10 bg-white/[0.06] p-4"
+        >
+          <p
+            class="text-[10px] uppercase tracking-[0.17em] text-[#829BB0]"
+          >
+            Signed in as
+          </p>
+
+
+          <div class="mt-3 flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#8DA9C4]/20 text-sm font-semibold"
+            >
+              {{ initials() }}
+            </span>
+
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium">
+                {{ displayName() }}
+              </p>
+
+
+              <p
+                class="mt-0.5 text-[10px] text-[#8FA5B7]"
+              >
+                Customer account
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <button
+          type="button"
+          class="mt-3 w-full rounded-full border border-white/10 px-5 py-3 text-sm text-[#C6D4DE] hover:bg-white/10"
+          (click)="logout()"
+        >
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+
+    <div class="min-w-0">
+      <header
+        class="sticky top-0 z-30 border-b border-white/60 bg-[#EEF4ED]/85 backdrop-blur-xl"
+      >
+        <div
+          class="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-8 lg:px-10"
+        >
+          <div>
+            <p
+              class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7890A3]"
+            >
+              Customer Portal
+            </p>
+
+
+            <h1 class="mt-1 text-lg font-medium">
+              Vacation Properties
+            </h1>
+          </div>
+
+
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              class="customer-secondary-button"
+              [disabled]="
+                propertiesLoading() ||
+                propertyProcessing()
+              "
+              (click)="refreshProperties()"
+            >
+              Refresh
+            </button>
+
+
+            <button
+              type="button"
+              class="customer-primary-button"
+              (click)="openCreateProperty()"
+            >
+              Add property
+            </button>
+          </div>
+        </div>
+      </header>
+
+
+      <main class="px-8 py-10 lg:px-10">
+        <div class="mx-auto max-w-[1600px]">
+          @if (successMessage()) {
+            <div
+              class="mb-6 flex justify-between rounded-[20px] border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm text-emerald-700"
+            >
+              <span>{{ successMessage() }}</span>
+
+
+              <button
+                type="button"
+                (click)="clearSuccessMessage()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          @if (errorMessage()) {
+            <div
+              class="mb-6 flex justify-between rounded-[20px] border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700"
+            >
+              <span>{{ errorMessage() }}</span>
+
+
+              <button
+                type="button"
+                (click)="clearError()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          <section
+            class="rounded-[30px] bg-[#0B2545] px-10 py-10 text-white"
+          >
+            <div
+              class="flex items-end justify-between gap-10"
+            >
+              <div>
+                <span class="property-hero-badge">
+                  Property portfolio
+                </span>
+
+
+                <h2
+                  class="mt-6 text-5xl font-medium tracking-[-0.05em]"
+                >
+                  Your vacation properties.
+                </h2>
+
+
+                <p
+                  class="mt-5 max-w-2xl text-sm leading-7 text-[#B8C9D7]"
+                >
+                  Register and maintain accurate property
+                  information before generating insurance
+                  quotes.
+                </p>
+              </div>
+
+
+              <div class="property-total-card">
+                <span>Total properties</span>
+
+
+                <strong>
+                  {{ totalProperties() }}
+                </strong>
+              </div>
+            </div>
+          </section>
+
+
+          <section
+            class="mt-7 rounded-[26px] border border-[#D7E1E7] bg-white p-6"
+          >
+            <div
+              class="flex items-center justify-between gap-6"
+            >
+              <label
+                class="flex items-center gap-3 text-sm text-[#52697D]"
+              >
+                <input
+                  type="checkbox"
+                  [checked]="includeArchived()"
+                  (change)="toggleArchived($event)"
+                />
+
+
+                Include archived properties
+              </label>
+
+
+              <label
+                class="flex items-center gap-3 text-sm text-[#52697D]"
+              >
+                Rows
+
+
+                <select
+                  class="property-select"
+                  [value]="pageSize()"
+                  (change)="changePageSize($event)"
+                >
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+
+          <section
+            class="mt-6 overflow-hidden rounded-[28px] border border-[#D7E1E7] bg-white"
+          >
+            <div
+              class="flex items-center justify-between border-b border-[#E1E8ED] px-8 py-6"
+            >
+              <div>
+                <p class="property-eyebrow">
+                  Registered properties
+                </p>
+
+
+                <h2 class="mt-2 text-2xl font-medium">
+                  Properties
+                </h2>
+              </div>
+
+
+              <span class="property-count-badge">
+                {{ totalProperties() }} records
+              </span>
+            </div>
+
+
+            @if (propertiesLoading()) {
+              <div class="space-y-4 p-8">
+                @for (
+                  item of [1, 2, 3];
+                  track item
+                ) {
+                  <div
+                    class="h-28 animate-pulse rounded-[20px] bg-[#EDF1F3]"
+                  ></div>
+                }
+              </div>
+            } @else if (
+              propertyItems().length === 0
+            ) {
+              <div class="property-empty-state">
+                <h3>No properties found</h3>
+
+
+                <p>
+                  Add a vacation property to begin.
+                </p>
+
+
+                <button
+                  type="button"
+                  class="customer-primary-button mt-5"
+                  (click)="openCreateProperty()"
+                >
+                  Add property
+                </button>
+              </div>
+            } @else {
+              <div class="divide-y divide-[#E6ECEF]">
+                @for (
+                  property of propertyItems();
+                  track property.propertyId
+                ) {
+                  <button
+                    type="button"
+                    class="property-list-row"
+                    (click)="openProperty(property)"
+                  >
+                    <span class="property-list-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+
+                    <span class="min-w-0 flex-1 text-left">
+                      <span
+                        class="flex items-center gap-3"
+                      >
+                        <strong
+                          class="truncate text-sm"
+                        >
+                          {{ property.propertyName }}
+                        </strong>
+
+
+                        <span
+                          class="property-status"
+                          [class.archived]="
+                            property.isArchived
+                          "
+                        >
+                          {{
+                            property.isArchived
+                              ? 'Archived'
+                              : 'Active'
+                          }}
+                        </span>
+                      </span>
+
+
+                      <span
+                        class="mt-2 block text-xs text-[#748799]"
+                      >
+                        {{ property.addressLine1 }},
+                        {{ property.city }},
+                        {{ property.state }}
+                      </span>
+
+
+                      <span
+                        class="mt-2 block text-[10px] text-[#91A0AE]"
+                      >
+                        {{
+                          propertyTypeLabel(
+                            property.propertyType
+                          )
+                        }}
+                        ·
+                        {{ property.propertyAge }} years old
+                      </span>
+                    </span>
+
+
+                    <span class="text-right">
+                      <strong
+                        class="block text-sm"
+                      >
+                        {{
+                          formatCurrency(
+                            property.propertyValue
+                          )
+                        }}
+                      </strong>
+
+
+                      <span
+                        class="mt-2 block text-[10px] text-[#91A0AE]"
+                      >
+                        View details
+                      </span>
+                    </span>
+                  </button>
+                }
+              </div>
+
+
+              <div
+                class="flex items-center justify-between border-t border-[#E1E8ED] px-8 py-5"
+              >
+                <p class="text-xs text-[#748799]">
+                  Showing {{ pageStart() }} to
+                  {{ pageEnd() }} of
+                  {{ totalProperties() }}
+                </p>
+
+
+                <div class="flex items-center gap-3">
+                  <button
+                    type="button"
+                    class="property-pagination-button"
+                    [disabled]="
+                      !hasPreviousPage() ||
+                      propertiesLoading()
+                    "
+                    (click)="previousPage()"
+                  >
+                    Previous
+                  </button>
+
+
+                  <span class="text-xs text-[#748799]">
+                    Page {{ pageNumber() }} of
+                    {{ totalPages() || 1 }}
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="property-pagination-button"
+                    [disabled]="
+                      !hasNextPage() ||
+                      propertiesLoading()
+                    "
+                    (click)="nextPage()"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            }
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  @if (dialogMode()) {
+    <div
+      class="property-dialog-backdrop"
+      (click)="closeDialog()"
+    >
+      <section
+        class="property-dialog"
+        role="dialog"
+        aria-modal="true"
+        (click)="$event.stopPropagation()"
+      >
+        <header class="property-dialog-header">
+          <div>
+            <p class="property-eyebrow">
+              Vacation property
+            </p>
+
+
+            <h2>
+              @switch (dialogMode()) {
+                @case ('create') {
+                  Add property
+                }
+
+
+                @case ('edit') {
+                  Edit property
+                }
+
+
+                @case ('archive') {
+                  Archive property
+                }
+
+
+                @default {
+                  Property details
+                }
+              }
+            </h2>
+          </div>
+
+
+          <button
+            type="button"
+            class="property-dialog-close"
+            [disabled]="propertyProcessing()"
+            (click)="closeDialog()"
+          >
+            ×
+          </button>
+        </header>
+
+
+        <div class="property-dialog-content">
+          @if (propertyDetailsLoading()) {
+            <div class="property-loading-state">
+              Loading property details
+            </div>
+          } @else if (
+            dialogMode() === 'details' &&
+            selectedProperty();
+            as property
+          ) {
+            <section class="property-summary-card">
+              <div>
+                <span>
+                  {{
+                    propertyTypeLabel(
+                      property.propertyType
+                    )
+                  }}
+                </span>
+
+
+                <h3>
+                  {{ property.propertyName }}
+                </h3>
+
+
+                <p>
+                  {{ property.addressLine1 }},
+                  {{ property.city }},
+                  {{ property.state }},
+                  {{ property.country }}
+                </p>
+              </div>
+
+
+              <span
+                class="property-status"
+                [class.archived]="
+                  property.isArchived
+                "
+              >
+                {{
+                  property.isArchived
+                    ? 'Archived'
+                    : 'Active'
+                }}
+              </span>
+            </section>
+
+
+            <section class="property-details-grid">
+              <div>
+                <span>Property value</span>
+
+
+                <strong>
+                  {{
+                    formatCurrency(
+                      property.propertyValue
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Construction year</span>
+
+
+                <strong>
+                  {{ property.constructionYear }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Property age</span>
+
+
+                <strong>
+                  {{ property.propertyAge }} years
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Occupancy</span>
+
+
+                <strong>
+                  {{
+                    occupancyLabel(
+                      property.occupancyFrequency
+                    )
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Security system</span>
+
+
+                <strong>
+                  {{
+                    property.hasSecuritySystem
+                      ? 'Yes'
+                      : 'No'
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Previous Claims</span>
+
+
+                <strong>
+                  {{ property.previousClaimsCount }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Disaster exposure</span>
+
+
+                <strong>
+                  {{
+                    property.disasterExposure
+                      ? 'Yes'
+                      : 'No'
+                  }}
+                </strong>
+              </div>
+
+
+              <div>
+                <span>Created</span>
+
+
+                <strong>
+                  {{
+                    formatDate(
+                      property.createdAtUtc
+                    )
+                  }}
+                </strong>
+              </div>
+            </section>
+
+
+            @if (!property.isArchived) {
+              <div class="property-dialog-actions">
+                <button
+                  type="button"
+                  class="property-danger-button"
+                  (click)="openArchiveProperty()"
+                >
+                  Archive property
+                </button>
+
+
+                <button
+                  type="button"
+                  class="customer-primary-button"
+                  (click)="openEditProperty()"
+                >
+                  Edit property
+                </button>
+              </div>
+            }
+          } @else if (
+            dialogMode() === 'create' ||
+            dialogMode() === 'edit'
+          ) {
+            <form
+              [formGroup]="propertyForm"
+              (ngSubmit)="submitProperty()"
+            >
+              <div class="property-form-grid">
+                <label class="property-field">
+                  <span>Property name</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="propertyName"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                  <span>Property type</span>
+
+
+                  <select formControlName="propertyType">
+                    <option [ngValue]="PropertyType.House">
+                      House
+                    </option>
+
+
+                    <option [ngValue]="PropertyType.Villa">
+                      Villa
+                    </option>
+
+
+                    <option [ngValue]="PropertyType.Apartment">
+                      Apartment
+                    </option>
+
+
+                    <option [ngValue]="PropertyType.Cottage">
+                      Cottage
+                    </option>
+                  </select>
+                </label>
+
+
+                <label class="property-field property-field-wide">
+                  <span>Address line 1</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="addressLine1"
+                  />
+                </label>
+
+
+                <label class="property-field property-field-wide">
+                  <span>Address line 2</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="addressLine2"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                  <span>City</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="city"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                  <span>State</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="state"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                  <span>Postal code</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="postalCode"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                  <span>Country</span>
+
+
+                  <input
+                    type="text"
+                    formControlName="country"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                <span>Property value</span>
+
+
+                <input
+                    type="number"
+                    min="50000"
+                    max="100000000"
+                    step="0.01"
+                    formControlName="propertyValue"
+                />
+                @if (
+                propertyForm.controls.propertyValue.touched &&
+                propertyForm.controls.propertyValue.hasError('max')
+                ) {
+                <small class="field-error">
+                    Property value cannot exceed ₹10 crore.
+                </small>
+                }
+
+
+                @if (
+                propertyForm.controls.propertyValue.touched &&
+                propertyForm.controls.propertyValue.hasError('min')
+                ) {
+                <small class="field-error">
+                    Property value must be at least ₹50,000.
+                </small>
+                }                
+
+
+                </label>
+
+
+                <label class="property-field">
+                  <span>Construction year</span>
+
+
+                  <input
+                    type="number"
+                    min="1800"
+                    formControlName="constructionYear"
+                  />
+                </label>
+
+
+                <label class="property-field">
+                  <span>Occupancy frequency</span>
+
+
+                  <select
+                    formControlName="occupancyFrequency"
+                  >
+                    <option
+                      [ngValue]="OccupancyFrequency.High"
+                    >
+                      High
+                    </option>
+
+
+                    <option
+                      [ngValue]="OccupancyFrequency.Medium"
+                    >
+                      Medium
+                    </option>
+
+
+                    <option
+                      [ngValue]="OccupancyFrequency.Low"
+                    >
+                      Low
+                    </option>
+                  </select>
+                </label>
+
+
+                <label class="property-field">
+                  <span>Previous Claims count</span>
+
+
+                  <input
+                    type="number"
+                    min="0"
+                    formControlName="previousClaimsCount"
+                  />
+                </label>
+              </div>
+
+
+              <div class="property-checkbox-grid">
+                <label>
+                  <input
+                    type="checkbox"
+                    formControlName="hasSecuritySystem"
+                  />
+
+
+                  Security system installed
+                </label>
+
+
+                <label>
+                  <input
+                    type="checkbox"
+                    formControlName="disasterExposure"
+                  />
+
+
+                  Property has disaster exposure
+                </label>
+              </div>
+
+
+              <div class="property-dialog-actions">
+                <button
+                  type="button"
+                  class="customer-secondary-button"
+                  (click)="
+                    dialogMode() === 'edit'
+                      ? returnToDetails()
+                      : closeDialog()
+                  "
+                >
+                  Cancel
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="customer-primary-button"
+                  [disabled]="
+                    propertyForm.invalid ||
+                    propertyProcessing()
+                  "
+                >
+                  {{
+                    propertyProcessing()
+                      ? 'Saving'
+                      : dialogMode() === 'create'
+                        ? 'Create property'
+                        : 'Save changes'
+                  }}
+                </button>
+              </div>
+            </form>
+          } @else if (
+            dialogMode() === 'archive' &&
+            selectedProperty();
+            as property
+          ) {
+            <section class="property-archive-panel">
+              <h3>
+                Archive {{ property.propertyName }}?
+              </h3>
+
+
+              <p>
+                The property will remain available when
+                archived properties are included, but it cannot
+                be edited.
+              </p>
+
+
+              <div class="property-dialog-actions">
+                <button
+                  type="button"
+                  class="customer-secondary-button"
+                  (click)="returnToDetails()"
+                >
+                  Cancel
+                </button>
+
+
+                <button
+                  type="button"
+                  class="property-danger-button"
+                  [disabled]="propertyProcessing()"
+                  (click)="confirmArchive()"
+                >
+                  {{
+                    propertyProcessing()
+                      ? 'Archiving'
+                      : 'Confirm archive'
+                  }}
+                </button>
+              </div>
+            </section>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</div>
+
+
+
+

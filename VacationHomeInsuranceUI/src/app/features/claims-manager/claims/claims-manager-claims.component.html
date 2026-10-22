@@ -1,0 +1,623 @@
+<main class="claims-manager-page">
+	<header class="workspace-hero">
+		<div>
+			<p class="section-eyebrow">Claims workspace</p>
+			<h1>Assigned claims</h1>
+			<p class="hero-description">Search, review, and track claims assigned to your team.</p>
+		</div>
+		<a routerLink="/claims-manager/dashboard" class="hero-link">Back to overview</a>
+	</header>
+
+	@if (errorMessage() && !selectedClaim() && !detailsLoading()) {
+		<p role="alert" class="feedback feedback-error">{{ errorMessage() }}</p>
+	}
+	@if (successMessage() && !selectedClaim() && !detailsLoading()) {
+		<p role="status" class="feedback feedback-success">{{ successMessage() }}</p>
+	}
+	@if (validationMessage) {
+		<p role="alert" class="feedback feedback-error">{{ validationMessage }}</p>
+	}
+
+	<section class="search-panel" aria-label="Search assigned claims">
+		<div class="search-heading">
+			<div>
+				<p class="section-eyebrow">Find a claim</p>
+				<h2>Search your assignments</h2>
+			</div>
+			<p class="search-hint">Use a claim number to narrow the results.</p>
+		</div>
+		<form class="search-form" (ngSubmit)="search()">
+			<div class="search-controls">
+				<label class="filter-field">
+					<span>Claim number</span>
+					<input id="claim-number" name="claimNumber" [(ngModel)]="claimNumber" maxlength="100" autocomplete="off" placeholder="e.g. CLM-2026-001" />
+				</label>
+				<label class="filter-field">
+					<span>Status</span>
+					<select name="status" [(ngModel)]="statusFilter">
+						<option [ngValue]="null">All statuses</option>
+						@for (option of statusOptions; track option.value) {
+							<option [ngValue]="option.value">{{ option.label }}</option>
+						}
+					</select>
+				</label>
+				<label class="filter-field">
+					<span>Claim type</span>
+					<select name="claimType" [(ngModel)]="claimTypeFilter">
+						<option [ngValue]="null">All types</option>
+						@for (option of claimTypeOptions; track option.value) {
+							<option [ngValue]="option.value">{{ option.label }}</option>
+						}
+					</select>
+				</label>
+				<label class="filter-field">
+					<span>Customer ID</span>
+					<input name="customerId" [(ngModel)]="customerIdFilter" autocomplete="off" placeholder="Customer GUID" />
+				</label>
+				<label class="filter-field">
+					<span>Submitted from</span>
+					<input name="fromDate" type="date" [(ngModel)]="fromDateFilter" />
+				</label>
+				<label class="filter-field">
+					<span>Submitted to</span>
+					<input name="toDate" type="date" [(ngModel)]="toDateFilter" />
+				</label>
+				<div class="filter-actions">
+					<button type="submit" class="primary-button">
+						<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8" />
+							<path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+						</svg>
+						Apply filters
+					</button>
+					<button type="button" (click)="clearSearch()" class="secondary-button">Clear</button>
+				</div>
+			</div>
+		</form>
+	</section>
+
+	@if (loading()) {
+		<section class="content-panel loading-panel" aria-busy="true">
+			<span class="loading-bar"></span>
+			<span class="loading-bar"></span>
+			<span class="loading-bar"></span>
+			<p class="sr-only" aria-live="polite">Loading assigned claims...</p>
+		</section>
+	} @else if (claims().length) {
+		<section class="content-panel results-panel" aria-labelledby="assigned-results-title">
+			<div class="panel-heading">
+				<div>
+					<p class="section-eyebrow">Work queue</p>
+					<h2 id="assigned-results-title">Assigned claims</h2>
+				</div>
+				<span class="result-count">{{ claims().length }} shown</span>
+			</div>
+			<div class="table-scroll">
+				<table class="claims-table">
+					<thead>
+						<tr>
+							<th scope="col">Claim</th>
+							<th scope="col">Status</th>
+							<th scope="col">Incident date</th>
+							<th scope="col" class="amount-cell">Claimed</th>
+							<th scope="col" class="action-cell" aria-label="Actions"></th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (claim of claims(); track claim.id) {
+							<tr>
+								<td>
+									<strong class="claim-number">{{ claim.claimNumber }}</strong>
+									<span class="claim-secondary">{{ claim.title }}</span>
+									<span class="claim-tertiary">
+										@if (claim.policyNumber) {
+											Policy {{ claim.policyNumber }}
+										} @else {
+											Policy details unavailable
+										}
+									</span>
+								</td>
+								<td><span class="status-badge" [ngClass]="statusClass(claim.status)">{{ statusName(claim.status) }}</span></td>
+								<td>{{ claim.incidentDate | date:'mediumDate' }}</td>
+								<td class="amount-cell">{{ formatCurrency(claim.claimedAmount) }}</td>
+								<td class="action-cell"><button type="button" class="details-button" (click)="openClaim(claim.id)">Details <span aria-hidden="true">→</span></button></td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+			<nav class="pagination" aria-label="Claim pages">
+				<button type="button" [disabled]="!hasPreviousPage()" (click)="previousPage()" class="page-button">
+					<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m12.5 4-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+					Previous
+				</button>
+				<span class="page-count">Page <strong>{{ pageNumber() }}</strong> of <strong>{{ totalPages() }}</strong></span>
+				<button type="button" [disabled]="!hasNextPage()" (click)="nextPage()" class="page-button">
+					Next
+					<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7.5 4 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg>
+				</button>
+			</nav>
+		</section>
+	} @else {
+		<section class="content-panel empty-state">
+			<span class="empty-icon" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none">
+					<path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Zm1 5h8m-8 4h8m-8 4h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</span>
+			<strong>No assigned claims found</strong>
+			<p>There are no claims matching your search. Try another claim number or clear the search.</p>
+			<button type="button" (click)="clearSearch()" class="secondary-button">Clear search</button>
+		</section>
+	}
+
+	@if (detailsLoading() || selectedClaim()) {
+		<div class="dialog-backdrop" (click)="closeClaimDetails()">
+			<section
+				class="claim-dialog"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="claim-dialog-title"
+				(click)="$event.stopPropagation()"
+			>
+				<header class="dialog-header">
+					<div>
+						<p class="section-eyebrow">Assigned claim review</p>
+						<h2 id="claim-dialog-title">
+							{{ selectedClaim()?.claimNumber ?? 'Loading claim' }}
+						</h2>
+					</div>
+					<button
+						type="button"
+						class="dialog-close-button"
+						[disabled]="detailsLoading() || workflowProcessing()"
+						aria-label="Close claim details"
+						(click)="closeClaimDetails()"
+					>×</button>
+				</header>
+
+				<div class="dialog-content">
+					@if (errorMessage()) {
+						<p role="alert" class="feedback feedback-error">{{ errorMessage() }}</p>
+					}
+					@if (successMessage()) {
+						<p role="status" class="feedback feedback-success">{{ successMessage() }}</p>
+					}
+					@if (detailsLoading()) {
+						<div class="dialog-loading" aria-live="polite" aria-busy="true">
+							<span class="loading-spinner"></span>
+							<p>Loading claim details...</p>
+						</div>
+					} @else if (selectedClaim(); as claim) {
+						<section class="claim-hero-card">
+							<div>
+								<span class="detail-label">Claim number</span>
+								<h3>{{ claim.claimNumber }}</h3>
+								<p>
+									{{ claim.title }}
+									@if (claim.policy?.policyNumber) {
+										· Policy {{ claim.policy?.policyNumber }}
+									}
+								</p>
+							</div>
+							<span class="status-badge" [ngClass]="statusClass(claim.status)">
+								{{ statusName(claim.status) }}
+							</span>
+						</section>
+
+						<div class="related-details-grid">
+							<section class="related-details-card">
+								<h3>Customer</h3>
+								@if (claim.customer; as customer) {
+									<dl class="related-details-list">
+										<div>
+											<dt>Name</dt>
+											<dd>{{ customer.firstName }} {{ customer.lastName }}</dd>
+										</div>
+										<div>
+											<dt>Email</dt>
+											<dd>{{ customer.email || 'Not available' }}</dd>
+										</div>
+										<div>
+											<dt>Phone</dt>
+											<dd>{{ customer.phoneNumber || 'Not available' }}</dd>
+										</div>
+									</dl>
+								} @else {
+									<p class="muted-copy">Customer details are not available.</p>
+								}
+							</section>
+
+							<section class="related-details-card">
+								<h3>Property</h3>
+								@if (claim.property; as property) {
+									<dl class="related-details-list">
+										<div>
+											<dt>Name</dt>
+											<dd>{{ property.name || 'Not available' }}</dd>
+										</div>
+										<div>
+											<dt>Property type</dt>
+											<dd>{{ property.type || 'Not available' }}</dd>
+										</div>
+										<div class="related-details-wide">
+											<dt>Address</dt>
+											<dd>
+												{{ property.addressLine1 }}
+												@if (property.addressLine2) {, {{ property.addressLine2 }}}
+												@if (property.city) {, {{ property.city }}}
+												@if (property.state) {, {{ property.state }}}
+												@if (property.postalCode) { {{ property.postalCode }}}
+												@if (property.country) {, {{ property.country }}}
+											</dd>
+										</div>
+										<div>
+											<dt>Property value</dt>
+											<dd>{{ property.propertyValue > 0 ? formatCurrency(property.propertyValue) : 'Not recorded' }}</dd>
+										</div>
+										<div>
+											<dt>Construction year</dt>
+											<dd>{{ property.constructionYear > 0 ? property.constructionYear : 'Not recorded' }}</dd>
+										</div>
+										<div>
+											<dt>Occupancy</dt>
+											<dd>{{ property.occupancyFrequency || 'Not recorded' }}</dd>
+										</div>
+										<div>
+											<dt>Security system</dt>
+											<dd>{{ property.hasSecuritySystem ? 'Present' : 'Not reported' }}</dd>
+										</div>
+									</dl>
+								} @else {
+									<p class="muted-copy">Property details are not available.</p>
+								}
+							</section>
+
+							<section class="related-details-card related-details-policy">
+								<h3>Policy</h3>
+								@if (claim.policy; as policy) {
+									<dl class="related-details-list">
+										<div>
+											<dt>Policy number</dt>
+											<dd>{{ policy.policyNumber || 'Not available' }}</dd>
+										</div>
+										<div>
+											<dt>Plan</dt>
+											<dd>{{ policy.productName || 'Not available' }}</dd>
+										</div>
+										<div>
+											<dt>Status</dt>
+											<dd><span class="policy-status">{{ policy.status }}</span></dd>
+										</div>
+										<div>
+											<dt>Coverage period</dt>
+											<dd>{{ policy.effectiveDateUtc | date:'mediumDate' }} – {{ policy.expiryDateUtc | date:'mediumDate' }}</dd>
+										</div>
+										<div>
+											<dt>Annual premium</dt>
+											<dd>{{ policy.annualPremium >= 0 ? formatCurrency(policy.annualPremium) : 'Not recorded' }}</dd>
+										</div>
+									</dl>
+									<div class="policy-coverages">
+										<h4>Coverage schedule</h4>
+										@if (policy.coverages.length) {
+											<ul class="coverage-list">
+												@for (coverage of policy.coverages; track coverage.coverageId) {
+													<li>
+														<span>{{ coverage.coverageName }}</span>
+														<strong>
+															@if (coverage.coverageLimitAmount > 0) {
+																{{ formatCurrency(coverage.coverageLimitAmount) }}
+															} @else {
+																{{ coverage.coverageLimitPercentage | number:'1.0-2' }}% of property value
+															}
+														</strong>
+													</li>
+												}
+											</ul>
+										} @else {
+											<p class="muted-copy">No coverage details are available.</p>
+										}
+									</div>
+								} @else {
+									<p class="muted-copy">Policy details are not available.</p>
+								}
+							</section>
+						</div>
+
+						<div class="detail-subsection">
+							<div class="subsection-heading">
+								<h3>Policy documents</h3>
+								<span class="subsection-count">{{ claim.policy?.documents?.length ?? 0 }}</span>
+							</div>
+							@if (claim.policy?.documents?.length) {
+								<ul class="document-list">
+									@for (policyDocument of claim.policy?.documents ?? []; track policyDocument.id) {
+										<li>
+											<div>
+												<strong>Policy {{ claim.policy?.policyNumber }} · Version {{ policyDocument.version }}</strong>
+												<span>
+													{{ policyDocument.status }} ·
+													{{ policyDocument.fileSizeBytes / 1024 | number:'1.0-0' }} KB ·
+													{{ (policyDocument.generatedAtUtc || policyDocument.createdAtUtc) | date:'mediumDate' }}
+												</span>
+											</div>
+											<div class="document-actions">
+												<button
+													type="button"
+													class="details-button"
+													[disabled]="!isPolicyDocumentAvailable(policyDocument) || downloadingDocument() !== null"
+													(click)="viewPolicyDocument(claim, policyDocument)"
+												>View</button>
+												<button
+													type="button"
+													class="details-button"
+													[disabled]="!isPolicyDocumentAvailable(policyDocument) || downloadingDocument() !== null"
+													(click)="downloadPolicyDocument(claim, policyDocument)"
+												>
+													{{ downloadingDocument() === policyDocument.id ? 'Opening…' : 'Download' }}
+												</button>
+											</div>
+										</li>
+									}
+								</ul>
+							} @else {
+								<p class="muted-copy">No policy documents are available for this policy.</p>
+							}
+						</div>
+
+						<section class="details-section">
+							<div class="details-grid">
+								<div class="detail-item">
+									<span>Claim type</span>
+									<strong>{{ claimTypeName(claim.type) }}</strong>
+								</div>
+								<div class="detail-item">
+									<span>Incident date</span>
+									<strong>{{ claim.incidentDate | date:'mediumDate' }}</strong>
+								</div>
+								<div class="detail-item">
+									<span>Submitted</span>
+									<strong>{{ claim.submittedAtUtc | date:'medium' }}</strong>
+								</div>
+								<div class="detail-item">
+									<span>Claimed amount</span>
+									<strong>{{ formatCurrency(claim.claimedAmount) }}</strong>
+								</div>
+								<div class="detail-item">
+									<span>Approved amount</span>
+									<strong>
+										{{ claim.approvedAmount === null ? '—' : formatCurrency(claim.approvedAmount) }}
+									</strong>
+								</div>
+							</div>
+							<div class="description-card">
+								<span>Description</span>
+								<p>{{ claim.description }}</p>
+							</div>
+							@if (claim.rejectionReason) {
+								<div class="rejection-card">
+									<span>Rejection reason</span>
+									<p>{{ claim.rejectionReason }}</p>
+								</div>
+							}
+						</section>
+
+						<div class="detail-subsection">
+							<h3>Claim timeline</h3>
+							<app-claim-timeline [entries]="claim.timeline" />
+						</div>
+
+						<div class="detail-subsection">
+							<div class="subsection-heading">
+								<h3>Documents</h3>
+								<span class="subsection-count">{{ claim.documents.length }}</span>
+							</div>
+							@if (claim.documents.length) {
+								<ul class="document-list">
+									@for (claimDocument of claim.documents; track claimDocument.id) {
+										<li>
+											<div>
+												<strong>{{ claimDocument.fileName }}</strong>
+												<span>
+													{{ documentTypeName(claimDocument.documentType) }} ·
+													{{ claimDocument.fileSizeBytes / 1024 | number:'1.0-0' }} KB ·
+													{{ claimDocument.uploadedAtUtc | date:'mediumDate' }}
+												</span>
+											</div>
+											<div class="document-actions">
+												<button
+													type="button"
+													class="details-button"
+													[disabled]="downloadingDocument() !== null"
+													(click)="viewDocument(claim.id, claimDocument)"
+												>View</button>
+												<button
+													type="button"
+													class="details-button"
+													[disabled]="downloadingDocument() !== null"
+													(click)="downloadDocument(claim.id, claimDocument)"
+												>
+													{{ downloadingDocument() === claimDocument.id ? 'Opening…' : 'Download' }}
+												</button>
+											</div>
+										</li>
+									}
+								</ul>
+							} @else {
+								<p class="muted-copy">No documents are attached to this claim.</p>
+							}
+						</div>
+
+						@if (claim.coverages.length) {
+							<div class="detail-subsection">
+								<h3>Selected coverages</h3>
+								<ul class="coverage-list">
+									@for (coverage of claim.coverages; track coverage.id) {
+										<li>
+											<span>{{ coverage.coverageName }}</span>
+											<strong>{{ formatCurrency(coverage.requestedAmount) }}</strong>
+										</li>
+									}
+								</ul>
+							</div>
+						}
+
+						<div class="detail-subsection">
+							<h3>Assignment history</h3>
+							@if (claim.assignmentHistory.length) {
+								<ol class="assignment-list">
+									@for (assignment of claim.assignmentHistory; track assignment.id) {
+										<li>
+											<strong>{{ assignment.claimsManagerName }}</strong>
+											<span>
+												{{ assignment.claimsManagerEmail }} ·
+												{{ assignment.assignedAtUtc | date:'medium' }}
+											</span>
+											<span>Assigned by {{ assignment.assignedBy }}</span>
+											@if (assignment.reason) {
+												<p>{{ assignment.reason }}</p>
+											}
+										</li>
+									}
+								</ol>
+							} @else {
+								<p class="muted-copy">No assignment history is available.</p>
+							}
+						</div>
+
+						<div class="detail-subsection workflow-section">
+							<div class="subsection-heading">
+								<div>
+									<p class="section-eyebrow">Claim decision</p>
+									<h3>Available actions</h3>
+								</div>
+								@if (workflowProcessing()) {
+									<span class="processing-label">{{ processingAction() }}…</span>
+								}
+							</div>
+							@if (actionValidationMessage) {
+								<p role="alert" class="feedback feedback-error">{{ actionValidationMessage }}</p>
+							}
+							@if (canStartReview(claim.status)) {
+								<div class="workflow-card">
+									<p>Start or resume assessment of this claim.</p>
+									<button
+										type="button"
+										class="primary-button"
+										[disabled]="workflowProcessing()"
+										(click)="startReview(claim.id, claim.rowVersion)"
+									>
+										{{ workflowProcessing() ? 'Starting review…' : 'Start review' }}
+									</button>
+								</div>
+							}
+							@if (canDecide(claim.status)) {
+								<div class="workflow-grid">
+									<form class="workflow-card" (ngSubmit)="requestInformation(claim.id, claim.rowVersion)">
+										<h4>Request information</h4>
+										<label class="filter-field">
+											<span>Message for customer</span>
+											<textarea
+												name="informationMessage"
+												[(ngModel)]="informationMessage"
+												required
+												maxlength="2000"
+												rows="4"
+												placeholder="Describe the information needed"
+											></textarea>
+										</label>
+										<button type="submit" class="secondary-button" [disabled]="workflowProcessing()">
+											Request information
+										</button>
+									</form>
+									<form class="workflow-card" (ngSubmit)="approve(claim.id, claim.rowVersion, claim.coverages)">
+										<h4>Approve claim</h4>
+										<div class="approval-list">
+											@for (coverage of claim.coverages; track coverage.id) {
+												<label class="approval-row">
+													<span>
+														{{ coverage.coverageName }}
+														<small>
+															Requested {{ formatCurrency(coverage.requestedAmount) }} ·
+															limit {{ formatCurrency(coverage.coverageLimitAmount) }}
+														</small>
+													</span>
+													<input
+														type="number"
+														min="0"
+														step="0.01"
+														[max]="coverage.requestedAmount"
+														[name]="'approved-' + coverage.id"
+														[ngModel]="approvalAmount(coverage.id, coverage.requestedAmount)"
+														(ngModelChange)="setApprovalAmount(coverage.id, $event)"
+													/>
+												</label>
+											}
+										</div>
+										<label class="filter-field">
+											<span>Approval notes (optional)</span>
+											<textarea name="approvalNotes" [(ngModel)]="approvalNotes" maxlength="2000" rows="3"></textarea>
+										</label>
+										<button type="submit" class="primary-button" [disabled]="workflowProcessing()">
+											Approve allocated amounts
+										</button>
+									</form>
+									<form class="workflow-card" (ngSubmit)="reject(claim.id, claim.rowVersion)">
+										<h4>Reject claim</h4>
+										<label class="filter-field">
+											<span>Reason (20–2,000 characters)</span>
+											<textarea
+												name="rejectionReason"
+												[(ngModel)]="rejectionReason"
+												required
+												minlength="20"
+												maxlength="2000"
+												rows="4"
+											></textarea>
+										</label>
+										<label class="filter-field">
+											<span>Internal notes (optional)</span>
+											<textarea name="rejectionNotes" [(ngModel)]="rejectionNotes" maxlength="2000" rows="2"></textarea>
+										</label>
+										<button type="submit" class="danger-button" [disabled]="workflowProcessing()">
+											Reject claim
+										</button>
+									</form>
+								</div>
+							}
+							@if (canMarkPaid(claim.status)) {
+								<form class="workflow-card compact-workflow-card" (ngSubmit)="markPaid(claim.id, claim.rowVersion)">
+									<h4>Record payment</h4>
+									<p>Approved total: <strong>{{ formatCurrency(claim.approvedAmount ?? 0) }}</strong></p>
+									<label class="filter-field">
+										<span>Payment reference</span>
+										<input name="paymentReference" [(ngModel)]="paymentReference" required maxlength="100" />
+									</label>
+									<button type="submit" class="primary-button" [disabled]="workflowProcessing()">Mark as paid</button>
+								</form>
+							}
+							@if (canClose(claim.status)) {
+								<div class="workflow-card compact-workflow-card">
+									<p>
+										{{ claim.status === ClaimStatus.Rejected ? 'Close this rejected claim file.' : 'Close this paid claim file.' }}
+									</p>
+									<button
+										type="button"
+										class="secondary-button"
+										[disabled]="workflowProcessing()"
+										(click)="closeClaim(claim.id, claim.rowVersion)"
+									>Close claim</button>
+								</div>
+							}
+							@if (!canStartReview(claim.status) && !canDecide(claim.status) && !canMarkPaid(claim.status) && !canClose(claim.status)) {
+								<p class="muted-copy">No workflow actions are available for the current status.</p>
+							}
+						</div>
+					}
+				</div>
+			</section>
+
+		</div>
+	}
+</main>

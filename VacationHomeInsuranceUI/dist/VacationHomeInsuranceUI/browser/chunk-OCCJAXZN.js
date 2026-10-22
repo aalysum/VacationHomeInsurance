@@ -1,0 +1,1 @@
+var g=(i=>(i[i.High=1]="High",i[i.Medium=2]="Medium",i[i.Low=3]="Low",i))(g||{});var l=(m=>(m[m.House=1]="House",m[m.Villa=2]="Villa",m[m.Apartment=3]="Apartment",m[m.Cottage=4]="Cottage",m))(l||{});export{g as a,l as b};

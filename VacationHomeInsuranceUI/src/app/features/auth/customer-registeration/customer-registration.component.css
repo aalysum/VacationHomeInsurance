@@ -1,0 +1,164 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+
+.auth-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #39536d;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+
+.auth-input {
+  width: 100%;
+  min-height: 3.5rem;
+  border: 1px solid #c8d5de;
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 78%);
+  padding: 0.875rem 1rem;
+  color: #0b2545;
+  font-size: 0.875rem;
+  outline: none;
+  box-shadow: 0 8px 30px rgb(19 49 92 / 4%);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+
+.auth-input::placeholder {
+  color: #9aa9b5;
+}
+
+
+.auth-input:hover {
+  border-color: #9fb2c1;
+  background: white;
+}
+
+
+.auth-input:focus {
+  border-color: #526f8d;
+  background: white;
+  box-shadow:
+    0 0 0 4px rgb(141 169 196 / 18%),
+    0 12px 35px rgb(19 49 92 / 7%);
+}
+
+
+.auth-input-error {
+  border-color: #e99595;
+}
+
+
+.auth-input-error:focus {
+  border-color: #dc6b6b;
+  box-shadow:
+    0 0 0 4px rgb(239 68 68 / 10%);
+}
+
+
+.field-error {
+  margin-top: 0.5rem;
+  color: #c94c4c;
+  font-size: 0.6875rem;
+  line-height: 1.45;
+}
+
+
+.visibility-button {
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  color: #6e8294;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+
+.visibility-button:hover {
+  color: #0b2545;
+}
+
+
+.password-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #899aa8;
+  font-size: 0.6875rem;
+}
+
+
+.password-rule span {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: 9999px;
+  background: #cad4db;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+.password-rule-valid {
+  color: #25745b;
+}
+
+
+.password-rule-valid span {
+  background: #10b981;
+  box-shadow:
+    0 0 0 4px rgb(16 185 129 / 10%);
+}
+
+
+.step-icon {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 8%);
+  color: #c7d6e1;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+
+.button-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgb(255 255 255 / 35%);
+  border-top-color: white;
+  border-radius: 9999px;
+  animation: spin 700ms linear infinite;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .button-spinner {
+    animation-duration: 1.4s;
+  }
+}

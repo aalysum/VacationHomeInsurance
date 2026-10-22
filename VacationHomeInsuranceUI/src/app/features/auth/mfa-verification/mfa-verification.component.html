@@ -1,0 +1,388 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div class="grid min-h-screen lg:grid-cols-[0.92fr_1.08fr]">
+
+
+    <!-- Brand panel -->
+    <aside
+      class="relative hidden overflow-hidden bg-[#0B2545] p-12 text-white lg:flex lg:flex-col lg:justify-between xl:p-16"
+    >
+      <div
+        class="pointer-events-none absolute -left-48 -top-48 h-[560px] w-[560px] rounded-full bg-[#8DA9C4]/20 blur-[90px]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute -bottom-56 -right-40 h-[560px] w-[560px] rounded-full bg-white/10 blur-[100px]"
+      ></div>
+
+
+      <a
+        routerLink="/"
+        class="relative z-10 inline-flex items-center gap-3"
+        aria-label="SecureSphere home"
+      >
+        <span
+          class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+        >
+          <svg
+            class="h-7 w-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+
+
+            <path
+              d="M8.8 12L11 14.2L15.5 9.7"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+
+        <span>
+          <span class="block text-base font-semibold">
+            SecureSphere
+          </span>
+
+
+          <span
+            class="mt-1 block text-[10px] uppercase tracking-[0.22em] text-[#AFC1D1]"
+          >
+            Insurance
+          </span>
+        </span>
+      </a>
+
+
+      <div class="relative z-10 max-w-xl">
+        <span
+          class="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#D5E1E9]"
+        >
+          Multi-factor authentication
+        </span>
+
+
+        <h1
+          class="mt-8 text-5xl font-medium leading-[1.02] tracking-[-0.055em] xl:text-6xl"
+        >
+          One more step to protect your account.
+        </h1>
+
+
+        <p
+          class="mt-6 max-w-lg text-sm leading-7 text-[#B7C7D4] xl:text-base"
+        >
+          Enter the six-digit code from your authenticator
+          application. Your account remains unauthenticated
+          until verification succeeds.
+        </p>
+
+
+        <div class="mt-12 border-t border-white/10 pt-8">
+          <div class="flex items-start gap-4">
+            <span
+              class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/10"
+            >
+              <svg
+                class="h-6 w-6 text-[#C8D7E2]"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="7"
+                  y="3"
+                  width="10"
+                  height="18"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+
+
+                <path
+                  d="M10 7H14M11 17H13"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+
+            <div>
+              <p class="text-sm font-medium">
+                Authenticator verification
+              </p>
+
+
+              <p class="mt-2 text-xs leading-6 text-[#91A7B9]">
+                Open your authenticator application and enter
+                the current six-digit code before it expires.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <p class="relative z-10 text-xs text-[#8199AD]">
+        Protection · Trust · Clarity
+      </p>
+    </aside>
+
+
+    <!-- Verification panel -->
+    <main
+      class="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-10 sm:px-8 lg:px-12"
+    >
+      <div
+        class="pointer-events-none absolute -right-48 -top-48 h-[480px] w-[480px] rounded-full bg-white/85 blur-[100px]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute -bottom-48 -left-48 h-[440px] w-[440px] rounded-full bg-[#8DA9C4]/20 blur-[100px]"
+      ></div>
+
+
+      <div class="relative z-10 w-full max-w-[520px]">
+
+
+        <a
+          routerLink="/"
+          class="mb-12 inline-flex items-center gap-3 lg:hidden"
+        >
+          <span
+            class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0B2545] text-white"
+          >
+            S
+          </span>
+
+
+          <span class="font-semibold">
+            SecureSphere
+          </span>
+        </a>
+
+
+        @if (challengeExpired()) {
+          <section
+            class="rounded-[32px] border border-white/80 bg-white/80 p-8 text-center shadow-[0_30px_90px_rgba(19,49,92,0.1)] backdrop-blur-xl sm:p-12"
+          >
+            <span
+              class="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-amber-50 text-amber-700"
+            >
+              <svg
+                class="h-9 w-9"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 7V12L15.5 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+
+            <p
+              class="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7890A3]"
+            >
+              Challenge expired
+            </p>
+
+
+            <h1
+              class="mt-5 text-4xl font-medium tracking-[-0.05em] text-[#0B2545]"
+            >
+              Sign in again.
+            </h1>
+
+
+            <p
+              class="mx-auto mt-5 max-w-md text-sm leading-7 text-[#6B7F92]"
+            >
+              {{
+                errorMessage() ??
+                'Your MFA challenge is no longer valid.'
+              }}
+            </p>
+
+
+            <button
+              type="button"
+              class="mt-9 inline-flex rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white"
+              (click)="returnToLogin()"
+            >
+              Return to login
+            </button>
+          </section>
+        } @else {
+          <section>
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7890A3]"
+            >
+              Identity verification
+            </p>
+
+
+            <h1
+              class="mt-5 text-4xl font-medium leading-tight tracking-[-0.05em] text-[#0B2545] sm:text-5xl"
+            >
+              Enter your security code.
+            </h1>
+
+
+            <p class="mt-5 text-sm leading-7 text-[#6B7F92]">
+              Enter the current six-digit code from your
+              authenticator application.
+            </p>
+
+
+            @if (errorMessage()) {
+              <div
+                class="mt-8 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-700"
+                role="alert"
+              >
+                <svg
+                  class="mt-0.5 h-5 w-5 shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3L3 20H21L12 3Z"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linejoin="round"
+                  />
+
+
+                  <path
+                    d="M12 9V14M12 17.5V17.6"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+
+                <span>{{ errorMessage() }}</span>
+              </div>
+            }
+
+
+            <form
+              class="mt-9"
+              [formGroup]="mfaForm"
+              (ngSubmit)="submit()"
+              novalidate
+            >
+              <label
+                for="mfaCode"
+                class="auth-label"
+              >
+                Authenticator code
+              </label>
+
+
+              <input
+                #codeInput
+                id="mfaCode"
+                type="text"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                maxlength="6"
+                formControlName="code"
+                placeholder="000000"
+                class="code-input"
+                [class.code-input-error]="
+                  codeControl.invalid &&
+                  codeControl.touched
+                "
+              />
+
+
+              @if (
+                codeControl.hasError('required') &&
+                codeControl.touched
+              ) {
+                <p class="field-error text-center">
+                  Authenticator code is required.
+                </p>
+              } @else if (
+                codeControl.hasError('pattern') &&
+                codeControl.touched
+              ) {
+                <p class="field-error text-center">
+                  Authenticator code must contain six digits.
+                </p>
+              }
+
+
+              <button
+                type="submit"
+                class="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_18px_45px_rgba(11,37,69,0.2)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#13315C] disabled:cursor-not-allowed disabled:opacity-60"
+                [disabled]="loading()"
+              >
+                @if (loading()) {
+                  <span class="button-spinner"></span>
+                  Verifying securely...
+                } @else {
+                  Verify and continue
+
+
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 12H19M14 7L19 12L14 17"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                }
+              </button>
+            </form>
+
+
+            <div
+              class="mt-8 border-t border-[#CDD9E1] pt-6 text-center"
+            >
+              <button
+                type="button"
+                class="text-xs font-medium text-[#526F8D] transition hover:text-[#0B2545]"
+                (click)="cancel()"
+              >
+                Cancel and return to login
+              </button>
+            </div>
+          </section>
+        }
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+

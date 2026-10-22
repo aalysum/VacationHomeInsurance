@@ -1,0 +1,1241 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div
+    class="min-h-screen lg:grid lg:grid-cols-[290px_minmax(0,1fr)]"
+  >
+    <aside
+      class="hidden min-h-screen bg-[#0B2545] text-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col"
+    >
+      <div class="border-b border-white/10 px-7 py-7">
+        <a
+          routerLink="/customer/dashboard"
+          class="flex items-center gap-3"
+          aria-label="Go to Customer dashboard"
+        >
+          <span
+            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545] shadow-[0_14px_35px_rgba(0,0,0,0.18)]"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+
+
+              <path
+                d="M8.8 12L11 14.2L15.5 9.7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+
+          <span>
+            <span
+              class="block text-[15px] font-semibold tracking-[-0.02em]"
+            >
+              SecureSphere
+            </span>
+
+
+            <span
+              class="mt-1 block text-[9px] font-medium uppercase tracking-[0.22em] text-[#AFC1D1]"
+            >
+              Customer Portal
+            </span>
+          </span>
+        </a>
+      </div>
+
+
+      <nav
+        class="customer-scrollbar flex-1 overflow-y-auto px-4 py-6"
+        aria-label="Customer navigation"
+      >
+        <p
+          class="px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#708CA4]"
+        >
+          Workspace
+        </p>
+
+
+        <div class="mt-4 space-y-1.5">
+          @for (
+            item of navigationItems;
+            track item.label
+          ) {
+            @if (item.available) {
+              <a
+                [routerLink]="item.route"
+                class="customer-nav-item"
+                [class.customer-nav-item-active]="
+                  isCurrentNavigationItem(item)
+                "
+              >
+                <span class="customer-nav-icon">
+                  @switch (item.icon) {
+                    @case ('overview') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('properties') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('quotes') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('policies') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 3H19V21H5V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M8 8H16M8 12H16M8 16H13"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('claims') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4 6.2V11.5C4 15.8 6.8 19.6 12 21C17.2 19.6 20 15.8 20 11.5V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M8.5 12H15.5M12 8.5V15.5"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('profile') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="12"
+                          cy="8"
+                          r="4"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+
+
+                        <path
+                          d="M4.5 21C4.5 16.8 7.8 14 12 14C16.2 14 19.5 16.8 19.5 21"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('security') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                <span class="min-w-0 flex-1">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#8FA5B7]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+              </a>
+            } @else {
+              <button
+                type="button"
+                class="customer-nav-item customer-nav-item-disabled"
+                disabled
+              >
+                <span class="customer-nav-icon">
+                  @switch (item.icon) {
+                    @case ('quotes') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('policies') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 3H19V21H5V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M8 8H16M8 12H16M8 16H13"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('claims') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4 6.2V11.5C4 15.8 6.8 19.6 12 21C17.2 19.6 20 15.8 20 11.5V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                <span class="min-w-0 flex-1 text-left">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#708CA4]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+
+
+                <span class="customer-soon-badge">
+                  Soon
+                </span>
+              </button>
+            }
+          }
+        </div>
+      </nav>
+
+
+      <div class="border-t border-white/10 p-4">
+        <div
+          class="rounded-[22px] border border-white/10 bg-white/[0.06] p-4"
+        >
+          <p
+            class="text-[10px] font-semibold uppercase tracking-[0.17em] text-[#829BB0]"
+          >
+            Signed in as
+          </p>
+
+
+          <div class="mt-3 flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#8DA9C4]/20 text-sm font-semibold"
+            >
+              {{ initials() }}
+            </span>
+
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium">
+                {{ displayName() }}
+              </p>
+
+
+              <p
+                class="mt-0.5 truncate text-[10px] text-[#8FA5B7]"
+              >
+                Customer account
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <button
+          type="button"
+          class="mt-3 w-full rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-[#C6D4DE] transition hover:bg-white/10 hover:text-white"
+          (click)="logout()"
+        >
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+
+    <div class="min-w-0">
+      <header
+        class="sticky top-0 z-30 border-b border-white/60 bg-[#EEF4ED]/85 backdrop-blur-xl"
+      >
+        <div
+          class="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-8 lg:px-10"
+        >
+          <div>
+            <p
+              class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7890A3]"
+            >
+              Customer Portal
+            </p>
+
+
+            <h1
+              class="mt-1 text-lg font-medium tracking-[-0.025em]"
+            >
+              Overview
+            </h1>
+          </div>
+
+
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              class="rounded-full border border-[#C9D6DF] bg-white/70 px-5 py-3 text-xs font-medium text-[#13315C] disabled:cursor-not-allowed disabled:opacity-60"
+              [disabled]="loading()"
+              (click)="refreshDashboard()"
+            >
+              {{
+                loading()
+                  ? 'Refreshing'
+                  : 'Refresh data'
+              }}
+            </button>
+
+
+            <button
+              type="button"
+              class="rounded-full bg-[#0B2545] px-5 py-3 text-xs font-medium text-white"
+              (click)="addProperty()"
+            >
+              Add property
+            </button>
+          </div>
+        </div>
+      </header>
+
+
+      <main
+        class="relative overflow-hidden px-8 py-10 lg:px-10"
+      >
+        <div
+          class="pointer-events-none absolute -right-52 -top-32 h-[480px] w-[480px] rounded-full bg-white/75 blur-[100px]"
+        ></div>
+
+
+        <div
+          class="pointer-events-none absolute -bottom-52 -left-40 h-[440px] w-[440px] rounded-full bg-[#8DA9C4]/15 blur-[100px]"
+        ></div>
+
+
+        <div
+          class="relative mx-auto max-w-[1600px]"
+        >
+          @if (errorMessage()) {
+            <div
+              class="mb-7 flex items-start justify-between gap-4 rounded-[22px] border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700"
+              role="alert"
+            >
+              <div>
+                <p class="font-semibold">
+                  Dashboard request failed
+                </p>
+
+
+                <p class="mt-1">
+                  {{ errorMessage() }}
+                </p>
+              </div>
+
+
+              <button
+                type="button"
+                class="text-xs font-semibold"
+                (click)="clearError()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          <section
+            class="relative overflow-hidden rounded-[32px] bg-[#0B2545] px-10 py-11 text-white shadow-[0_28px_80px_rgba(11,37,69,0.2)] lg:px-12"
+          >
+            <div
+              class="absolute -right-24 -top-36 h-[420px] w-[420px] rounded-full bg-[#8DA9C4]/25 blur-[40px]"
+            ></div>
+
+
+            <div
+              class="relative flex items-end justify-between gap-10"
+            >
+              <div class="max-w-3xl">
+                <span
+                  class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#D7E3EC]"
+                >
+                  <span
+                    class="h-2 w-2 rounded-full bg-emerald-400"
+                  ></span>
+
+
+                  @if (activeProfile()) {
+                    Active customer account
+                  } @else {
+                    Customer account
+                  }
+                </span>
+
+
+                <h2
+                  class="mt-7 text-5xl font-medium leading-[1.04] tracking-[-0.055em]"
+                >
+                  Welcome, {{ displayName() }}.
+                </h2>
+
+
+                <p
+                  class="mt-6 max-w-2xl text-sm leading-7 text-[#B8C9D7]"
+                >
+                  Manage vacation properties and prepare for
+                  quotes, Policies, and Claim protection through
+                  one secure customer workspace.
+                </p>
+
+
+                <div class="mt-8 flex gap-3">
+                  <button
+                    type="button"
+                    class="rounded-full bg-white px-6 py-3.5 text-sm font-medium text-[#0B2545]"
+                    (click)="openProperties()"
+                  >
+                    View properties
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white"
+                    (click)="addProperty()"
+                  >
+                    Add vacation property
+                  </button>
+                </div>
+              </div>
+
+
+              <div
+                class="min-w-[260px] rounded-[26px] border border-white/10 bg-white/[0.07] p-6"
+              >
+                <p
+                  class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9CB0C0]"
+                >
+                  Profile location
+                </p>
+
+
+                <p class="mt-4 text-lg font-medium">
+                  {{ profileLocation() }}
+                </p>
+
+
+                <p
+                  class="mt-3 text-xs leading-6 text-[#AFC1D1]"
+                >
+                  Keep profile and property information current
+                  for accurate insurance quotes.
+                </p>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="mt-8">
+            <div class="grid grid-cols-4 gap-5">
+              <button
+                type="button"
+                class="customer-stat-card text-left"
+                (click)="openProperties()"
+              >
+                <span
+                  class="customer-stat-icon bg-[#E4EDF3] text-[#13315C]"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                @if (propertiesLoading()) {
+                  <span
+                    class="mt-7 block h-10 w-20 animate-pulse rounded-xl bg-[#E7EDF0]"
+                  ></span>
+                } @else {
+                  <strong>
+                    {{ totalProperties() }}
+                  </strong>
+                }
+
+
+                <span class="customer-stat-title">
+                  Active properties
+                </span>
+
+
+                <span class="customer-stat-description">
+                  Vacation properties registered with the
+                  customer account.
+                </span>
+              </button>
+
+
+              <article class="customer-stat-card">
+                <span
+                  class="customer-stat-icon bg-emerald-50 text-emerald-700"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 11V8C7 5.2 9.2 3 12 3C14.8 3 17 5.2 17 8V11M5 11H19V21H5V11Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                @if (propertiesLoading()) {
+                  <span
+                    class="mt-7 block h-10 w-20 animate-pulse rounded-xl bg-[#E7EDF0]"
+                  ></span>
+                } @else {
+                  <strong>
+                    {{ securedProperties() }}
+                  </strong>
+                }
+
+
+                <span class="customer-stat-title">
+                  Security systems
+                </span>
+
+
+                <span class="customer-stat-description">
+                  Loaded properties reporting an installed
+                  security system.
+                </span>
+              </article>
+
+
+              <article class="customer-stat-card">
+                <span
+                  class="customer-stat-icon bg-amber-50 text-amber-700"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3L3 20H21L12 3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+
+
+                    <path
+                      d="M12 9V14M12 17H12.01"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+
+
+                @if (propertiesLoading()) {
+                  <span
+                    class="mt-7 block h-10 w-20 animate-pulse rounded-xl bg-[#E7EDF0]"
+                  ></span>
+                } @else {
+                  <strong>
+                    {{ disasterExposedProperties() }}
+                  </strong>
+                }
+
+
+                <span class="customer-stat-title">
+                  Disaster exposure
+                </span>
+
+
+                <span class="customer-stat-description">
+                  Loaded properties marked with disaster
+                  exposure.
+                </span>
+              </article>
+
+
+              <article class="customer-stat-card">
+                <span
+                  class="customer-stat-icon bg-violet-50 text-violet-700"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3V21M16.5 7.5C16.5 5.8 14.7 5 12.5 5C10.3 5 8.5 6 8.5 7.8C8.5 9.6 10.1 10.3 12.6 10.9C15.1 11.5 16.5 12.3 16.5 14.2C16.5 16.1 14.7 17.1 12.2 17.1"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+
+
+                @if (propertiesLoading()) {
+                  <span
+                    class="mt-7 block h-10 w-32 animate-pulse rounded-xl bg-[#E7EDF0]"
+                  ></span>
+                } @else {
+                  <strong class="customer-stat-currency">
+                    {{
+                      formatCurrency(
+                        totalPropertyValue()
+                      )
+                    }}
+                  </strong>
+                }
+
+
+                <span class="customer-stat-title">
+                  Loaded property value
+                </span>
+
+
+                <span class="customer-stat-description">
+                  Combined value of properties loaded on this
+                  dashboard.
+                </span>
+              </article>
+            </div>
+          </section>
+
+
+          <section
+            class="mt-8 grid grid-cols-[1.2fr_0.8fr] gap-7"
+          >
+            <article
+              class="overflow-hidden rounded-[28px] border border-[#D7E1E7] bg-white shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+            >
+              <div
+                class="flex items-center justify-between border-b border-[#E1E8ED] px-8 py-6"
+              >
+                <div>
+                  <p class="customer-eyebrow">
+                    Property portfolio
+                  </p>
+
+
+                  <h2
+                    class="mt-2 text-2xl font-medium tracking-[-0.04em]"
+                  >
+                    Recent properties
+                  </h2>
+                </div>
+
+
+                <button
+                  type="button"
+                  class="text-sm font-medium text-[#526F8D]"
+                  (click)="openProperties()"
+                >
+                  View all
+                </button>
+              </div>
+
+
+              @if (propertiesLoading()) {
+                <div class="space-y-4 p-8">
+                  @for (
+                    item of [1, 2, 3];
+                    track item
+                  ) {
+                    <div
+                      class="h-24 animate-pulse rounded-[20px] bg-[#EDF1F3]"
+                    ></div>
+                  }
+                </div>
+              } @else if (
+                recentProperties().length === 0
+              ) {
+                <div
+                  class="flex min-h-[340px] flex-col items-center justify-center px-8 text-center"
+                >
+                  <span class="customer-empty-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+
+
+                  <h3 class="mt-5 text-lg font-medium">
+                    No vacation properties
+                  </h3>
+
+
+                  <p
+                    class="mt-2 max-w-sm text-sm leading-6 text-[#748799]"
+                  >
+                    Add a vacation property to begin the
+                    insurance quote journey.
+                  </p>
+
+
+                  <button
+                    type="button"
+                    class="customer-primary-button mt-6"
+                    (click)="addProperty()"
+                  >
+                    Add property
+                  </button>
+                </div>
+              } @else {
+                <div class="divide-y divide-[#E6ECEF]">
+                  @for (
+                    property of recentProperties();
+                    track property.propertyId
+                  ) {
+                    <button
+                      type="button"
+                      class="customer-property-row"
+                      (click)="openProperty(property)"
+                    >
+                      <span class="customer-property-icon">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+
+
+                      <span class="min-w-0 flex-1">
+                        <span
+                          class="flex items-center gap-3"
+                        >
+                          <strong
+                            class="truncate text-sm font-medium"
+                          >
+                            {{ property.propertyName }}
+                          </strong>
+
+
+                          <span
+                            class="customer-property-status"
+                            [class.archived]="
+                              property.isArchived
+                            "
+                          >
+                            {{
+                              propertyStatusLabel(
+                                property
+                              )
+                            }}
+                          </span>
+                        </span>
+
+
+                        <span
+                          class="mt-1 block truncate text-xs text-[#748799]"
+                        >
+                          {{ property.city }},
+                          {{ property.state }},
+                          {{ property.country }}
+                        </span>
+
+
+                        <span
+                          class="mt-2 block text-[10px] text-[#91A0AE]"
+                        >
+                          {{
+                            propertyTypeLabel(
+                              property.propertyType
+                            )
+                          }}
+                          ·
+                          {{
+                            occupancyLabel(
+                              property.occupancyFrequency
+                            )
+                          }}
+                        </span>
+                      </span>
+
+
+                      <span class="text-right">
+                        <strong
+                          class="block text-sm font-semibold"
+                        >
+                          {{
+                            formatCurrency(
+                              property.propertyValue
+                            )
+                          }}
+                        </strong>
+
+
+                        <span
+                          class="mt-1 block text-[10px] text-[#91A0AE]"
+                        >
+                          Added
+                          {{
+                            formatDate(
+                              property.createdAtUtc
+                            )
+                          }}
+                        </span>
+                      </span>
+                    </button>
+                  }
+                </div>
+              }
+            </article>
+
+
+            <div class="space-y-7">
+              <article
+                class="rounded-[28px] border border-[#D7E1E7] bg-white p-8 shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+              >
+                <p class="customer-eyebrow">
+                  Customer profile
+                </p>
+
+
+                <h2
+                  class="mt-2 text-2xl font-medium tracking-[-0.04em]"
+                >
+                  {{ displayName() }}
+                </h2>
+
+
+                <p
+                  class="mt-3 text-sm text-[#748799]"
+                >
+                  {{ profileLocation() }}
+                </p>
+
+
+                <div
+                  class="mt-6 rounded-[20px] border border-[#D7E1E7] bg-[#F9FBFA] p-5"
+                >
+                  <span
+                    class="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8293A2]"
+                  >
+                    Account status
+                  </span>
+
+
+                  <div
+                    class="mt-3 flex items-center justify-between"
+                  >
+                    <strong class="text-sm">
+                      Customer account
+                    </strong>
+
+
+                    <span
+                      class="customer-profile-status"
+                      [class.inactive]="
+                        !activeProfile()
+                      "
+                    >
+                      {{
+                        activeProfile()
+                          ? 'Active'
+                          : 'Inactive'
+                      }}
+                    </span>
+                  </div>
+                </div>
+
+
+                <button
+                  type="button"
+                  class="customer-secondary-button mt-6 w-full"
+                  (click)="openProfile()"
+                >
+                  View profile
+                </button>
+              </article>
+
+
+              <article
+                class="rounded-[28px] border border-[#C7D6DF] bg-gradient-to-br from-[#DCE8F1] to-white p-8"
+              >
+                <p class="customer-eyebrow">
+                  Next step
+                </p>
+
+
+                <h2
+                  class="mt-2 text-2xl font-medium tracking-[-0.04em]"
+                >
+                  Add a vacation property
+                </h2>
+
+
+                <p
+                  class="mt-4 text-sm leading-7 text-[#667B8E]"
+                >
+                  Property details are required before an
+                  insurance quote can be generated.
+                </p>
+
+
+                <button
+                  type="button"
+                  class="customer-primary-button mt-6"
+                  (click)="addProperty()"
+                >
+                  Add property
+                </button>
+              </article>
+            </div>
+          </section>
+
+
+          <section
+            class="mt-8 rounded-[28px] border border-[#D7E1E7] bg-white p-8 shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+          >
+            <p class="customer-eyebrow">
+              Quick access
+            </p>
+
+
+            <h2
+              class="mt-2 text-2xl font-medium tracking-[-0.04em]"
+            >
+              Customer tools
+            </h2>
+
+
+            <div class="mt-6 grid grid-cols-4 gap-4">
+              <button
+                type="button"
+                class="customer-quick-action"
+                (click)="openProperties()"
+              >
+                <span class="customer-quick-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span>
+                  <strong>Properties</strong>
+
+
+                  <small>
+                    Manage vacation properties
+                  </small>
+                </span>
+              </button>
+
+
+              <button
+                type="button"
+                class="customer-quick-action"
+                (click)="openProfile()"
+              >
+                <span class="customer-quick-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="12"
+                      cy="8"
+                      r="4"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    />
+
+
+                    <path
+                      d="M4.5 21C4.5 16.8 7.8 14 12 14C16.2 14 19.5 16.8 19.5 21"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span>
+                  <strong>Profile</strong>
+
+
+                  <small>
+                    Review customer information
+                  </small>
+                </span>
+              </button>
+
+
+              <button
+                type="button"
+                class="customer-quick-action"
+                (click)="openChangePassword()"
+              >
+                <span class="customer-quick-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 10V8C7 5.2 9.2 3 12 3C14.8 3 17 5.2 17 8V10M5 10H19V20H5V10Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span>
+                  <strong>Change password</strong>
+
+
+                  <small>
+                    Update account password
+                  </small>
+                </span>
+              </button>
+
+
+              <button
+                type="button"
+                class="customer-quick-action"
+                (click)="openMfaSettings()"
+              >
+                <span class="customer-quick-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span>
+                  <strong>MFA settings</strong>
+
+
+                  <small>
+                    Manage account security
+                  </small>
+                </span>
+              </button>
+            </div>
+          </section>
+
+
+          <footer
+            class="mt-10 flex items-center justify-between border-t border-[#D5E0E6] py-7 text-xs text-[#7C8F9F]"
+          >
+            <p>
+              SecureSphere Customer Portal
+            </p>
+
+
+            <p>
+              Properties · Quotes · Policies · Claims
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+
+
+

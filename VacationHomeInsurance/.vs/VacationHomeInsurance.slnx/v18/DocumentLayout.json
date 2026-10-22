@@ -1,0 +1,275 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E5E6290A-E3E6-42E5-946D-400569DF8920}|VacationHome.ProductQuote.Infrastructure\\VacationHome.ProductQuote.Infrastructure.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.productquote.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5E6290A-E3E6-42E5-946D-400569DF8920}|VacationHome.ProductQuote.Infrastructure\\VacationHome.ProductQuote.Infrastructure.csproj|solutionrelative:vacationhome.productquote.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7801DF-142D-487F-A02D-D50F476405CE}|VacationHome.ProductQuote.Domain\\VacationHome.ProductQuote.Domain.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.productquote.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E7801DF-142D-487F-A02D-D50F476405CE}|VacationHome.ProductQuote.Domain\\VacationHome.ProductQuote.Domain.csproj|solutionrelative:vacationhome.productquote.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77C4E7FA-CD39-4825-8F87-E7F5E714282B}|VacationHome.ProductQuote.Application\\VacationHome.ProductQuote.Application.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.productquote.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77C4E7FA-CD39-4825-8F87-E7F5E714282B}|VacationHome.ProductQuote.Application\\VacationHome.ProductQuote.Application.csproj|solutionrelative:vacationhome.productquote.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72D7F3C5-5B76-4C42-A2CF-7E598C42CACF}|VacationHome.PolicyService.Infrastructure\\VacationHome.PolicyService.Infrastructure.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.policyservice.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72D7F3C5-5B76-4C42-A2CF-7E598C42CACF}|VacationHome.PolicyService.Infrastructure\\VacationHome.PolicyService.Infrastructure.csproj|solutionrelative:vacationhome.policyservice.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99DECAC5-64A7-4EC7-B8B2-71CDD3F0EE3D}|VacationHome.PolicyService.Domain\\VacationHome.PolicyService.Domain.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.policyservice.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99DECAC5-64A7-4EC7-B8B2-71CDD3F0EE3D}|VacationHome.PolicyService.Domain\\VacationHome.PolicyService.Domain.csproj|solutionrelative:vacationhome.policyservice.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{749F2982-4A02-4C29-A404-10EFC82E3E21}|VacationHome.PolicyService.Application\\VacationHome.PolicyService.Application.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.policyservice.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{749F2982-4A02-4C29-A404-10EFC82E3E21}|VacationHome.PolicyService.Application\\VacationHome.PolicyService.Application.csproj|solutionrelative:vacationhome.policyservice.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AA7A13E-5ADA-4F57-A16B-F39B1BD82452}|VacationHome.Customer.Infrastructure\\VacationHome.Customer.Infrastructure.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.customer.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AA7A13E-5ADA-4F57-A16B-F39B1BD82452}|VacationHome.Customer.Infrastructure\\VacationHome.Customer.Infrastructure.csproj|solutionrelative:vacationhome.customer.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C2676E1-114D-47E6-823E-94B6A612D2DD}|VacationHome.Customer.Application\\VacationHome.Customer.Application.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.customer.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2676E1-114D-47E6-823E-94B6A612D2DD}|VacationHome.Customer.Application\\VacationHome.Customer.Application.csproj|solutionrelative:vacationhome.customer.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE88FAF2-8709-4A4A-841C-B9BAC975D20D}|VacationHome.Customer.Domain\\VacationHome.Customer.Domain.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.customer.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE88FAF2-8709-4A4A-841C-B9BAC975D20D}|VacationHome.Customer.Domain\\VacationHome.Customer.Domain.csproj|solutionrelative:vacationhome.customer.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{612AC7C1-7C36-4E41-A127-1AB69732D91A}|VacationHome.ClaimService.Infrastructure\\VacationHome.ClaimService.Infrastructure.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.claimservice.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{612AC7C1-7C36-4E41-A127-1AB69732D91A}|VacationHome.ClaimService.Infrastructure\\VacationHome.ClaimService.Infrastructure.csproj|solutionrelative:vacationhome.claimservice.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94BEF8D1-D12E-4F8F-A815-44ABBC5CCB3D}|VacationHome.ClaimService.Application\\VacationHome.ClaimService.Application.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.claimservice.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BEF8D1-D12E-4F8F-A815-44ABBC5CCB3D}|VacationHome.ClaimService.Application\\VacationHome.ClaimService.Application.csproj|solutionrelative:vacationhome.claimservice.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C095B3-20A4-400A-9519-FF0DAA3EFD41}|VacationHome.ClaimService.Domain\\VacationHome.ClaimService.Domain.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.claimservice.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C095B3-20A4-400A-9519-FF0DAA3EFD41}|VacationHome.ClaimService.Domain\\VacationHome.ClaimService.Domain.csproj|solutionrelative:vacationhome.claimservice.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2896358D-C646-422D-9503-D91D41BB4ED8}|VacationHome.Auth.Infrastructure\\VacationHome.Auth.Infrastructure.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.auth.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2896358D-C646-422D-9503-D91D41BB4ED8}|VacationHome.Auth.Infrastructure\\VacationHome.Auth.Infrastructure.csproj|solutionrelative:vacationhome.auth.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F6C58B-2F52-44E1-8C75-72D2FC864BFA}|VacationHome.Auth.Domain\\VacationHome.Auth.Domain.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.auth.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9F6C58B-2F52-44E1-8C75-72D2FC864BFA}|VacationHome.Auth.Domain\\VacationHome.Auth.Domain.csproj|solutionrelative:vacationhome.auth.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3371467E-C79F-405C-B1F6-2AB4673890F9}|VacationHome.Auth.Application\\VacationHome.Auth.Application.csproj|d:\\capstoneproject\\vacationhomeinsuranceui\\vacationhomeinsurance\\vacationhome.auth.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3371467E-C79F-405C-B1F6-2AB4673890F9}|VacationHome.Auth.Application\\VacationHome.Auth.Application.csproj|solutionrelative:vacationhome.auth.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.ProductQuote.Infrastructure\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "VacationHome.ProductQuote.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:12:55.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.ProductQuote.Domain\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Domain\\Class1.cs",
+              "RelativeToolTip": "VacationHome.ProductQuote.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:12:43.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.ProductQuote.Application\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ProductQuote.Application\\Class1.cs",
+              "RelativeToolTip": "VacationHome.ProductQuote.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:12:33.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.PolicyService.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.PolicyService.Infrastructure\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.PolicyService.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "VacationHome.PolicyService.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:11:31.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.PolicyService.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.PolicyService.Domain\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.PolicyService.Domain\\Class1.cs",
+              "RelativeToolTip": "VacationHome.PolicyService.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:11:15.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.PolicyService.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.PolicyService.Application\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.PolicyService.Application\\Class1.cs",
+              "RelativeToolTip": "VacationHome.PolicyService.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:10:54.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Customer.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.Customer.Infrastructure\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Customer.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "VacationHome.Customer.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:09:46.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Customer.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.Customer.Application\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Customer.Application\\Class1.cs",
+              "RelativeToolTip": "VacationHome.Customer.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:09:29.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Customer.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.Customer.Domain\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Customer.Domain\\Class1.cs",
+              "RelativeToolTip": "VacationHome.Customer.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:09:08.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ClaimService.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.ClaimService.Infrastructure\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ClaimService.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "VacationHome.ClaimService.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:08:39.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ClaimService.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.ClaimService.Application\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ClaimService.Application\\Class1.cs",
+              "RelativeToolTip": "VacationHome.ClaimService.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:08:24.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ClaimService.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.ClaimService.Domain\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ClaimService.Domain\\Class1.cs",
+              "RelativeToolTip": "VacationHome.ClaimService.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:08:13.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Auth.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.Auth.Infrastructure\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Auth.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "VacationHome.Auth.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:07:00.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Auth.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.Auth.Domain\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Auth.Domain\\Class1.cs",
+              "RelativeToolTip": "VacationHome.Auth.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:06:36.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Auth.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "VacationHome.Auth.Application\\Class1.cs",
+              "ToolTip": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.Auth.Application\\Class1.cs",
+              "RelativeToolTip": "VacationHome.Auth.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-18T06:06:21.284Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

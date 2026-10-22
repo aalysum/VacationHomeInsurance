@@ -1,0 +1,2850 @@
+<div class="min-h-screen bg-[#EEF4ED] text-[#0B2545]">
+  <div
+    class="min-h-screen lg:grid lg:grid-cols-[290px_minmax(0,1fr)]"
+  >
+    <aside
+      class="hidden min-h-screen bg-[#0B2545] text-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col"
+    >
+      <div class="border-b border-white/10 px-7 py-7">
+        <a
+          routerLink="/admin/dashboard"
+          class="flex items-center gap-3"
+          aria-label="SecureSphere home"
+        >
+          <span
+            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0B2545] shadow-[0_14px_35px_rgba(0,0,0,0.18)]"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+
+
+              <path
+                d="M8.8 12L11 14.2L15.5 9.7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+
+
+          <span>
+            <span
+              class="block text-[15px] font-semibold tracking-[-0.02em]"
+            >
+              SecureSphere
+            </span>
+
+
+            <span
+              class="mt-1 block text-[9px] font-medium uppercase tracking-[0.22em] text-[#AFC1D1]"
+            >
+              Administration
+            </span>
+          </span>
+        </a>
+      </div>
+
+
+      <nav
+        class="admin-scrollbar flex-1 overflow-y-auto px-4 py-6"
+        aria-label="Admin navigation"
+      >
+        <p
+          class="px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#708CA4]"
+        >
+          Management
+        </p>
+
+
+        <div class="mt-4 space-y-1.5">
+          @for (
+            item of navigationItems;
+            track item.label
+          ) {
+            @if (
+              item.available &&
+              item.route
+            ) {
+              <a
+                [routerLink]="item.route"
+                class="admin-nav-item"
+                [class.admin-nav-item-active]="
+                  isCurrentNavigationItem(item)
+                "
+              >
+                <span class="admin-nav-icon">
+                  @switch (item.icon) {
+                    @case ('overview') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('applications') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M8 6H20M8 12H20M8 18H15M4 6H4.01M4 12H4.01M4 18H4.01"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('quotes') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M6 3H15L19 7V21H6V3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M15 3V7H19M9 12H16M9 16H14"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('products') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 7L12 3L20 7L12 11L4 7Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M4 12L12 16L20 12M4 17L12 21L20 17"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('pricing') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3V21M16.5 7.5C16.5 5.8 14.7 5 12.5 5C10.3 5 8.5 6 8.5 7.8C8.5 9.6 10.1 10.3 12.6 10.9C15.1 11.5 16.5 12.3 16.5 14.2C16.5 16.1 14.7 17.1 12.2 17.1C9.9 17.1 7.8 16.2 7.5 14.3"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('users') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M8 11C10.2 11 12 9.2 12 7C12 4.8 10.2 3 8 3C5.8 3 4 4.8 4 7C4 9.2 5.8 11 8 11ZM2.5 20C2.5 16.7 5 14 8 14C11 14 13.5 16.7 13.5 20M15 14C18 14 20.5 16.2 20.5 19"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('operations') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4 6.2V11.5C4 15.8 6.8 19.6 12 21C17.2 19.6 20 15.8 20 11.5V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+
+
+                        <path
+                          d="M8.5 12H15.5M12 8.5V15.5"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('security') {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @default {
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 19V13M12 19V5M19 19V9"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                <span class="min-w-0 flex-1">
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#8FA5B7]"
+                  >
+                    {{ item.description }}
+                  </span>
+                </span>
+
+
+                @if (
+                  item.icon === 'applications' &&
+                  pendingApplicationCount() > 0
+                ) {
+                  <span
+                    class="rounded-full bg-amber-300 px-2 py-1 text-[10px] font-bold text-[#0B2545]"
+                  >
+                    {{ pendingApplicationCount() }}
+                  </span>
+                }
+              </a>
+            } @else {
+              <button
+                type="button"
+                class="admin-nav-item admin-nav-item-disabled"
+                disabled
+              >
+                <span class="admin-nav-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 19V13M12 19V5M19 19V9"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <span
+                  class="min-w-0 flex-1 text-left"
+                >
+                  <span
+                    class="block truncate text-sm font-medium"
+                  >
+                    {{ item.label }}
+                  </span>
+
+
+                  <span
+                    class="mt-0.5 block truncate text-[10px] text-[#708CA4]"
+                  >
+                    Integration pending
+                  </span>
+                </span>
+
+
+                <span
+                  class="rounded-full border border-white/10 px-2 py-1 text-[9px] text-[#708CA4]"
+                >
+                  Soon
+                </span>
+              </button>
+            }
+          }
+        </div>
+      </nav>
+
+
+      <div class="border-t border-white/10 p-4">
+        <div
+          class="rounded-[22px] border border-white/10 bg-white/[0.06] p-4"
+        >
+          <p
+            class="text-[10px] font-semibold uppercase tracking-[0.17em] text-[#829BB0]"
+          >
+            Signed in as
+          </p>
+
+
+          <div class="mt-3 flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#8DA9C4]/20 text-sm font-semibold"
+            >
+              AD
+            </span>
+
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium">
+                Administrator
+              </p>
+
+
+              <p
+                class="mt-0.5 text-[10px] text-[#8FA5B7]"
+              >
+                SecureSphere Admin
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <button
+          type="button"
+          class="mt-3 flex w-full items-center justify-center rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-[#C6D4DE] transition hover:bg-white/10 hover:text-white"
+          (click)="logout()"
+        >
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+
+    <div class="min-w-0">
+      <header
+        class="sticky top-0 z-30 border-b border-white/60 bg-[#EEF4ED]/85 backdrop-blur-xl"
+      >
+        <div
+          class="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-8 lg:px-10"
+        >
+          <div>
+            <p
+              class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7890A3]"
+            >
+              Administration
+            </p>
+
+
+            <h1
+              class="mt-1 text-lg font-medium tracking-[-0.025em]"
+            >
+              Policy and Claim Operations
+            </h1>
+          </div>
+
+
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              class="rounded-full border border-[#C9D6DF] bg-white/70 px-5 py-3 text-xs font-medium disabled:cursor-not-allowed disabled:opacity-60"
+              [disabled]="
+                operationsLoading() ||
+                assignmentProcessing()
+              "
+              (click)="refreshOperations()"
+            >
+              {{
+                operationsLoading()
+                  ? 'Refreshing'
+                  : 'Refresh data'
+              }}
+            </button>
+
+
+            <button
+              type="button"
+              class="rounded-full border border-[#C9D6DF] bg-white/70 px-5 py-3 text-xs font-medium"
+              (click)="openMfaSettings()"
+            >
+              Security
+            </button>
+          </div>
+        </div>
+      </header>
+
+
+      <main
+        class="relative overflow-hidden px-8 py-10 lg:px-10"
+      >
+        <div
+          class="pointer-events-none absolute -right-52 -top-32 h-[480px] w-[480px] rounded-full bg-white/75 blur-[100px]"
+        ></div>
+
+
+        <div
+          class="pointer-events-none absolute -bottom-52 -left-40 h-[440px] w-[440px] rounded-full bg-[#8DA9C4]/15 blur-[100px]"
+        ></div>
+
+
+        <div
+          class="relative mx-auto max-w-[1600px]"
+        >
+          @if (errorMessage()) {
+            <div
+              class="mb-7 flex items-start justify-between gap-4 rounded-[22px] border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700"
+              role="alert"
+            >
+              <div>
+                <p class="font-semibold">
+                  The request could not be completed
+                </p>
+
+
+                <p class="mt-1">
+                  {{ errorMessage() }}
+                </p>
+              </div>
+
+
+              <button
+                type="button"
+                class="text-xs font-semibold"
+                (click)="clearError()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          @if (claimFilterValidationMessage()) {
+            <div
+              class="mb-7 flex items-start justify-between gap-4 rounded-[22px] border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800"
+              role="alert"
+            >
+              <div>
+                <p class="font-semibold">
+                  Review the Claim filters
+                </p>
+
+
+                <p class="mt-1">
+                  {{ claimFilterValidationMessage() }}
+                </p>
+              </div>
+
+
+              <button
+                type="button"
+                class="text-xs font-semibold"
+                (click)="clearError()"
+              >
+                Dismiss
+              </button>
+            </div>
+          }
+
+
+          <section
+            class="relative overflow-hidden rounded-[30px] bg-[#0B2545] px-10 py-10 text-white shadow-[0_28px_80px_rgba(11,37,69,0.18)] lg:px-12"
+          >
+            <div
+              class="absolute -right-24 -top-32 h-80 w-80 rounded-full bg-[#8DA9C4]/25 blur-[45px]"
+            ></div>
+
+
+            <div
+              class="relative flex items-end justify-between gap-8"
+            >
+              <div class="max-w-3xl">
+                <span
+                  class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px]"
+                >
+                  <span
+                    class="h-2 w-2 rounded-full bg-emerald-400"
+                  ></span>
+
+
+                  Operational oversight
+                </span>
+
+
+                <h2
+                  class="mt-7 text-5xl font-medium tracking-[-0.05em]"
+                >
+                  Policy and Claim Operations
+                </h2>
+
+
+                <p
+                  class="mt-5 max-w-2xl text-sm leading-7 text-[#B8C9D7]"
+                >
+                  Monitor issued Policies, inspect Claim
+                  activity, and assign eligible Claims Managers
+                  while keeping Claim decisions under Claims
+                  Manager authority.
+                </p>
+              </div>
+
+
+              <div
+                class="rounded-[24px] border border-white/10 bg-white/[0.07] px-6 py-5"
+              >
+                <p
+                  class="text-[10px] uppercase tracking-[0.18em] text-[#9CB0C0]"
+                >
+                  Current module
+                </p>
+
+
+                <p class="mt-2 text-lg font-medium">
+                  Operations
+                </p>
+
+
+                <p
+                  class="mt-1 text-xs text-[#AFC1D1]"
+                >
+                  Admin oversight only
+                </p>
+              </div>
+            </div>
+          </section>
+
+
+          <section
+            class="mt-8 flex items-center gap-3 rounded-[24px] border border-[#D7E1E7] bg-white p-3 shadow-[0_16px_50px_rgba(19,49,92,0.06)]"
+            role="tablist"
+            aria-label="Operations areas"
+          >
+            <button
+              type="button"
+              class="rounded-[18px] px-6 py-3 text-sm font-medium transition"
+              [class.bg-[#0B2545]]="
+                activeTab() === 'policies'
+              "
+              [class.text-white]="
+                activeTab() === 'policies'
+              "
+              [class.text-[#52697D]]="
+                activeTab() !== 'policies'
+              "
+              [attr.aria-selected]="
+                activeTab() === 'policies'
+              "
+              (click)="selectTab('policies')"
+            >
+              Policies
+              <span
+                class="ml-2 rounded-full bg-white/15 px-2 py-1 text-[10px]"
+              >
+                {{ policyTotalCount() }}
+              </span>
+            </button>
+
+
+            <button
+              type="button"
+              class="rounded-[18px] px-6 py-3 text-sm font-medium transition"
+              [class.bg-[#0B2545]]="
+                activeTab() === 'claims'
+              "
+              [class.text-white]="
+                activeTab() === 'claims'
+              "
+              [class.text-[#52697D]]="
+                activeTab() !== 'claims'
+              "
+              [attr.aria-selected]="
+                activeTab() === 'claims'
+              "
+              (click)="selectTab('claims')"
+            >
+              Claims
+              <span
+                class="ml-2 rounded-full bg-white/15 px-2 py-1 text-[10px]"
+              >
+                {{ claimTotalCount() }}
+              </span>
+            </button>
+          </section>
+
+
+          @if (activeTab() === 'policies') {
+            <section class="mt-7">
+              <div
+                class="flex items-end justify-between"
+              >
+                <div>
+                  <p class="section-eyebrow">
+                    Policy monitoring
+                  </p>
+
+
+                  <h2
+                    class="mt-2 text-3xl font-medium tracking-[-0.04em]"
+                  >
+                    Issued Policies
+                  </h2>
+
+
+                  <p
+                    class="mt-3 text-sm text-[#748799]"
+                  >
+                    Review Policy status, product details,
+                    premiums, dates, and issued Coverages.
+                  </p>
+                </div>
+
+
+                <span
+                  class="rounded-full bg-[#E7EEF3] px-5 py-3 text-xs font-semibold"
+                >
+                  {{ policyTotalCount() }} Policies
+                </span>
+              </div>
+
+
+              <form
+                class="mt-6 rounded-[28px] border border-[#D7E1E7] bg-white p-8 shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+                [formGroup]="policyFilterForm"
+                (ngSubmit)="applyPolicyFilters()"
+              >
+                <div
+                  class="grid grid-cols-[minmax(240px,1fr)_220px_260px_120px] gap-4"
+                >
+                  <label class="field-group">
+                    <span>Product name</span>
+
+
+                    <input
+                      type="search"
+                      formControlName="productName"
+                      placeholder="Search Product"
+                      autocomplete="off"
+                    />
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Policy status</span>
+
+
+                    <select formControlName="status">
+                      <option value="">
+                        All statuses
+                      </option>
+
+
+                      <option
+                        [value]="PolicyStatus.Active"
+                      >
+                        Active
+                      </option>
+
+
+                      <option
+                        [value]="PolicyStatus.Cancelled"
+                      >
+                        Cancelled
+                      </option>
+
+
+                      <option
+                        [value]="PolicyStatus.Expired"
+                      >
+                        Expired
+                      </option>
+                    </select>
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Product type</span>
+
+
+                    <select formControlName="productType">
+                      <option value="">
+                        All Product types
+                      </option>
+
+
+                      <option
+                        [value]="
+                          ProductType.PropertyProtection
+                        "
+                      >
+                        Property Protection
+                      </option>
+
+
+                      <option
+                        [value]="
+                          ProductType
+                            .NaturalDisasterProtection
+                        "
+                      >
+                        Natural Disaster Protection
+                      </option>
+
+
+                      <option
+                        [value]="
+                          ProductType
+                            .ComprehensiveProtection
+                        "
+                      >
+                        Comprehensive Protection
+                      </option>
+                    </select>
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Rows</span>
+
+
+                    <select formControlName="pageSize">
+                      <option [ngValue]="10">
+                        10
+                      </option>
+
+
+                      <option [ngValue]="20">
+                        20
+                      </option>
+
+
+                      <option [ngValue]="50">
+                        50
+                      </option>
+
+
+                      <option [ngValue]="100">
+                        100
+                      </option>
+                    </select>
+                  </label>
+                </div>
+
+
+                <div
+                  class="mt-6 flex justify-end gap-3"
+                >
+                  <button
+                    type="button"
+                    class="rounded-full border border-[#CBD8E1] px-5 py-3 text-xs font-medium"
+                    [disabled]="policiesLoading()"
+                    (click)="clearPolicyFilters()"
+                  >
+                    Clear filters
+                  </button>
+
+
+                  <button
+                    type="submit"
+                    class="rounded-full bg-[#0B2545] px-6 py-3 text-xs font-medium text-white disabled:opacity-60"
+                    [disabled]="policiesLoading()"
+                  >
+                    {{
+                      policiesLoading()
+                        ? 'Applying filters'
+                        : 'Apply filters'
+                    }}
+                  </button>
+                </div>
+              </form>
+
+
+              <div
+                class="mt-6 overflow-hidden rounded-[28px] border border-[#D7E1E7] bg-white shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+              >
+                @if (policiesLoading()) {
+                  <div
+                    class="flex min-h-[320px] flex-col items-center justify-center"
+                  >
+                    <span
+                      class="h-10 w-10 animate-spin rounded-full border-4 border-[#8DA9C4]/30 border-t-[#0B2545]"
+                    ></span>
+
+
+                    <p class="mt-4 text-sm font-medium">
+                      Loading Policies
+                    </p>
+                  </div>
+                } @else if (
+                  policies().length === 0
+                ) {
+                  <div
+                    class="flex min-h-[320px] flex-col items-center justify-center text-center"
+                  >
+                    <h3 class="text-xl font-medium">
+                      No Policies found
+                    </h3>
+
+
+                    <p
+                      class="mt-2 text-sm text-[#748799]"
+                    >
+                      Adjust the filters or refresh the data.
+                    </p>
+                  </div>
+                } @else {
+                  <div class="overflow-x-auto">
+                    <table
+                      class="operations-table w-full"
+                    >
+                      <thead>
+                        <tr>
+                    <th>Policy</th>
+                    <th>Property</th>
+                    <th>Product</th>
+                    <th>Annual premium</th>
+                    <th>Coverage period</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+                        @for (
+                          policy of policies();
+                          track policy.id
+                        ) {
+                          <tr>
+                            <td>
+                              <div class="primary-cell">
+                                <strong>
+                                  {{ policy.policyNumber }}
+                                </strong>
+                                <small>
+                                Property:
+                                {{ policy.propertyName }}
+                                </small>
+                              </div>
+                            </td>
+                           <td>
+                            <div class="primary-cell">
+                                <strong>
+                                {{ policy.propertyName }}
+                                </strong>
+                            </div>
+                            </td> 
+
+
+                            <td>
+                              <div class="primary-cell">
+                                <strong>
+                                  {{ policy.productName }}
+                                </strong>
+
+
+                                <small>
+                                  {{
+                                    productTypeLabel(
+                                      policy.productType
+                                    )
+                                  }}
+                                </small>
+                              </div>
+                            </td>
+
+
+                            <td>
+                              {{
+                                formatCurrency(
+                                  policy.annualPremium
+                                )
+                              }}
+                            </td>
+
+
+                            <td>
+                              {{
+                                formatDate(
+                                  policy.effectiveDateUtc
+                                )
+                              }}
+                              to
+                              {{
+                                formatDate(
+                                  policy.expiryDateUtc
+                                )
+                              }}
+                            </td>
+
+
+                            <td>
+                              <span
+                                class="status-pill"
+                                [ngClass]="
+                                  policyStatusClass(
+                                    policy.status
+                                  )
+                                "
+                              >
+                                {{
+                                  policyStatusLabel(
+                                    policy.status
+                                  )
+                                }}
+                              </span>
+                            </td>
+
+
+                            <td>
+                              <button
+                                type="button"
+                                class="table-action-button"
+                                (click)="openPolicy(policy)"
+                              >
+                                View details
+                              </button>
+                            </td>
+                          </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+
+
+                  <div
+                    class="flex items-center justify-between border-t border-[#E1E8ED] px-8 py-5"
+                  >
+                    <p class="text-xs text-[#748799]">
+                      Page {{ policyPageNumber() }}
+                      of {{ policyTotalPages() || 1 }}
+                    </p>
+
+
+                    <div class="flex gap-3">
+                      <button
+                        type="button"
+                        class="pagination-button"
+                        [disabled]="
+                          !policyHasPreviousPage() ||
+                          policiesLoading()
+                        "
+                        (click)="previousPolicyPage()"
+                      >
+                        Previous
+                      </button>
+
+
+                      <button
+                        type="button"
+                        class="pagination-button"
+                        [disabled]="
+                          !policyHasNextPage() ||
+                          policiesLoading()
+                        "
+                        (click)="nextPolicyPage()"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                }
+              </div>
+            </section>
+          }
+
+
+          @if (activeTab() === 'claims') {
+            <section class="mt-7">
+              <div
+                class="flex items-end justify-between"
+              >
+                <div>
+                  <p class="section-eyebrow">
+                    Claim oversight
+                  </p>
+
+
+                  <h2
+                    class="mt-2 text-3xl font-medium tracking-[-0.04em]"
+                  >
+                    Claim Operations
+                  </h2>
+
+
+                  <p
+                    class="mt-3 text-sm text-[#748799]"
+                  >
+                    Monitor Claims and manage Claims Manager
+                    assignments. Claim decisions remain
+                    unavailable to Admin.
+                  </p>
+                </div>
+
+
+                <span
+                  class="rounded-full bg-[#E7EEF3] px-5 py-3 text-xs font-semibold"
+                >
+                  {{
+                    claimsDashboard()?.totalClaims ??
+                      claimTotalCount()
+                  }}
+                  Claims
+                </span>
+              </div>
+
+
+              @if (claimsDashboardLoading()) {
+                <div
+                  class="mt-6 h-32 animate-pulse rounded-[28px] bg-white"
+                ></div>
+              } @else if (
+                claimsDashboard();
+                as dashboard
+              ) {
+                <div
+                  class="mt-6 grid grid-cols-4 gap-4"
+                >
+                  <article class="metric-card">
+                    <span>Submitted</span>
+                    <strong>
+                      {{ dashboard.submittedClaims }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Under review</span>
+                    <strong>
+                      {{ dashboard.underReviewClaims }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Information requested</span>
+                    <strong>
+                      {{
+                        dashboard
+                          .informationRequestedClaims
+                      }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Approved</span>
+                    <strong>
+                      {{ dashboard.approvedClaims }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Paid</span>
+                    <strong>
+                      {{ dashboard.paidClaims }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Closed</span>
+                    <strong>
+                      {{ dashboard.closedClaims }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Total claimed</span>
+                    <strong>
+                      {{
+                        formatCurrency(
+                          dashboard.totalClaimedAmount
+                        )
+                      }}
+                    </strong>
+                  </article>
+
+
+                  <article class="metric-card">
+                    <span>Total approved</span>
+                    <strong>
+                      {{
+                        formatCurrency(
+                          dashboard.totalApprovedAmount
+                        )
+                      }}
+                    </strong>
+                  </article>
+                </div>
+              }
+
+
+              <form
+                class="mt-6 rounded-[28px] border border-[#D7E1E7] bg-white p-8 shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+                [formGroup]="claimFilterForm"
+                (ngSubmit)="applyClaimFilters()"
+              >
+                <div class="grid grid-cols-4 gap-4">
+                  <label class="field-group">
+                    <span>Claim number</span>
+
+
+                    <input
+                      type="search"
+                      formControlName="claimNumber"
+                      placeholder="Search Claim number"
+                    />
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Customer ID</span>
+
+
+                    <input
+                      type="search"
+                      formControlName="customerId"
+                      placeholder="Customer identifier"
+                    />
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Claim status</span>
+
+
+                    <select formControlName="status">
+                      <option value="">
+                        All statuses
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.Submitted"
+                      >
+                        Submitted
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.UnderReview"
+                      >
+                        Under Review
+                      </option>
+
+
+                      <option
+                        [value]="
+                          ClaimStatus
+                            .AdditionalInformationRequested
+                        "
+                      >
+                        Information Requested
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.Approved"
+                      >
+                        Approved
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.Rejected"
+                      >
+                        Rejected
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.Paid"
+                      >
+                        Paid
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.Closed"
+                      >
+                        Closed
+                      </option>
+
+
+                      <option
+                        [value]="ClaimStatus.Withdrawn"
+                      >
+                        Withdrawn
+                      </option>
+                    </select>
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Claim type</span>
+
+
+                    <select formControlName="claimType">
+                      <option value="">
+                        All Claim types
+                      </option>
+
+                      <option [value]="ClaimType.Fire">
+                        Fire
+                      </option>
+
+
+                      <option
+                        [value]="ClaimType.DwellingDamage"
+                      >
+                        Dwelling Damage
+                      </option>
+
+
+                      <option
+                        [value]="
+                          ClaimType.OtherStructureDamage
+                        "
+                      >
+                        Other Structure Damage
+                      </option>
+
+
+                      <option
+                        [value]="
+                          ClaimType.PersonalPropertyDamage
+                        "
+                      >
+                        Personal Property Damage
+                      </option>
+
+
+                      <option [value]="ClaimType.Theft">
+                        Theft
+                      </option>
+
+
+                      <option [value]="ClaimType.Flood">
+                        Flood
+                      </option>
+
+
+                      <option
+                        [value]="ClaimType.Earthquake"
+                      >
+                        Earthquake
+                      </option>
+
+
+                      <option
+                        [value]="ClaimType.Wildfire"
+                      >
+                        Wildfire
+                      </option>
+
+
+                      <option
+                        [value]="ClaimType.Hurricane"
+                      >
+                        Hurricane
+                      </option>
+
+
+                      <option [value]="ClaimType.Other">
+                        Other
+                      </option>
+                    </select>
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>From date</span>
+
+
+                    <input
+                      type="date"
+                      formControlName="fromDate"
+                    />
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>To date</span>
+
+
+                    <input
+                      type="date"
+                      formControlName="toDate"
+                    />
+                  </label>
+
+
+                  <label class="field-group">
+                    <span>Rows</span>
+
+
+                    <select formControlName="pageSize">
+                      <option [ngValue]="10">10</option>
+                      <option [ngValue]="20">20</option>
+                      <option [ngValue]="50">50</option>
+                      <option [ngValue]="100">
+                        100
+                      </option>
+                    </select>
+                  </label>
+                </div>
+
+
+                <div
+                  class="mt-6 flex justify-end gap-3"
+                >
+                  <button
+                    type="button"
+                    class="rounded-full border border-[#CBD8E1] px-5 py-3 text-xs font-medium"
+                    [disabled]="claimsLoading()"
+                    (click)="clearClaimFilters()"
+                  >
+                    Clear filters
+                  </button>
+
+
+                  <button
+                    type="submit"
+                    class="rounded-full bg-[#0B2545] px-6 py-3 text-xs font-medium text-white disabled:opacity-60"
+                    [disabled]="claimsLoading()"
+                  >
+                    {{
+                      claimsLoading()
+                        ? 'Applying filters'
+                        : 'Apply filters'
+                    }}
+                  </button>
+                </div>
+              </form>
+
+
+              <div
+                class="mt-6 overflow-hidden rounded-[28px] border border-[#D7E1E7] bg-white shadow-[0_20px_60px_rgba(19,49,92,0.07)]"
+              >
+                @if (claimsLoading()) {
+                  <div
+                    class="flex min-h-[320px] flex-col items-center justify-center"
+                  >
+                    <span
+                      class="h-10 w-10 animate-spin rounded-full border-4 border-[#8DA9C4]/30 border-t-[#0B2545]"
+                    ></span>
+
+
+                    <p class="mt-4 text-sm font-medium">
+                      Loading Claims
+                    </p>
+                  </div>
+                } @else if (
+                  claims().length === 0
+                ) {
+                  <div
+                    class="flex min-h-[320px] flex-col items-center justify-center"
+                  >
+                    <h3 class="text-xl font-medium">
+                      No Claims found
+                    </h3>
+
+
+                    <p
+                      class="mt-2 text-sm text-[#748799]"
+                    >
+                      Adjust the filters or refresh the data.
+                    </p>
+                  </div>
+                } @else {
+                  <div class="overflow-x-auto">
+                    <table
+                      class="operations-table w-full"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Claim</th>
+                          <th>Type</th>
+                          <th>Amount</th>
+                          <th>Assignment</th>
+                          <th>Status</th>
+                          <th>Submitted</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+                        @for (
+                          claim of claims();
+                          track claim.id
+                        ) {
+                          <tr>
+                            <td>
+                              <div class="primary-cell">
+                                <strong>
+                                  {{ claim.claimNumber }}
+                                </strong>
+
+
+                                <small>
+                                  {{ claim.title }}
+                                </small>
+                                <small>
+                                  Policy {{ claim.policyNumber || claim.policyId }}
+                                </small>
+                              </div>
+                            </td>
+
+
+                            <td>
+                              {{
+                                claimTypeLabel(
+                                  claim.type
+                                )
+                              }}
+                            </td>
+
+
+                            <td>
+                              <div class="primary-cell">
+                                <strong>
+                                  {{
+                                    formatCurrency(
+                                      claim.claimedAmount
+                                    )
+                                  }}
+                                </strong>
+
+
+                                <small>
+                                  Approved:
+                                  {{
+                                    formatCurrency(
+                                      claim.approvedAmount
+                                    )
+                                  }}
+                                </small>
+                              </div>
+                            </td>
+
+
+                            <td>
+                              <div class="primary-cell">
+                                <strong>
+                                  {{
+                                    claim
+                                      .assignedClaimsManagerName ||
+                                      assignmentStatusLabel(
+                                        claim
+                                          .assignedClaimsManagerId
+                                      )
+                                  }}
+                                </strong>
+
+
+                                <small>
+                                  {{
+                                    claim
+                                      .assignedClaimsManagerEmail ||
+                                      'Admin action may be required'
+                                  }}
+                                </small>
+                              </div>
+                            </td>
+
+
+                            <td>
+                              <span
+                                class="status-pill"
+                                [ngClass]="
+                                  claimStatusClass(
+                                    claim.status
+                                  )
+                                "
+                              >
+                                {{
+                                  claimStatusLabel(
+                                    claim.status
+                                  )
+                                }}
+                              </span>
+                            </td>
+
+
+                            <td>
+                              {{
+                                formatDateTime(
+                                  claim.submittedAtUtc
+                                )
+                              }}
+                            </td>
+
+
+                            <td>
+                              <button
+                                type="button"
+                                class="table-action-button"
+                                (click)="openClaim(claim)"
+                              >
+                                View details
+                              </button>
+                            </td>
+                          </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+
+
+                  <div
+                    class="flex items-center justify-between border-t border-[#E1E8ED] px-8 py-5"
+                  >
+                    <p class="text-xs text-[#748799]">
+                      Page {{ claimPageNumber() }}
+                      of {{ claimTotalPages() || 1 }}
+                    </p>
+
+
+                    <div class="flex gap-3">
+                      <button
+                        type="button"
+                        class="pagination-button"
+                        [disabled]="
+                          !claimHasPreviousPage() ||
+                          claimsLoading()
+                        "
+                        (click)="previousClaimPage()"
+                      >
+                        Previous
+                      </button>
+
+
+                      <button
+                        type="button"
+                        class="pagination-button"
+                        [disabled]="
+                          !claimHasNextPage() ||
+                          claimsLoading()
+                        "
+                        (click)="nextClaimPage()"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                }
+              </div>
+            </section>
+          }
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  @if (policyDetailsOpen()) {
+    <div
+      class="dialog-backdrop"
+      role="presentation"
+      (click)="closePolicyDetails()"
+    >
+      <section
+        class="details-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="policy-details-title"
+        (click)="$event.stopPropagation()"
+      >
+        <header class="dialog-header">
+          <div>
+            <span class="dialog-kicker">
+              Policy oversight
+            </span>
+
+
+            <h2 id="policy-details-title">
+              Policy Details
+            </h2>
+          </div>
+
+
+          <button
+            type="button"
+            class="dialog-close-button"
+            aria-label="Close Policy details"
+            [disabled]="policyDetailsLoading()"
+            (click)="closePolicyDetails()"
+          >
+            ×
+          </button>
+        </header>
+
+
+        <div class="dialog-content">
+          @if (policyDetailsLoading()) {
+            <div class="loading-state dialog-loading">
+              <span class="loading-spinner"></span>
+
+
+              <strong>
+                Loading Policy details
+              </strong>
+            </div>
+          } @else if (
+            selectedPolicy();
+            as policy
+          ) {
+            <section class="details-hero-card">
+              <div>
+                <span class="details-label">
+                  Policy number
+                </span>
+
+
+                <h3>
+                  {{ policy.policyNumber }}
+                </h3>
+                <p>
+                {{ policy.productName }}
+                </p>
+
+
+                <p class="mt-2 text-sm text-[#748799]">
+                Property:
+                {{ policy.propertyName }}
+                </p>
+              </div>
+
+
+              <span
+                class="status-pill"
+                [ngClass]="
+                  policyStatusClass(
+                    policy.status
+                  )
+                "
+              >
+                {{
+                  policyStatusLabel(
+                    policy.status
+                  )
+                }}
+              </span>
+            </section>
+
+
+            <section class="details-section">
+              <div class="details-grid">
+                <div class="detail-item">
+                  <span>Policy ID</span>
+                  <strong>{{ policy.id }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Quote ID</span>
+                  <strong>{{ policy.quoteId }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Customer ID</span>
+                  <strong>{{ policy.customerId }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                <span>Property</span>
+                <strong>{{ policy.propertyName }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Product type</span>
+
+
+                  <strong>
+                    {{
+                      productTypeLabel(
+                        policy.productType
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Annual premium</span>
+
+
+                  <strong>
+                    {{
+                      formatCurrency(
+                        policy.annualPremium
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Effective date</span>
+
+
+                  <strong>
+                    {{
+                      formatDate(
+                        policy.effectiveDateUtc
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Expiry date</span>
+
+
+                  <strong>
+                    {{
+                      formatDate(
+                        policy.expiryDateUtc
+                      )
+                    }}
+                  </strong>
+                </div>
+              </div>
+            </section>
+
+
+            <section class="details-section">
+              <div class="subsection-heading">
+                <div>
+                  <span class="section-kicker">
+                    Issued snapshot
+                  </span>
+
+
+                  <h3>Policy Coverages</h3>
+                </div>
+
+
+                <span class="count-badge">
+                  {{ policy.coverages.length }}
+                </span>
+              </div>
+
+
+              @if (
+                policy.coverages.length === 0
+              ) {
+                <div class="inline-empty-state">
+                  No Coverages are attached to this Policy.
+                </div>
+              } @else {
+                <div class="coverage-list">
+                  @for (
+                    coverage of policy.coverages;
+                    track coverage.coverageId
+                  ) {
+                    <article class="coverage-card">
+                      <div class="coverage-card-header">
+                        <div>
+                          <h4>
+                            {{ coverage.coverageName }}
+                          </h4>
+
+
+                          <span
+                            class="coverage-type-badge"
+                            [class.mandatory]="
+                              coverage.isMandatory
+                            "
+                          >
+                            {{
+                              coverage.isMandatory
+                                ? 'Mandatory'
+                                : 'Optional'
+                            }}
+                          </span>
+                        </div>
+
+
+                        <strong>
+                          {{
+                            formatCurrency(
+                              coverage
+                                .coverageLimitAmount
+                            )
+                          }}
+                        </strong>
+                      </div>
+
+
+                      <div class="coverage-metrics">
+                        <div>
+                          <span>Coverage charge</span>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage.coverageCharge
+                              )
+                            }}
+                          </strong>
+                        </div>
+
+
+                        <div>
+                          <span>Limit percentage</span>
+
+
+                          <strong>
+                            {{
+                              formatPercentage(
+                                coverage
+                                  .coverageLimitPercentage
+                              )
+                            }}
+                          </strong>
+                        </div>
+                      </div>
+                    </article>
+                  }
+                </div>
+              }
+            </section>
+
+            <section class="details-section">
+              <div class="subsection-heading">
+                <div>
+                  <span class="section-kicker">
+                    Issued policy files
+                  </span>
+
+                  <h3>Policy Documents</h3>
+                </div>
+
+                <span class="count-badge">
+                  {{ policy.documents.length }}
+                </span>
+              </div>
+
+              @if (errorMessage()) {
+                <p class="inline-empty-state" role="alert">
+                  {{ errorMessage() }}
+                </p>
+              }
+
+              @if (policy.documents.length === 0) {
+                <div class="inline-empty-state">
+                  No policy document is available yet.
+                </div>
+              } @else {
+                <div class="document-list">
+                  @for (
+                    policyDocument of policy.documents;
+                    track policyDocument.id
+                  ) {
+                    <article class="document-card">
+                      <div>
+                        <strong>
+                          Policy PDF · Version
+                          {{ policyDocument.version }}
+                        </strong>
+                        <span>
+                          Status: {{ policyDocument.status }}
+                          @if (policyDocument.generatedAtUtc) {
+                            · Issued
+                            {{
+                              formatDate(
+                                policyDocument.generatedAtUtc
+                              )
+                            }}
+                          }
+                        </span>
+                        @if (policyDocument.status === 'Failed') {
+                          <span class="text-red-700" role="status">
+                            Generation failed; an Administrator can retry it.
+                          </span>
+                        }
+                      </div>
+
+                      @if (policyDocument.status === 'Available') {
+                        <button
+                          type="button"
+                          class="table-action-button"
+                          [disabled]="
+                            downloadingPolicyDocumentId() !== null
+                          "
+                          (click)="
+                            downloadPolicyDocument(
+                              policy.id,
+                              policyDocument
+                            )
+                          "
+                        >
+                          {{
+                            downloadingPolicyDocumentId() ===
+                            policyDocument.id
+                              ? 'Downloading…'
+                              : 'Download PDF'
+                          }}
+                        </button>
+                      } @else if (
+                        policyDocument.status === 'Failed' &&
+                        policyDocument.id === policy.documents[0]?.id
+                      ) {
+                        <button
+                          type="button"
+                          class="table-action-button"
+                          [disabled]="
+                            retryingPolicyDocumentId() !== null
+                          "
+                          (click)="
+                            retryPolicyDocumentGeneration(
+                              policy.id
+                            )
+                          "
+                        >
+                          {{
+                            retryingPolicyDocumentId() ===
+                            policy.id
+                              ? 'Retrying…'
+                              : 'Retry generation'
+                          }}
+                        </button>
+                      }
+                    </article>
+                  }
+                </div>
+              }
+            </section>
+          } @else {
+            <div class="empty-state dialog-empty">
+              <strong>
+                Policy details are unavailable
+              </strong>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  }
+
+
+  @if (claimDetailsOpen()) {
+    <div
+      class="dialog-backdrop"
+      role="presentation"
+      (click)="closeClaimDetails()"
+    >
+      <section
+        class="details-dialog claim-details-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="claim-details-title"
+        (click)="$event.stopPropagation()"
+      >
+        <header class="dialog-header">
+          <div>
+            <span class="dialog-kicker">
+              Claim oversight
+            </span>
+
+
+            <h2 id="claim-details-title">
+              Claim Details
+            </h2>
+          </div>
+
+
+          <button
+            type="button"
+            class="dialog-close-button"
+            aria-label="Close Claim details"
+            [disabled]="
+              claimDetailsLoading() ||
+              assignmentProcessing()
+            "
+            (click)="closeClaimDetails()"
+          >
+            ×
+          </button>
+        </header>
+
+
+        <div class="dialog-content">
+          @if (claimDetailsLoading()) {
+            <div class="loading-state dialog-loading">
+              <span class="loading-spinner"></span>
+
+
+              <strong>
+                Loading Claim details
+              </strong>
+            </div>
+          } @else if (
+            selectedClaim();
+            as claim
+          ) {
+            <section
+              class="details-hero-card claim-hero-card"
+            >
+              <div>
+                <span class="details-label">
+                  Claim number
+                </span>
+
+
+                <h3>{{ claim.claimNumber }}</h3>
+
+
+                <p>{{ claim.title }}</p>
+              </div>
+
+
+              <span
+                class="status-pill"
+                [ngClass]="
+                  claimStatusClass(
+                    claim.status
+                  )
+                "
+              >
+                {{
+                  claimStatusLabel(
+                    claim.status
+                  )
+                }}
+              </span>
+            </section>
+
+
+            <section class="admin-boundary-notice">
+              <div>
+                <strong>
+                  Admin oversight only
+                </strong>
+
+
+                <p>
+                  Admin can inspect this Claim and manage its
+                  Claims Manager assignment. Review,
+                  information requests, Coverage decisions,
+                  payment, and closure remain the assigned
+                  Claims Manager’s responsibility.
+                </p>
+              </div>
+            </section>
+
+
+            <section class="details-section">
+              <div class="details-grid">
+                <div class="detail-item">
+                  <span>Claim ID</span>
+                  <strong>{{ claim.id }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Claim type</span>
+
+
+                  <strong>
+                    {{
+                      claimTypeLabel(
+                        claim.type
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Customer ID</span>
+                  <strong>{{ claim.customerId }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Policy ID</span>
+                  <strong>{{ claim.policyId }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Policy number</span>
+                  <strong>{{ claim.policyNumber || claim.policyId }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Property ID</span>
+                  <strong>{{ claim.propertyId }}</strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Incident date</span>
+
+
+                  <strong>
+                    {{
+                      formatDate(
+                        claim.incidentDate
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Submitted</span>
+
+
+                  <strong>
+                    {{
+                      formatDateTime(
+                        claim.submittedAtUtc
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Total claimed</span>
+
+
+                  <strong>
+                    {{
+                      formatCurrency(
+                        claim.claimedAmount
+                      )
+                    }}
+                  </strong>
+                </div>
+
+
+                <div class="detail-item">
+                  <span>Total approved</span>
+
+
+                  <strong>
+                    {{
+                      formatCurrency(
+                        claim.approvedAmount
+                      )
+                    }}
+                  </strong>
+                </div>
+              </div>
+
+
+              <div class="description-card">
+                <span>Description</span>
+                <p>{{ claim.description }}</p>
+              </div>
+
+
+              @if (claim.rejectionReason) {
+                <div class="rejection-card">
+                  <span>Rejection reason</span>
+                  <p>{{ claim.rejectionReason }}</p>
+                </div>
+              }
+            </section>
+
+
+            <section class="details-section">
+              <app-claim-timeline
+                [entries]="claim.timeline"
+              />
+            </section>
+
+
+            <section
+              class="details-section assignment-section"
+            >
+              <div class="subsection-heading">
+                <div>
+                  <span class="section-kicker">
+                    Claim ownership
+                  </span>
+
+
+                  <h3>
+                    Claims Manager Assignment
+                  </h3>
+                </div>
+
+
+                <span
+                  class="assignment-status-badge"
+                  [class.assigned]="
+                    claim.assignedClaimsManagerId
+                  "
+                >
+                  {{
+                    assignmentStatusLabel(
+                      claim.assignedClaimsManagerId
+                    )
+                  }}
+                </span>
+              </div>
+
+
+              @if (
+                claim.assignedClaimsManagerId
+              ) {
+                <div class="current-assignment-card">
+                  <div class="assignment-avatar">
+                    {{
+                      (
+                        claim
+                          .assignedClaimsManagerName ||
+                        'CM'
+                      ).slice(0, 2)
+                    }}
+                  </div>
+
+
+                  <div class="current-assignment-copy">
+                    <span>
+                      Assigned Claims Manager
+                    </span>
+
+
+                    <strong>
+                      {{
+                        claim
+                          .assignedClaimsManagerName ||
+                          'Claims Manager'
+                      }}
+                    </strong>
+
+
+                    <small>
+                      {{
+                        claim
+                          .assignedClaimsManagerEmail ||
+                          claim
+                            .assignedClaimsManagerId
+                      }}
+                    </small>
+                  </div>
+
+
+                  <div class="assignment-date">
+                    <span>Assigned</span>
+
+
+                    <strong>
+                      {{
+                        formatDateTime(
+                          claim.assignedAtUtc
+                        )
+                      }}
+                    </strong>
+                  </div>
+                </div>
+              } @else {
+                <div class="unassigned-notice">
+                  <div>
+                    <strong>
+                      No Claims Manager assigned
+                    </strong>
+
+
+                    <p>
+                      Select an eligible Claims Manager to
+                      oversee this Claim.
+                    </p>
+                  </div>
+                </div>
+              }
+
+
+              @if (canAssignSelectedClaim()) {
+                <form
+                  class="assignment-form"
+                  [formGroup]="assignmentForm"
+                  (ngSubmit)="
+                    submitClaimsManagerAssignment()
+                  "
+                >
+                  <label class="field-group">
+                    <span>
+                      Claims Manager
+                      <b aria-hidden="true">*</b>
+                    </span>
+
+
+                    <select
+                      formControlName="claimsManagerId"
+                      [disabled]="
+                        activeClaimsManagersLoading() ||
+                        assignmentProcessing()
+                      "
+                      (change)="
+                        onClaimsManagerSelectionChange()
+                      "
+                    >
+                      <option value="">
+                        Select an active Claims Manager
+                      </option>
+
+
+                      @for (
+                        manager of activeClaimsManagers();
+                        track manager.userId
+                      ) {
+                        <option
+                          [value]="manager.userId"
+                        >
+                          {{
+                            claimsManagerLabel(
+                              manager
+                            )
+                          }}
+                        </option>
+                      }
+                    </select>
+
+
+                    @if (
+                      claimsManagerSelectionError()
+                    ) {
+                      <small class="field-error">
+                        {{
+                          claimsManagerSelectionError()
+                        }}
+                      </small>
+                    }
+                  </label>
+
+
+                  @if (
+                    activeClaimsManagersLoading()
+                  ) {
+                    <div class="inline-loading">
+                      <span
+                        class="loading-spinner small"
+                      ></span>
+
+
+                      Loading active Claims Managers
+                    </div>
+                  }
+
+
+                  @if (
+                    !activeClaimsManagersLoading() &&
+                    activeClaimsManagers().length === 0
+                  ) {
+                    <div class="inline-empty-state">
+                      No active, approved Claims Managers are
+                      currently available.
+                    </div>
+                  }
+
+
+                  @if (
+                    selectedActiveClaimsManager();
+                    as selectedManager
+                  ) {
+                    <article
+                      class="selected-manager-card"
+                    >
+                      <div>
+                        <strong>
+                          {{
+                            selectedManager.displayName ||
+                            selectedManager.email
+                          }}
+                        </strong>
+
+
+                        <span>
+                          {{ selectedManager.email }}
+                        </span>
+                      </div>
+
+
+                      <div class="manager-experience">
+                        <strong>
+                          {{
+                            selectedManager
+                              .yearsOfExperience
+                          }}
+                        </strong>
+
+
+                        <span>
+                          years of experience
+                        </span>
+                      </div>
+
+
+                      @if (
+                        selectedManager
+                          .professionalSummary
+                      ) {
+                        <p>
+                          {{
+                            selectedManager
+                              .professionalSummary
+                          }}
+                        </p>
+                      }
+                    </article>
+                  }
+
+
+                  @if (
+                    assignmentReasonRequired()
+                  ) {
+                    <label class="field-group">
+                      <span>
+                        Reassignment reason
+                        <b aria-hidden="true">*</b>
+                      </span>
+
+
+                      <textarea
+                        rows="4"
+                        formControlName="reason"
+                        maxlength="2000"
+                        placeholder="Explain why this Claim is being reassigned"
+                        [disabled]="
+                          assignmentProcessing()
+                        "
+                        (input)="
+                          onAssignmentReasonInput()
+                        "
+                      ></textarea>
+
+
+                      <div class="field-meta">
+                        @if (
+                          assignmentReasonError()
+                        ) {
+                          <small class="field-error">
+                            {{
+                              assignmentReasonError()
+                            }}
+                          </small>
+                        } @else {
+                          <small>
+                            Required for reassignment
+                          </small>
+                        }
+
+
+                        <small>
+                          {{
+                            assignmentForm
+                              .controls
+                              .reason
+                              .value
+                              .length
+                          }}/2000
+                        </small>
+                      </div>
+                    </label>
+                  }
+
+
+                  @if (
+                    assignmentSuccessMessage()
+                  ) {
+                    <div
+                      class="message-banner success-banner compact-banner"
+                      role="status"
+                    >
+                      <div class="message-content">
+                        <strong>
+                          Assignment updated
+                        </strong>
+
+
+                        <p>
+                          {{
+                            assignmentSuccessMessage()
+                          }}
+                        </p>
+                      </div>
+
+
+                      <button
+                        type="button"
+                        class="message-close"
+                        aria-label="Dismiss assignment message"
+                        (click)="clearAssignmentMessage()"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  }
+
+
+                  <div class="assignment-actions">
+                    <button
+                      type="submit"
+                      class="primary-button"
+                      [disabled]="
+                        assignmentProcessing() ||
+                        activeClaimsManagersLoading() ||
+                        activeClaimsManagers().length === 0
+                      "
+                    >
+                      {{ assignmentButtonLabel() }}
+                    </button>
+                  </div>
+                </form>
+              } @else {
+                <div class="assignment-locked-notice">
+                  This Claim has reached a state where
+                  assignment or reassignment is no longer
+                  permitted.
+                </div>
+              }
+            </section>
+
+
+            <section class="details-section">
+              <div class="subsection-heading">
+                <div>
+                  <span class="section-kicker">
+                    Financial allocation
+                  </span>
+
+
+                  <h3>Claim Coverages</h3>
+                </div>
+
+
+                <span class="count-badge">
+                  {{ claim.coverages.length }}
+                </span>
+              </div>
+
+
+              @if (
+                claim.coverages.length === 0
+              ) {
+                <div class="inline-empty-state">
+                  No Coverage allocations are available.
+                </div>
+              } @else {
+                <div class="coverage-list">
+                  @for (
+                    coverage of claim.coverages;
+                    track coverage.id
+                  ) {
+                    <article class="coverage-card">
+                      <div class="coverage-card-header">
+                        <div>
+                          <h4>
+                            {{ coverage.coverageName }}
+                          </h4>
+                        </div>
+
+
+                        <span
+                          class="coverage-decision"
+                          [class.approved]="
+                            coverage.approvedAmount !==
+                              null &&
+                            coverage.approvedAmount > 0
+                          "
+                        >
+                          {{
+                            coverageDecisionLabel(
+                              coverage.approvedAmount
+                            )
+                          }}
+                        </span>
+                      </div>
+
+
+                      <div
+                        class="coverage-metrics four-columns"
+                      >
+                        <div>
+                          <span>Coverage limit</span>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage
+                                  .coverageLimitAmount
+                              )
+                            }}
+                          </strong>
+                        </div>
+
+
+                        <div>
+                          <span>Requested</span>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage.requestedAmount
+                              )
+                            }}
+                          </strong>
+                        </div>
+
+
+                        <div>
+                          <span>Approved</span>
+
+
+                          <strong>
+                            {{
+                              formatCurrency(
+                                coverage.approvedAmount
+                              )
+                            }}
+                          </strong>
+                        </div>
+
+
+                        <div>
+                          <span>Limit percentage</span>
+
+
+                          <strong>
+                            {{
+                              formatPercentage(
+                                coverage
+                                  .coverageLimitPercentage
+                              )
+                            }}
+                          </strong>
+                        </div>
+                      </div>
+                    </article>
+                  }
+                </div>
+              }
+            </section>
+
+
+            <section class="details-section">
+              <div class="subsection-heading">
+                <div>
+                  <span class="section-kicker">
+                    Supporting evidence
+                  </span>
+
+
+                  <h3>Documents</h3>
+                </div>
+
+
+                <span class="count-badge">
+                  {{ claim.documents.length }}
+                </span>
+              </div>
+
+
+              @if (
+                claim.documents.length === 0
+              ) {
+                <div class="inline-empty-state">
+                  No documents have been uploaded for this
+                  Claim.
+                </div>
+              } @else {
+                <div class="document-list">
+                  @for (
+                    document of claim.documents;
+                    track document.id
+                  ) {
+                    <article class="document-card">
+                      <div>
+                        <strong>
+                          {{ document.fileName }}
+                        </strong>
+
+
+                        <span>
+                          {{ document.contentType }}
+                          ·
+                          {{
+                            formatFileSize(
+                              document.fileSizeBytes
+                            )
+                          }}
+                        </span>
+
+
+                        <small>
+                          Uploaded
+                          {{
+                            formatDateTime(
+                              document.uploadedAtUtc
+                            )
+                          }}
+                        </small>
+                      </div>
+                    </article>
+                  }
+                </div>
+              }
+            </section>
+
+
+            <section class="details-section">
+              <div class="subsection-heading">
+                <div>
+                  <span class="section-kicker">
+                    Workflow history
+                  </span>
+
+
+                  <h3>Claim Timeline</h3>
+                </div>
+
+
+                <span class="count-badge">
+                  {{ claim.timeline.length }}
+                </span>
+              </div>
+
+
+              @if (
+                claim.timeline.length === 0
+              ) {
+                <div class="inline-empty-state">
+                  No Claim timeline entries are available.
+                </div>
+              } @else {
+                <div class="timeline-list">
+                  @for (
+                    entry of claim.timeline;
+                    track $index
+                  ) {
+                    <article class="timeline-entry">
+                      <span
+                        class="timeline-marker"
+                      ></span>
+
+
+                      <div class="timeline-card">
+                        <div class="timeline-header">
+                          <strong>
+                            {{
+                              claimStatusLabel(
+                                entry.newStatus
+                              )
+                            }}
+                          </strong>
+
+
+                          <span>
+                            {{
+                              formatDateTime(
+                                entry.changedAtUtc
+                              )
+                            }}
+                          </span>
+                        </div>
+
+
+                        <p>{{ entry.comments }}</p>
+
+
+                        <small>
+                          Changed by
+                          {{ entry.changedBy }}
+                        </small>
+                      </div>
+                    </article>
+                  }
+                </div>
+              }
+            </section> 
+          
+          
+          } @else {
+            <div class="empty-state dialog-empty">
+              <strong>
+                Claim details are unavailable
+              </strong>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</div>

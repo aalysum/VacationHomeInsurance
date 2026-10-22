@@ -1,0 +1,1 @@
+var d=(e=>(e[e.Submitted=1]="Submitted",e[e.UnderReview=2]="UnderReview",e[e.AdditionalInformationRequested=3]="AdditionalInformationRequested",e[e.Approved=4]="Approved",e[e.Rejected=5]="Rejected",e[e.Paid=6]="Paid",e[e.Closed=7]="Closed",e[e.Withdrawn=8]="Withdrawn",e))(d||{});export{d as a};

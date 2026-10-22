@@ -1,0 +1,11 @@
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\bin\Debug\net8.0\VacationHome.ProductQuote.Application.deps.json
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\bin\Debug\net8.0\VacationHome.ProductQuote.Application.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\bin\Debug\net8.0\VacationHome.ProductQuote.Application.pdb
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\VacationHome.ProductQuote.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\VacationHome.ProductQuote.Application.AssemblyInfoInputs.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\VacationHome.ProductQuote.Application.AssemblyInfo.cs
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\VacationHome.ProductQuote.Application.csproj.CoreCompileInputs.cache
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\VacationHome.ProductQuote.Application.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\refint\VacationHome.ProductQuote.Application.dll
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\VacationHome.ProductQuote.Application.pdb
+D:\CapstoneProject\VacationHomeInsuranceUI\VacationHomeInsurance\VacationHome.ProductQuote.Application\obj\Debug\net8.0\ref\VacationHome.ProductQuote.Application.dll

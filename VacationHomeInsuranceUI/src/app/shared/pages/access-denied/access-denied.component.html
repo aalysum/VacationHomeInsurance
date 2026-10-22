@@ -1,0 +1,81 @@
+<main
+  class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#EEF4ED] px-5 py-10"
+>
+  <div
+    class="pointer-events-none absolute -right-40 -top-40 h-[460px] w-[460px] rounded-full bg-white/90 blur-[100px]"
+  ></div>
+
+
+  <section
+    class="relative z-10 w-full max-w-xl rounded-[32px] border border-white/80 bg-white/80 p-8 text-center shadow-[0_30px_90px_rgba(19,49,92,0.1)] backdrop-blur-xl sm:p-12"
+  >
+    <span
+      class="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-red-50 text-red-600"
+    >
+      <svg
+        class="h-9 w-9"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M7 10V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10M5 10H19V20H5V10Z"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linejoin="round"
+        />
+
+
+        <path
+          d="M12 14V16"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </svg>
+    </span>
+
+
+    <p
+      class="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7890A3]"
+    >
+      Access restricted
+    </p>
+
+
+    <h1
+      class="mt-5 text-4xl font-medium tracking-[-0.05em] text-[#0B2545] sm:text-5xl"
+    >
+      You cannot access this page.
+    </h1>
+
+
+    <p
+      class="mx-auto mt-5 max-w-md text-sm leading-7 text-[#6B7F92]"
+    >
+      Your account is authenticated, but it does not have
+      the role required to use this feature.
+    </p>
+
+
+    <div
+      class="mt-9 grid gap-3 sm:grid-cols-2"
+    >
+      <button
+        type="button"
+        class="rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_18px_45px_rgba(11,37,69,0.2)]"
+        (click)="returnToDashboard()"
+      >
+        Return to dashboard
+      </button>
+
+
+      <a
+        routerLink="/"
+        class="flex items-center justify-center rounded-full border border-[#C8D5DE] bg-white/70 px-7 py-4 text-sm font-medium text-[#39536D]"
+      >
+        Return home
+      </a>
+    </div>
+  </section>
+</main>

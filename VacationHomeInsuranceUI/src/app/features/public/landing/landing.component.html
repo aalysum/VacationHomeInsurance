@@ -1,0 +1,1385 @@
+<div class="min-h-screen overflow-hidden bg-[#EEF4ED] text-[#0B2545]">
+
+
+  <!-- NAVIGATION -->
+  <header
+    class="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-[#EEF4ED]/85 backdrop-blur-xl"
+  >
+    <nav
+      class="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12"
+      aria-label="Main navigation"
+    >
+      <a
+        routerLink="/"
+        class="group flex items-center gap-3"
+        aria-label="Insurance platform home"
+      >
+        <span
+          class="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-[#0B2545] shadow-[0_12px_30px_rgba(11,37,69,0.2)]"
+        >
+          <svg
+            class="h-6 w-6 text-white"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.8 12L11 14.2L15.5 9.7"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+
+        <span>
+          <span
+            class="block text-[15px] font-semibold leading-none tracking-[-0.02em] text-[#0B2545]"
+          >
+            SecureSphere
+          </span>
+
+
+          <span
+            class="mt-1 block text-[10px] font-medium uppercase tracking-[0.22em] text-[#6D8094]"
+          >
+            Insurance
+          </span>
+        </span>
+      </a>
+
+
+      <div
+        class="hidden items-center gap-8 rounded-full border border-white/70 bg-white/50 px-7 py-3 shadow-[0_8px_30px_rgba(19,49,92,0.05)] lg:flex"
+      >
+        <button
+          type="button"
+          class="nav-link"
+          (click)="scrollToSection('home')"
+        >
+          Home
+        </button>
+
+
+        <button
+          type="button"
+          class="nav-link"
+          (click)="scrollToSection('solutions')"
+        >
+          Solutions
+        </button>
+
+
+        <button
+          type="button"
+          class="nav-link"
+          (click)="scrollToSection('products')"
+        >
+          Products
+        </button>
+
+
+        <button
+          type="button"
+          class="nav-link"
+          (click)="scrollToSection('why-us')"
+        >
+          Why us
+        </button>
+      </div>
+
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a
+          routerLink="/auth/login"
+          class="hidden rounded-full px-5 py-3 text-sm font-medium text-[#13315C] transition hover:bg-white/70 sm:inline-flex"
+        >
+          Sign in
+        </a>
+
+
+        <button
+          type="button"
+          class="inline-flex items-center gap-2 rounded-full bg-[#13315C] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_30px_rgba(19,49,92,0.2)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#0B2545]"
+          (click)="register()"
+        >
+          Create account
+
+
+          <svg
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 12H19M14 7L19 12L14 17"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+
+
+    <!-- HERO -->
+    <section
+      id="home"
+      class="relative isolate min-h-screen overflow-hidden pt-[76px]"
+    >
+      <div
+        class="pointer-events-none absolute -left-48 top-16 h-[520px] w-[520px] rounded-full bg-[#8DA9C4]/30 blur-[100px]"
+      ></div>
+
+
+      <div
+        class="pointer-events-none absolute -right-40 top-24 h-[540px] w-[540px] rounded-full bg-white/80 blur-[100px]"
+      ></div>
+
+
+      <div
+        class="mx-auto grid min-h-[calc(100vh-76px)] max-w-[1440px] items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:py-24"
+      >
+        <div class="relative z-10 max-w-3xl">
+
+
+          <h1
+            class="max-w-[780px] text-[clamp(3.4rem,7vw,7.2rem)] font-medium leading-[0.92] tracking-[-0.065em] text-[#0B2545]"
+          >
+            Protect what
+            <span class="relative inline-block text-[#526F8D]">
+              matters
+              <svg
+                class="absolute -bottom-3 left-0 w-full text-[#8DA9C4]/70"
+                viewBox="0 0 270 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 13C64 4 174 4 266 9"
+                  stroke="currentColor"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            most.
+          </h1>
+
+
+          <p
+            class="mt-9 max-w-xl text-base leading-8 text-[#64788C] sm:text-lg"
+          >
+            One secure platform to explore protection for your home, business,
+            vehicle, employees, and the unexpected moments in between.
+          </p>
+
+
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <button
+              type="button"
+              class="group inline-flex items-center justify-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white shadow-[0_20px_50px_rgba(11,37,69,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-[#13315C]"
+              (click)="scrollToSection('products')"
+            >
+              Explore insurance
+
+
+              <span
+                class="flex h-7 w-7 items-center justify-center rounded-full bg-white/12 transition group-hover:translate-x-1"
+              >
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12H19M14 7L19 12L14 17"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+
+
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-full border border-[#8DA9C4]/45 bg-white/55 px-7 py-4 text-sm font-medium text-[#13315C] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white"
+              (click)="register()"
+            >
+              Create your account
+            </button>
+          </div>
+
+
+          <div
+            class="mt-14 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-[#8DA9C4]/25 pt-7"
+          >
+            <div>
+              <p class="text-2xl font-medium tracking-[-0.04em] text-[#0B2545]">
+                5
+              </p>
+              <p class="mt-1 text-xs text-[#73879A]">Insurance domains</p>
+            </div>
+
+
+            <div class="h-10 w-px bg-[#8DA9C4]/30"></div>
+
+
+            <div>
+              <p class="text-2xl font-medium tracking-[-0.04em] text-[#0B2545]">
+                25
+              </p>
+              <p class="mt-1 text-xs text-[#73879A]">Visible products</p>
+            </div>
+
+
+            <div class="h-10 w-px bg-[#8DA9C4]/30"></div>
+
+
+            <div>
+              <p class="text-2xl font-medium tracking-[-0.04em] text-[#0B2545]">
+                24/7
+              </p>
+              <p class="mt-1 text-xs text-[#73879A]">Digital access</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- HERO VISUAL -->
+        <div class="relative mx-auto w-full max-w-[650px]">
+          <div
+            class="absolute left-[10%] top-[8%] h-[78%] w-[78%] rounded-full border border-[#8DA9C4]/20"
+          ></div>
+
+
+          <div
+            class="absolute left-[18%] top-[16%] h-[62%] w-[62%] rounded-full border border-dashed border-[#8DA9C4]/30"
+          ></div>
+
+
+          <div class="relative aspect-square">
+            <div
+              class="absolute inset-[15%] overflow-hidden rounded-[44px] bg-gradient-to-br from-[#13315C] via-[#173963] to-[#0B2545] shadow-[0_50px_100px_rgba(11,37,69,0.28)]"
+            >
+              <div
+                class="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-[#8DA9C4]/28 blur-2xl"
+              ></div>
+
+
+              <div
+                class="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+              ></div>
+
+
+              <div class="relative flex h-full flex-col justify-between p-8 sm:p-10">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <p
+                      class="text-[10px] font-medium uppercase tracking-[0.22em] text-[#B7C8D9]"
+                    >
+                      Unified protection
+                    </p>
+
+
+                    <p
+                      class="mt-3 max-w-[250px] text-2xl font-medium leading-tight tracking-[-0.04em] text-white sm:text-3xl"
+                    >
+                      Your coverage, clearly connected.
+                    </p>
+                  </div>
+
+
+                  <span
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10"
+                  >
+                    <svg
+                      class="h-6 w-6 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+
+
+                <div>
+                  <div class="mb-5 flex items-end justify-between">
+                    <div>
+                      <p class="text-xs text-[#B7C8D9]">Protection areas</p>
+                      <p class="mt-1 text-4xl font-medium text-white">05</p>
+                    </div>
+
+
+                    <div class="flex -space-x-2">
+                      <span
+                        class="h-9 w-9 rounded-full border-2 border-[#173963] bg-[#8DA9C4]"
+                      ></span>
+                      <span
+                        class="h-9 w-9 rounded-full border-2 border-[#173963] bg-[#EEF4ED]"
+                      ></span>
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#173963] bg-white text-xs font-medium text-[#13315C]"
+                      >
+                        +3
+                      </span>
+                    </div>
+                  </div>
+
+
+                  <div class="h-1.5 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      class="h-full w-3/5 rounded-full bg-gradient-to-r from-[#8DA9C4] to-white"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <article
+              class="floating-card absolute left-0 top-[10%] w-[215px] rounded-[22px] border border-white/80 bg-white/76 p-4 shadow-[0_20px_60px_rgba(19,49,92,0.12)] backdrop-blur-xl"
+            >
+              <div class="flex items-center gap-3">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E4EDF3] text-[#13315C]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <div>
+                  <p class="text-sm font-medium text-[#0B2545]">
+                    Home insurance
+                  </p>
+                  <p class="mt-1 text-[11px] text-emerald-700">
+                    Product available
+                  </p>
+                </div>
+              </div>
+            </article>
+
+
+            <article
+              class="floating-card-delayed absolute right-0 top-[22%] w-[200px] rounded-[22px] border border-white/80 bg-white/76 p-4 shadow-[0_20px_60px_rgba(19,49,92,0.12)] backdrop-blur-xl"
+            >
+              <div class="flex items-center gap-3">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E8EEF4] text-[#526F8D]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 20V7H19V20M8 7V4H16V7M8 11H10M14 11H16M8 15H10M14 15H16"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+
+                <div>
+                  <p class="text-sm font-medium text-[#0B2545]">
+                    Business
+                  </p>
+                  <p class="mt-1 text-[11px] text-[#8494A5]">Coming soon</p>
+                </div>
+              </div>
+            </article>
+
+
+            <article
+              class="floating-card-slow absolute bottom-[7%] left-[5%] w-[230px] rounded-[22px] border border-white/80 bg-white/80 p-4 shadow-[0_20px_60px_rgba(19,49,92,0.12)] backdrop-blur-xl"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <p
+                    class="text-[10px] font-medium uppercase tracking-[0.16em] text-[#7D8FA0]"
+                  >
+                    Digital access
+                  </p>
+                  <p class="mt-2 text-sm font-medium text-[#0B2545]">
+                    Quotes to claims
+                  </p>
+                </div>
+
+
+                <span
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-[#0B2545] text-white"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 12H19M14 7L19 12L14 17"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+
+      <div
+        class="absolute bottom-7 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-xs text-[#7D8FA0] lg:flex"
+      >
+        <span class="h-8 w-px bg-[#8DA9C4]/50"></span>
+        Scroll to explore
+      </div>
+    </section>
+
+
+    <!-- INSURANCE DOMAINS -->
+    <section id="solutions" class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div
+          class="grid items-end gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20"
+        >
+          <div>
+            <p class="section-eyebrow">Insurance solutions</p>
+
+
+            <h2 class="section-title mt-5">
+              One platform.
+              <span class="text-[#7892AA]">Every protection need.</span>
+            </h2>
+          </div>
+
+
+          <p class="max-w-xl text-base leading-8 text-[#6B7F92] lg:ml-auto">
+     Discover our complete insurance ecosystem across five specialized domains. We believe transparency matters, so every product remains visible, giving you insight into the full platform journey, current offerings, and future expansions.
+          </p>
+        </div>
+
+
+        <div
+          class="mt-16 grid overflow-hidden rounded-[30px] border border-[#DCE5EC] bg-[#F8FAF9] lg:grid-cols-[0.42fr_0.58fr]"
+        >
+          <!-- Domain selector -->
+          <div class="border-b border-[#DCE5EC] lg:border-b-0 lg:border-r">
+            @for (domain of domains; track domain.id) {
+              <button
+                type="button"
+                class="group flex w-full items-center gap-5 border-b border-[#DCE5EC] px-6 py-6 text-left transition last:border-b-0 sm:px-8"
+                [class.bg-[#0B2545]]="selectedDomainId === domain.id"
+                [class.text-white]="selectedDomainId === domain.id"
+                [class.hover:bg-white]="selectedDomainId !== domain.id"
+                (click)="selectDomain(domain.id)"
+              >
+                <span
+                  class="text-xs font-medium"
+                  [class.text-[#AFC1D1]]="selectedDomainId === domain.id"
+                  [class.text-[#91A0AE]]="selectedDomainId !== domain.id"
+                >
+                  {{ domain.number }}
+                </span>
+
+
+                <span class="flex-1">
+                  <span
+                    class="block text-lg font-medium tracking-[-0.025em]"
+                  >
+                    {{ domain.name }}
+                  </span>
+
+
+                  <span
+                    class="mt-1 block text-xs"
+                    [class.text-[#AFC1D1]]="selectedDomainId === domain.id"
+                    [class.text-[#8999A8]]="selectedDomainId !== domain.id"
+                  >
+                    5 insurance products
+                  </span>
+                </span>
+
+
+                <svg
+                  class="h-5 w-5 transition group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12H19M14 7L19 12L14 17"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            }
+          </div>
+
+
+          <!-- Selected domain -->
+          <div
+            class="relative overflow-hidden bg-gradient-to-br p-7 sm:p-10 lg:p-12"
+            [class]="selectedDomain.accentClass"
+          >
+            <div
+              class="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[#8DA9C4]/20"
+            ></div>
+
+
+            <div
+              class="absolute -right-8 -top-8 h-44 w-44 rounded-full border border-[#8DA9C4]/20"
+            ></div>
+
+
+            <div class="relative">
+              <div class="flex items-start justify-between gap-6">
+                <span
+                  class="flex h-16 w-16 items-center justify-center rounded-[22px] bg-white text-[#13315C] shadow-[0_14px_40px_rgba(19,49,92,0.1)]"
+                >
+                  @switch (selectedDomain.icon) {
+                    @case ('home') {
+                      <svg
+                        class="h-7 w-7"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('business') {
+                      <svg
+                        class="h-7 w-7"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 20V7H19V20M8 7V4H16V7M8 11H10M14 11H16M8 15H10M14 15H16"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('auto') {
+                      <svg
+                        class="h-7 w-7"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 17H3V12L5.5 6H18.5L21 12V17H19M7 17H17M6 13H8M16 13H18M6 17V19M18 17V19"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @case ('disaster') {
+                      <svg
+                        class="h-7 w-7"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3L3 20H21L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 9V14M12 17.5V17.6"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+
+
+                    @default {
+                      <svg
+                        class="h-7 w-7"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M8 11C10.2091 11 12 9.20914 12 7C12 4.79086 10.2091 3 8 3C5.79086 3 4 4.79086 4 7C4 9.20914 5.79086 11 8 11Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                        />
+                        <path
+                          d="M14.5 10C16.433 10 18 8.433 18 6.5C18 4.567 16.433 3 14.5 3M2.5 20C2.5 16.6863 4.96243 14 8 14C11.0376 14 13.5 16.6863 13.5 20M15 14C18.0376 14 20.5 16.2386 20.5 19"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    }
+                  }
+                </span>
+
+
+                @if (selectedDomain.available) {
+                  <span class="status-available">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                    Product available
+                  </span>
+                } @else {
+                  <span class="status-coming-soon">Coming soon</span>
+                }
+              </div>
+
+
+              <p
+                class="mt-10 text-xs font-medium uppercase tracking-[0.2em] text-[#71869A]"
+              >
+                {{ selectedDomain.number }} / 05
+              </p>
+
+
+              <h3
+                class="mt-4 max-w-md text-4xl font-medium tracking-[-0.05em] text-[#0B2545] sm:text-5xl"
+              >
+                {{ selectedDomain.name }}
+              </h3>
+
+
+              <p class="mt-5 max-w-lg text-sm leading-7 text-[#63788B]">
+                {{ selectedDomain.description }}
+              </p>
+
+
+              <div class="mt-10 space-y-3">
+                @for (
+                  product of selectedDomain.products;
+                  track product.name
+                ) {
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 rounded-2xl border border-white/80 bg-white/70 px-5 py-4 text-left backdrop-blur-sm transition"
+                    [class.cursor-pointer]="product.available"
+                    [class.hover:-translate-y-0.5]="product.available"
+                    [class.hover:shadow-lg]="product.available"
+                    [class.cursor-default]="!product.available"
+                    (click)="openProduct(product)"
+                  >
+                    <span>
+                      <span
+                        class="block text-sm font-medium text-[#193A5C]"
+                      >
+                        {{ product.name }}
+                      </span>
+
+
+                      <span class="mt-1 block text-xs text-[#8191A0]">
+                        {{ product.description }}
+                      </span>
+                    </span>
+
+
+                    @if (product.available) {
+                      <span class="status-available">Available</span>
+                    } @else {
+                      <span class="status-coming-soon">Coming soon</span>
+                    }
+                  </button>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ALL 25 PRODUCTS -->
+    <section id="products" class="bg-[#EEF4ED] py-24 sm:py-32">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div
+          class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div>
+            <p class="section-eyebrow">Complete portfolio</p>
+
+
+            <h2 class="section-title mt-5 max-w-3xl">
+              Browse all
+              <span class="text-[#7892AA]">25 insurance products.</span>
+            </h2>
+          </div>
+
+
+          <div
+            class="flex max-w-md items-start gap-3 rounded-2xl border border-[#C9D6DF] bg-white/55 p-4"
+          >
+            <span
+              class="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500 shadow-[0_0_0_5px_rgba(16,185,129,0.12)]"
+            ></span>
+
+
+            <p class="text-xs leading-6 text-[#6E8294]">
+              Vacation Home Insurance is currently available. The remaining
+              products are visible as part of the upcoming platform portfolio.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="mt-16 space-y-7">
+          @for (domain of domains; track domain.id; let domainIndex = $index) {
+            <article
+              class="group overflow-hidden rounded-[28px] border border-[#D7E1E7] bg-white transition duration-500 hover:border-[#B8C8D4] hover:shadow-[0_24px_70px_rgba(19,49,92,0.08)]"
+            >
+              <div
+                class="grid lg:grid-cols-[0.34fr_0.66fr]"
+              >
+                <div
+                  class="relative overflow-hidden border-b border-[#E1E8ED] bg-[#F8FAF9] p-7 sm:p-9 lg:border-b-0 lg:border-r"
+                >
+                  <span
+                    class="absolute -right-6 -top-10 text-[120px] font-medium leading-none tracking-[-0.08em] text-[#E7EDF0]"
+                  >
+                    0{{ domainIndex + 1 }}
+                  </span>
+
+
+                  <div class="relative">
+                    <span
+                      class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B2545] text-white"
+                    >
+                      {{ domainIndex + 1 }}
+                    </span>
+
+
+                    <h3
+                      class="mt-10 text-2xl font-medium tracking-[-0.04em] text-[#0B2545]"
+                    >
+                      {{ domain.name }}
+                    </h3>
+
+
+                    <p class="mt-3 max-w-xs text-sm leading-7 text-[#748799]">
+                      {{ domain.description }}
+                    </p>
+
+
+                    <p
+                      class="mt-8 text-xs font-medium uppercase tracking-[0.17em] text-[#91A0AE]"
+                    >
+                      5 products
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="grid sm:grid-cols-2 xl:grid-cols-5">
+                  @for (
+                    product of domain.products;
+                    track product.name;
+                    let productIndex = $index
+                  ) {
+                    <button
+                      type="button"
+                      class="product-card min-h-[220px] border-b border-[#E1E8ED] p-6 text-left transition last:border-b-0 sm:border-r xl:border-b-0"
+                      [class.product-card-active]="product.available"
+                      [class.cursor-pointer]="product.available"
+                      [class.cursor-default]="!product.available"
+                      [attr.aria-disabled]="!product.available"
+                      (click)="openProduct(product)"
+                    >
+                      <span
+                        class="text-[11px] font-medium text-[#9AA8B4]"
+                      >
+                        0{{ productIndex + 1 }}
+                      </span>
+
+
+                      <span
+                        class="mt-8 block text-base font-medium leading-6 tracking-[-0.025em] text-[#193A5C]"
+                      >
+                        {{ product.name }}
+                      </span>
+
+
+                      <span class="mt-3 block text-xs leading-5 text-[#8495A4]">
+                        {{ product.description }}
+                      </span>
+
+
+                      <span class="mt-7 inline-flex">
+                        @if (product.available) {
+                          <span class="status-available">
+                            <span
+                              class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            Available
+                          </span>
+                        } @else {
+                          <span class="status-coming-soon">Coming soon</span>
+                        }
+                      </span>
+                    </button>
+                  }
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FEATURED PRODUCT -->
+    <section class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div
+          class="relative overflow-hidden rounded-[36px] bg-[#0B2545] px-6 py-10 text-white shadow-[0_40px_100px_rgba(11,37,69,0.22)] sm:px-10 sm:py-14 lg:px-16 lg:py-16"
+        >
+          <div
+            class="absolute -right-24 -top-40 h-[520px] w-[520px] rounded-full bg-[#8DA9C4]/20 blur-[20px]"
+          ></div>
+
+
+          <div
+            class="absolute -bottom-56 left-[20%] h-[500px] w-[500px] rounded-full bg-white/5 blur-[20px]"
+          ></div>
+
+
+          <div
+            class="relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]"
+          >
+            <div>
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium text-[#D6E2EC]"
+              >
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                Currently available
+              </span>
+
+
+              <h2
+                class="mt-8 max-w-2xl text-4xl font-medium leading-[1.02] tracking-[-0.055em] sm:text-6xl"
+              >
+                Vacation Home Insurance
+              </h2>
+
+
+              <p
+                class="mt-6 max-w-xl text-sm leading-7 text-[#B9C9D7] sm:text-base"
+              >
+                Protect seasonal and secondary residences with a digital
+                insurance experience designed around property coverage, risk
+                assessment, quotes, policies, and claims.
+              </p>
+
+
+              <div
+                class="mt-10 grid gap-x-8 gap-y-5 border-y border-white/10 py-8 sm:grid-cols-2"
+              >
+                @for (
+                  coverage of [
+                    'Dwelling Coverage',
+                    'Other Structures Coverage',
+                    'Personal Property Coverage',
+                    'Theft Protection'
+                  ];
+                  track coverage
+                ) {
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[#BFD1DF]"
+                    >
+                      <svg
+                        class="h-3.5 w-3.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 12.5L9.2 16.5L19 6.5"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+
+                    <span class="text-sm text-[#E8F0F5]">
+                      {{ coverage }}
+                    </span>
+                  </div>
+                }
+              </div>
+
+
+              <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-medium text-[#0B2545] transition duration-300 hover:-translate-y-1"
+                  (click)="openProduct({
+                    name: 'Vacation Home Insurance',
+                    description: '',
+                    available: true
+                  })"
+                >
+                  View product details
+
+
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 12H19M14 7L19 12L14 17"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+
+
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-medium text-white transition duration-300 hover:bg-white/10"
+                  (click)="generateQuote()"
+                >
+                  Login to generate quote
+                </button>
+              </div>
+            </div>
+
+
+            <!-- Product visual -->
+            <div class="relative mx-auto w-full max-w-[500px]">
+              <div
+                class="aspect-[4/5] rounded-[32px] border border-white/10 bg-gradient-to-br from-white/14 to-white/5 p-5 backdrop-blur-md sm:p-7"
+              >
+                <div
+                  class="flex h-full flex-col justify-between rounded-[25px] bg-[#EEF4ED] p-6 text-[#0B2545] sm:p-8"
+                >
+                  <div class="flex items-start justify-between">
+                    <span
+                      class="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#0B2545] text-white"
+                    >
+                      <svg
+                        class="h-7 w-7"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3.5 10.5L12 3.5L20.5 10.5V20H14.5V14H9.5V20H3.5V10.5Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+
+
+                    <span class="status-available">Active product</span>
+                  </div>
+
+
+                  <div>
+                    <p
+                      class="text-xs font-medium uppercase tracking-[0.18em] text-[#7A8EA0]"
+                    >
+                      Property protection
+                    </p>
+
+
+                    <h3
+                      class="mt-4 text-4xl font-medium leading-tight tracking-[-0.055em]"
+                    >
+                      Coverage for the place you escape to.
+                    </h3>
+                  </div>
+
+
+                  <div
+                    class="grid grid-cols-2 gap-3 border-t border-[#CEDAE2] pt-6"
+                  >
+                    <div>
+                      <p class="text-[11px] text-[#8193A3]">Availability</p>
+                      <p class="mt-1 text-sm font-medium">Online</p>
+                    </div>
+
+
+                    <div>
+                      <p class="text-[11px] text-[#8193A3]">Quote access</p>
+                      <p class="mt-1 text-sm font-medium">Customers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div
+                class="absolute -bottom-5 -left-5 rounded-2xl border border-white/15 bg-[#173963]/90 px-5 py-4 shadow-2xl backdrop-blur-xl"
+              >
+                <p class="text-[10px] uppercase tracking-[0.16em] text-[#AFC1D1]">
+                  End-to-end
+                </p>
+                <p class="mt-1 text-sm font-medium text-white">
+                  Quote · Policy · Claim
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="bg-white pb-24 sm:pb-32">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div class="border-t border-[#DDE5EA] pt-24">
+          <div class="grid gap-14 lg:grid-cols-[0.34fr_0.66fr]">
+            <div>
+              <p class="section-eyebrow">Designed around you</p>
+
+
+              <h2
+                class="mt-5 text-4xl font-medium leading-tight tracking-[-0.05em] text-[#0B2545] sm:text-5xl"
+              >
+                Insurance should feel clear, not complicated.
+              </h2>
+            </div>
+
+
+            <div class="grid gap-10 sm:grid-cols-3">
+              <article class="feature-item">
+                <span class="feature-number">01</span>
+
+
+                <h3>Digital first</h3>
+
+
+                <p>
+                  Move from product discovery to quotes, policies, and claims
+                  through one connected experience.
+                </p>
+              </article>
+
+
+              <article class="feature-item">
+                <span class="feature-number">02</span>
+
+
+                <h3>Clear decisions</h3>
+
+
+                <p>
+                  Availability, protection details, coverage, and next steps
+                  remain understandable throughout the journey.
+                </p>
+              </article>
+
+
+              <article class="feature-item">
+                <span class="feature-number">03</span>
+
+
+                <h3>Secure access</h3>
+
+
+                <p>
+                  Role-based access protects customer, administrator, and claims
+                  management experiences.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="bg-[#EEF4ED] py-16 sm:py-24">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div
+          class="relative overflow-hidden rounded-[32px] border border-[#CAD7E0] bg-white px-6 py-14 text-center shadow-[0_30px_80px_rgba(19,49,92,0.08)] sm:px-12 sm:py-20"
+        >
+          <div
+            class="absolute left-1/2 top-0 h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8DA9C4]/25 blur-3xl"
+          ></div>
+
+
+          <div class="relative mx-auto max-w-3xl">
+            <p class="section-eyebrow">Begin your journey</p>
+
+
+            <h2
+              class="mt-6 text-4xl font-medium leading-tight tracking-[-0.055em] text-[#0B2545] sm:text-6xl"
+            >
+              Protection starts with one simple step.
+            </h2>
+
+
+            <p class="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#6B7F92]">
+              Create your customer account to register a property, explore the
+              available product, and generate your insurance quote.
+            </p>
+
+
+            <div
+              class="mt-9 flex flex-col justify-center gap-4 sm:flex-row"
+            >
+              <button
+                type="button"
+                class="inline-flex items-center justify-center gap-3 rounded-full bg-[#0B2545] px-7 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-1 hover:bg-[#13315C]"
+                (click)="register()"
+              >
+                Create an account
+
+
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 12H19M14 7L19 12L14 17"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+
+              <a
+                routerLink="/auth/login"
+                class="inline-flex items-center justify-center rounded-full border border-[#C5D2DB] bg-[#F6F9F8] px-7 py-4 text-sm font-medium text-[#13315C] transition hover:bg-[#EEF4ED]"
+              >
+                Sign in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0B2545] text-white">
+    <div class="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 lg:px-12">
+      <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+        <div>
+          <a routerLink="/" class="flex items-center gap-3">
+            <span
+              class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#0B2545]"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 3L4.5 6.2V11.1C4.5 15.6 7.6 19.8 12 21C16.4 19.8 19.5 15.6 19.5 11.1V6.2L12 3Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.8 12L11 14.2L15.5 9.7"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+
+            <span>
+              <span class="block text-sm font-semibold">SecureSphere</span>
+              <span
+                class="mt-1 block text-[9px] uppercase tracking-[0.2em] text-[#AFC0CF]"
+              >
+                Insurance
+              </span>
+            </span>
+          </a>
+
+
+          <p class="mt-6 max-w-sm text-sm leading-7 text-[#AFC0CF]">
+            A unified digital platform for discovering insurance products and
+            managing quotes, policies, and claims.
+          </p>
+        </div>
+
+
+        <div>
+          <h3
+            class="text-xs font-medium uppercase tracking-[0.18em] text-[#8199AD]"
+          >
+            Platform
+          </h3>
+
+
+          <div class="mt-5 space-y-3 text-sm text-[#C6D3DE]">
+            <button
+              type="button"
+              class="block transition hover:text-white"
+              (click)="scrollToSection('solutions')"
+            >
+              Solutions
+            </button>
+
+
+            <button
+              type="button"
+              class="block transition hover:text-white"
+              (click)="scrollToSection('products')"
+            >
+              Products
+            </button>
+
+
+            <a
+              routerLink="/auth/login"
+              class="block transition hover:text-white"
+            >
+              Sign in
+            </a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3
+            class="text-xs font-medium uppercase tracking-[0.18em] text-[#8199AD]"
+          >
+            Insurance
+          </h3>
+
+
+          <div class="mt-5 space-y-3 text-sm text-[#C6D3DE]">
+            <p>Home</p>
+            <p>Business</p>
+            <p>Auto</p>
+            <p>Disaster</p>
+            <p>Employee Benefits</p>
+          </div>
+        </div>
+
+
+        <div>
+          <h3
+            class="text-xs font-medium uppercase tracking-[0.18em] text-[#8199AD]"
+          >
+            Access
+          </h3>
+
+
+          <div class="mt-5 space-y-3 text-sm text-[#C6D3DE]">
+            <a
+              routerLink="/auth/register/customer"
+              class="block transition hover:text-white"
+            >
+              Customer registration
+            </a>
+
+
+            <a
+              routerLink="/auth/register/claims-manager"
+              class="block transition hover:text-white"
+            >
+              Claims manager registration
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div
+        class="mt-14 flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-[#7F97AA] sm:flex-row sm:items-center sm:justify-between"
+      >
+        <p>© {{ currentYear }} SecureSphere Insurance. All rights reserved.</p>
+
+
+        <p>Protection · Trust · Clarity</p>
+      </div>
+    </div>
+  </footer>
+</div>

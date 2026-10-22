@@ -1,0 +1,39 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Gateway/">
+    <Project Path="VacationHome.ApiGateway/VacationHome.ApiGateway.csproj" Id="b10be445-e19b-4bde-b002-03372adf9d33" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Authentication/">
+    <Project Path="VacationHome.Auth.Api/VacationHome.Auth.Api.csproj" Id="3774a956-6763-426f-b0c3-74cff5d6bde0" />
+    <Project Path="VacationHome.Auth.Application/VacationHome.Auth.Application.csproj" Id="3371467e-c79f-405c-b1f6-2ab4673890f9" />
+    <Project Path="VacationHome.Auth.Domain/VacationHome.Auth.Domain.csproj" Id="f9f6c58b-2f52-44e1-8c75-72d2fc864bfa" />
+    <Project Path="VacationHome.Auth.Infrastructure/VacationHome.Auth.Infrastructure.csproj" Id="2896358d-c646-422d-9503-d91d41bb4ed8" />
+  </Folder>
+  <Folder Name="/src/Services/Claim/">
+    <Project Path="VacationHome.ClaimService.API/VacationHome.ClaimService.API.csproj" Id="ce6c2985-b298-4fb4-b158-3487e6319522" />
+    <Project Path="VacationHome.ClaimService.Application/VacationHome.ClaimService.Application.csproj" Id="94bef8d1-d12e-4f8f-a815-44abbc5ccb3d" />
+    <Project Path="VacationHome.ClaimService.Domain/VacationHome.ClaimService.Domain.csproj" Id="e4c095b3-20a4-400a-9519-ff0daa3efd41" />
+    <Project Path="VacationHome.ClaimService.Infrastructure/VacationHome.ClaimService.Infrastructure.csproj" Id="612ac7c1-7c36-4e41-a127-1ab69732d91a" />
+  </Folder>
+  <Folder Name="/src/Services/Customer/">
+    <Project Path="VacationHome.Customer.Api/VacationHome.Customer.Api.csproj" Id="ed80cd4c-dcff-47ea-8527-e519cb244c59" />
+    <Project Path="VacationHome.Customer.Application/VacationHome.Customer.Application.csproj" Id="0c2676e1-114d-47e6-823e-94b6a612d2dd" />
+    <Project Path="VacationHome.Customer.Domain/VacationHome.Customer.Domain.csproj" Id="de88faf2-8709-4a4a-841c-b9bac975d20d" />
+    <Project Path="VacationHome.Customer.Infrastructure/VacationHome.Customer.Infrastructure.csproj" Id="1aa7a13e-5ada-4f57-a16b-f39b1bd82452" />
+  </Folder>
+  <Folder Name="/src/Services/Policy/">
+    <Project Path="VacationHome.PolicyService.API/VacationHome.PolicyService.API.csproj" Id="40800388-7e74-4a37-ad5e-3658a860ec9c" />
+    <Project Path="VacationHome.PolicyService.Application/VacationHome.PolicyService.Application.csproj" Id="749f2982-4a02-4c29-a404-10efc82e3e21" />
+    <Project Path="VacationHome.PolicyService.Domain/VacationHome.PolicyService.Domain.csproj" Id="99decac5-64a7-4ec7-b8b2-71cdd3f0ee3d" />
+    <Project Path="VacationHome.PolicyService.Infrastructure/VacationHome.PolicyService.Infrastructure.csproj" Id="72d7f3c5-5b76-4c42-a2cf-7e598c42cacf" />
+    <Project Path="VacationHome.PolicyService.Tests/VacationHome.PolicyService.Tests.csproj" Id="79c7e55d-e3ae-4e2d-b006-f3343e017e0f" />
+  </Folder>
+  <Folder Name="/src/Services/ProductQuote/">
+    <Project Path="VacationHome.ProductQuote.Api/VacationHome.ProductQuote.Api.csproj" Id="c90be54d-c92c-4ab7-876c-566a9820e12c" />
+    <Project Path="VacationHome.ProductQuote.Application/VacationHome.ProductQuote.Application.csproj" Id="77c4e7fa-cd39-4825-8f87-e7f5e714282b" />
+    <Project Path="VacationHome.ProductQuote.Domain/VacationHome.ProductQuote.Domain.csproj" Id="6e7801df-142d-487f-a02d-d50f476405ce" />
+    <Project Path="VacationHome.ProductQuote.Infrastructure/VacationHome.ProductQuote.Infrastructure.csproj" Id="e5e6290a-e3e6-42e5-946d-400569df8920" />
+    <Project Path="VacationHome.Quote.Tests/VacationHome.ProductQuote.Tests.csproj" Id="88fc0a9c-4011-4e7c-b421-95e53c6da64e" />
+  </Folder>
+</Solution>

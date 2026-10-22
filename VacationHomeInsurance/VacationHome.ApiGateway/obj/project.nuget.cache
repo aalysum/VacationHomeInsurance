@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "dgSpecHash": "phJjHR3ACik=",
+  "success": true,
+  "projectFilePath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ApiGateway\\VacationHome.ApiGateway.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\ipaddressrange\\6.1.0\\ipaddressrange.6.1.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.31\\microsoft.aspnetcore.authentication.jwtbearer.8.0.31.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.11\\microsoft.aspnetcore.jsonpatch.8.0.11.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.aspnetcore.middlewareanalysis\\8.0.11\\microsoft.aspnetcore.middlewareanalysis.8.0.11.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.11\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.11.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.extensions.diagnosticadapter\\3.1.32\\microsoft.extensions.diagnosticadapter.3.1.32.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.1.0\\microsoft.identitymodel.abstractions.8.1.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.1.0\\microsoft.identitymodel.jsonwebtokens.8.1.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.identitymodel.logging\\8.1.0\\microsoft.identitymodel.logging.8.1.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.7.3\\microsoft.identitymodel.protocols.7.7.3.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.7.3\\microsoft.identitymodel.protocols.openidconnect.7.7.3.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.1.0\\microsoft.identitymodel.tokens.8.1.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\ocelot\\23.4.2\\ocelot.23.4.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\ocelot.provider.polly\\23.4.2\\ocelot.provider.polly.23.4.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\polly\\8.5.0\\polly.8.5.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\polly.core\\8.5.0\\polly.core.8.5.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.1.0\\system.identitymodel.tokens.jwt.8.1.0.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.32\\microsoft.netcore.app.ref.8.0.32.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.32\\microsoft.windowsdesktop.app.ref.8.0.32.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.32\\microsoft.aspnetcore.app.ref.8.0.32.nupkg.sha512",
+    "C:\\Users\\Swapanthi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.32\\microsoft.netcore.app.host.win-x64.8.0.32.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "VacationHome.ApiGateway depends on Microsoft.IdentityModel.Tokens (>= 8.0.31) but Microsoft.IdentityModel.Tokens 8.0.31 was not found. Microsoft.IdentityModel.Tokens 8.1.0 was resolved instead.",
+      "projectPath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ApiGateway\\VacationHome.ApiGateway.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ApiGateway\\VacationHome.ApiGateway.csproj",
+      "libraryId": "Microsoft.IdentityModel.Tokens",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "VacationHome.ApiGateway depends on System.IdentityModel.Tokens.Jwt (>= 8.0.31) but System.IdentityModel.Tokens.Jwt 8.0.31 was not found. System.IdentityModel.Tokens.Jwt 8.1.0 was resolved instead.",
+      "projectPath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ApiGateway\\VacationHome.ApiGateway.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\CapstoneProject\\VacationHomeInsuranceUI\\VacationHomeInsurance\\VacationHome.ApiGateway\\VacationHome.ApiGateway.csproj",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

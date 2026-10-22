@@ -1,0 +1,1 @@
+var n=(i=>(i[i.PropertyProtection=1]="PropertyProtection",i[i.NaturalDisasterProtection=2]="NaturalDisasterProtection",i[i.ComprehensiveProtection=3]="ComprehensiveProtection",i))(n||{});export{n as a};

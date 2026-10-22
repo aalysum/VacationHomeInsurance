@@ -1,0 +1,1026 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "DownstreamPathTemplate": "/auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 1
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/claims-managers/pending",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims-managers/pending",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims-managers/{id}/approve",
+      "UpstreamHttpMethod": [
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/claims-managers/{id}/approve",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims-managers/{id}/reject",
+      "UpstreamHttpMethod": [
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/claims-managers/{id}/reject",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims-managers/{id}/document",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims-managers/{id}/document",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/users/{id}/status",
+      "UpstreamHttpMethod": [
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/users/{id}/status",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/customers/profile",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PATCH"
+      ],
+      "DownstreamPathTemplate": "/customers/profile",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/properties",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/properties",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/properties/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/properties/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/properties/{id}/archive",
+      "UpstreamHttpMethod": [
+        "PATCH"
+      ],
+      "DownstreamPathTemplate": "/properties/{id}/archive",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/customers",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/customers",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/admin/customers/{customerId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/customers/{customerId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/admin/customers/{customerId}/properties",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/customers/{customerId}/properties",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7102
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/products",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/products",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/products/{productId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/products/{productId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 5
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/quotes",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/quotes",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/quotes/{quoteId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/quotes/{quoteId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/quotes/{quoteId}/accept",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/quotes/{quoteId}/accept",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/quotes/{quoteId}/withdraw",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/quotes/{quoteId}/withdraw",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/products/{productId}/status",
+      "UpstreamHttpMethod": [
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/products/{productId}/status",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/products",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/products",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/products/{productId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/products/{productId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/products/{productId}/coverages/{coverageId}/limit",
+      "UpstreamHttpMethod": [
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/products/{productId}/coverages/{coverageId}/limit",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/products/{productId}/coverages/{coverageId}/charge",
+      "UpstreamHttpMethod": [
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/products/{productId}/coverages/{coverageId}/charge",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/pricing",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/admin/pricing",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/quotes",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/quotes",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/admin/quotes/{quoteId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/quotes/{quoteId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/quotes/{quoteId}/approve",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/quotes/{quoteId}/approve",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/quotes/{quoteId}/reject",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/quotes/{quoteId}/reject",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/quotes/{quoteId}/invalidate",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/quotes/{quoteId}/invalidate",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/policies",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/policies",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/policies/{policyId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/policies/{policyId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/policies/{policyId}/documents",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/policies/{policyId}/documents",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 20
+    },
+    {
+      "UpstreamPathTemplate": "/policies/{policyId}/documents/{documentId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/policies/{policyId}/documents/{documentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 25
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims-managers/active",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims-managers/active",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7101
+        }
+      ],
+      "Priority": 20
+    },
+    {
+      "UpstreamPathTemplate": "/policies/{policyId}/cancel",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/policies/{policyId}/cancel",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/policies/{policyId}/renewal-eligibility",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/policies/{policyId}/renewal-eligibility",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/policies/{policyId}/renew",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/policies/{policyId}/renew",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/policies/payments",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/policies/payments",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 15
+    },
+    {
+      "UpstreamPathTemplate": "/policies/payments/{paymentId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/policies/payments/{paymentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 15
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/policies",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/policies",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/admin/policies/{policyId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/policies/{policyId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/policies/{policyId}/documents",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/policies/{policyId}/documents",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 20
+    },
+    {
+      "UpstreamPathTemplate": "/admin/policies/{policyId}/documents/{documentId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/policies/{policyId}/documents/{documentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 25
+    },
+    {
+      "UpstreamPathTemplate": "/admin/policies/{policyId}/documents/retry",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/policies/{policyId}/documents/retry",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 30
+    },
+    {
+      "UpstreamPathTemplate": "/admin/payments/{paymentId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/payments/{paymentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7104
+        }
+      ],
+      "Priority": 10
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/claims",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/claims",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/claims/eligible-coverages",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/claims/eligible-coverages",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 15
+    },
+    {
+      "UpstreamPathTemplate": "/claims/{claimId}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT"
+      ],
+      "DownstreamPathTemplate": "/claims/{claimId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/claims/{claimId}/withdraw",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/claims/{claimId}/withdraw",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/claims/{claimId}/documents",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/claims/{claimId}/documents",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/claims/{claimId}/documents/{documentId}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "DELETE"
+      ],
+      "DownstreamPathTemplate": "/claims/{claimId}/documents/{documentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 15
+    },
+    {
+      "UpstreamPathTemplate": "/claims/{claimId}/documents/{documentId}/download",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/claims/{claimId}/documents/{documentId}/download",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 20
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/admin/claims/dashboard",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/dashboard",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 15
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/policy-documents/{documentId}/download",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/policy-documents/{documentId}/download",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 25
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 5
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/review",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/review",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/request-information",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/request-information",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/approve",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/approve",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/assignment",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/assignment",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 20
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/reject",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/reject",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/pay",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/pay",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    },
+    {
+      "UpstreamPathTemplate": "/claims-manager/claims/dashboard",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/dashboard",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 15
+    },
+    {
+      "UpstreamPathTemplate": "/admin/claims/{claimId}/close",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/admin/claims/{claimId}/close",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7105
+        }
+      ],
+      "Priority": 10
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7001",
+
+
+    "QoSOptions": {
+      "ExceptionsAllowedBeforeBreaking": 3,
+      "DurationOfBreak": 30,
+      "TimeoutValue": 15000
+    }
+  }
+}

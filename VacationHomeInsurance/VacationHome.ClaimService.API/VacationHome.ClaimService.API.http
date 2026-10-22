@@ -1,0 +1,8 @@
+@VacationHome.ClaimService.API_HostAddress = http://localhost:5220
+
+
+GET {{VacationHome.ClaimService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+###
